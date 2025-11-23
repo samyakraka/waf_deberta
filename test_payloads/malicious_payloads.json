@@ -1,0 +1,156 @@
+{
+  "description": "Example malicious payloads for WAF testing",
+  "requests": [
+    {
+      "name": "SQL Injection - UNION attack",
+      "method": "GET",
+      "path": "/products",
+      "query": {
+        "id": "1' UNION SELECT username, password FROM users--"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SQL Injection - Boolean-based blind",
+      "method": "POST",
+      "path": "/login",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "body": "username=admin' AND '1'='1&password=anything"
+    },
+    {
+      "name": "XSS - Reflected attack",
+      "method": "GET",
+      "path": "/search",
+      "query": {
+        "q": "<script>alert('XSS')</script>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - DOM-based",
+      "method": "GET",
+      "path": "/profile",
+      "query": {
+        "name": "<img src=x onerror=alert(document.cookie)>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Command Injection - Linux",
+      "method": "POST",
+      "path": "/api/ping",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"host\": \"8.8.8.8; cat /etc/passwd\"}"
+    },
+    {
+      "name": "Path Traversal",
+      "method": "GET",
+      "path": "/download",
+      "query": {
+        "file": "../../../../etc/passwd"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "LDAP Injection",
+      "method": "POST",
+      "path": "/api/search",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": \"*)(uid=*))(&(uid=*\"}"
+    },
+    {
+      "name": "XXE Attack",
+      "method": "POST",
+      "path": "/api/upload",
+      "headers": {
+        "content-type": "application/xml"
+      },
+      "body": "<?xml version=\"1.0\"?><!DOCTYPE root [<!ENTITY test SYSTEM 'file:///etc/passwd'>]><root>&test;</root>"
+    },
+    {
+      "name": "Remote Code Execution - eval()",
+      "method": "POST",
+      "path": "/api/calculate",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"expression\": \"__import__('os').system('whoami')\"}"
+    },
+    {
+      "name": "NoSQL Injection - MongoDB",
+      "method": "POST",
+      "path": "/api/login",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": {\"$ne\": null}, \"password\": {\"$ne\": null}}"
+    },
+    {
+      "name": "Server-Side Template Injection",
+      "method": "GET",
+      "path": "/greet",
+      "query": {
+        "name": "{{7*7}}"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "HTTP Header Injection",
+      "method": "GET",
+      "path": "/redirect",
+      "headers": {
+        "user-agent": "Mozilla/5.0",
+        "x-forwarded-for": "127.0.0.1\r\nSet-Cookie: malicious=true"
+      },
+      "query": {
+        "url": "http://example.com"
+      }
+    },
+    {
+      "name": "CRLF Injection",
+      "method": "GET",
+      "path": "/log",
+      "query": {
+        "message": "test%0d%0aInjected-Header: malicious"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SSRF Attack",
+      "method": "POST",
+      "path": "/api/fetch",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"url\": \"http://169.254.169.254/latest/meta-data/\"}"
+    },
+    {
+      "name": "Prototype Pollution",
+      "method": "POST",
+      "path": "/api/update",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"__proto__\": {\"isAdmin\": true}}"
+    }
+  ],
+  "labels": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+}

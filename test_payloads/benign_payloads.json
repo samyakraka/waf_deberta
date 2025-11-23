@@ -1,0 +1,105 @@
+{
+  "description": "Benign test requests for false positive checking",
+  "requests": [
+    {
+      "name": "Normal GET request",
+      "method": "GET",
+      "path": "/products",
+      "query": {
+        "category": "electronics",
+        "page": "1"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      }
+    },
+    {
+      "name": "Normal POST request",
+      "method": "POST",
+      "path": "/api/users",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": \"john_doe\", \"email\": \"john@example.com\"}"
+    },
+    {
+      "name": "Search query",
+      "method": "GET",
+      "path": "/search",
+      "query": {
+        "q": "laptop computers"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "API authentication",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": \"user@example.com\", \"password\": \"securePassword123\"}"
+    },
+    {
+      "name": "File download",
+      "method": "GET",
+      "path": "/download/report.pdf",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Form submission",
+      "method": "POST",
+      "path": "/contact",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      "body": "name=Jane+Doe&email=jane@example.com&message=Hello+World"
+    },
+    {
+      "name": "JSON API call",
+      "method": "PUT",
+      "path": "/api/products/123",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"name\": \"Updated Product\", \"price\": 99.99, \"stock\": 50}"
+    },
+    {
+      "name": "DELETE request",
+      "method": "DELETE",
+      "path": "/api/items/456",
+      "headers": {
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+      }
+    },
+    {
+      "name": "Complex query parameters",
+      "method": "GET",
+      "path": "/api/data",
+      "query": {
+        "filter": "active",
+        "sort": "date_desc",
+        "limit": "20",
+        "offset": "0"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Image upload",
+      "method": "POST",
+      "path": "/api/upload",
+      "headers": {
+        "content-type": "multipart/form-data"
+      },
+      "body": "file=profile.jpg&user_id=789"
+    }
+  ],
+  "labels": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}

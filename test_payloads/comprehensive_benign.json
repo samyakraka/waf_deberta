@@ -1,0 +1,64 @@
+{
+  "description": "Benign request test suite",
+  "total_payloads": 5,
+  "requests": [
+    {
+      "name": "Normal GET",
+      "method": "GET",
+      "path": "/products",
+      "query": {
+        "category": "electronics",
+        "page": "1"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "API POST",
+      "method": "POST",
+      "path": "/api/users",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"name\": \"John Doe\", \"email\": \"john@example.com\"}"
+    },
+    {
+      "name": "Search",
+      "method": "GET",
+      "path": "/search",
+      "query": {
+        "q": "laptop computers"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "name": "Login",
+      "method": "POST",
+      "path": "/login",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": "{\"username\": \"user@example.com\", \"password\": \"Password123!\"}"
+    },
+    {
+      "name": "API GET with auth",
+      "method": "GET",
+      "path": "/api/profile",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+      }
+    }
+  ],
+  "labels": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}

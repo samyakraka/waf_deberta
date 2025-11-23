@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "total_requests": 5,
+    "malicious_detected": 3,
+    "benign_detected": 2,
+    "detection_rate": 60.0,
+    "avg_reconstruction_loss": 6.2539785285061225,
+    "avg_confidence": 11.677350759481197,
+    "avg_anomaly_score": 1.7994380581117326
+  },
+  "risk_distribution": {
+    "LOW": 2,
+    "MEDIUM": 3,
+    "HIGH": 0,
+    "CRITICAL": 0
+  },
+  "threshold": 6.287774896621704,
+  "baseline_stats": {
+    "mean": 1.795492749020923,
+    "std": 2.4777100603083713,
+    "median": 0.9419696629047394,
+    "percentile_95": 6.287774896621704,
+    "percentile_99": 11.924603862762455,
+    "min": 0.0,
+    "max": 12.749442100524902
+  },
+  "malicious_indices": [
+    1,
+    2,
+    3
+  ],
+  "detailed_results": [
+    {
+      "index": 0,
+      "is_malicious": false,
+      "confidence": 9.406520710090849,
+      "reconstruction_loss": 5.69631404876709,
+      "anomaly_score": 1.5743655249398625,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/products QUERY:category=electronics&page=1 HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 1,
+      "is_malicious": true,
+      "confidence": 5.770499630009507,
+      "reconstruction_loss": 6.65061092376709,
+      "anomaly_score": 1.9595182876812907,
+      "risk_level": "MEDIUM",
+      "request_preview": "METHOD:POST PATH:/api/users HEADER:content-type:application/json BODY:{\"name\": \"John Doe\", \"email\": ..."
+    },
+    {
+      "index": 2,
+      "is_malicious": true,
+      "confidence": 0.07124981771966521,
+      "reconstruction_loss": 6.29225492477417,
+      "anomaly_score": 1.8148863532457016,
+      "risk_level": "MEDIUM",
+      "request_preview": "METHOD:GET PATH:/search QUERY:q=laptop computers HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 3,
+      "is_malicious": true,
+      "confidence": 22.00789422772582,
+      "reconstruction_loss": 7.671581745147705,
+      "anomaly_score": 2.371580553454852,
+      "risk_level": "MEDIUM",
+      "request_preview": "METHOD:POST PATH:/login HEADER:content-type:application/json BODY:{\"username\": \"user@example.com\", \"..."
+    },
+    {
+      "index": 4,
+      "is_malicious": false,
+      "confidence": 21.130589411860136,
+      "reconstruction_loss": 4.959131000074558,
+      "anomaly_score": 1.276839571236957,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/api/profile HEADER:user-agent:Mozilla/5.0..."
+    }
+  ],
+  "evaluation": {
+    "accuracy": 0.4,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "true_positives": 0,
+    "true_negatives": 2,
+    "false_positives": 3,
+    "false_negatives": 0,
+    "total_samples": 5,
+    "confusion_matrix": {
+      "TP": 0,
+      "TN": 2,
+      "FP": 3,
+      "FN": 0
+    }
+  },
+  "timestamp": "2025-11-23T11:45:19.644789",
+  "model_path": "models/deberta-waf/best_model"
+}

@@ -22,4 +22,5 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
+wafenv/
+models/

