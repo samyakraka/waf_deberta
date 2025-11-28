@@ -28,3 +28,6 @@ python-dateutil>=2.8.2
 
 # Testing Framework Requirements
 flask>=2.3.0  # For real-time testing server
+
+# Redis for rule management
+redis>=5.0.0

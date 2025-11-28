@@ -102,6 +102,21 @@ PARSING_CONFIG = {
 
 
 # ============================================================================
+# REDIS CONFIGURATIONS
+# ============================================================================
+
+REDIS_CONFIG = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 0,
+    'password': None,  # Set if Redis requires authentication
+    'decode_responses': True,
+    'socket_timeout': 5,
+    'socket_connect_timeout': 5
+}
+
+
+# ============================================================================
 # DIRECTORY CONFIGURATIONS
 # ============================================================================
 
