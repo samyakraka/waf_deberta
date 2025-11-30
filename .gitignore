@@ -25,3 +25,5 @@ wheels/
 wafenv/
 models/
 wafenv/
+nginx/logs/
+.DS_Store/

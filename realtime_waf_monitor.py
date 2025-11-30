@@ -118,7 +118,7 @@ class RealtimeWAFMonitor:
         self.detector = WAFDetector(
             model_path=model_path,
             max_length=256,
-            threshold_percentile=95.0
+            threshold_percentile=85.0
         )
         
         # Calibrate if data provided
