@@ -54,7 +54,7 @@ class WAFDetector:
         model_path: str,
         tokenizer_name: str = "microsoft/deberta-v3-small",
         max_length: int = 256,
-        threshold_percentile: float = 95.0,
+        threshold_percentile: float = 98.0,
         device: Optional[str] = None
     ):
         """
@@ -64,7 +64,7 @@ class WAFDetector:
             model_path: Path to trained model directory
             tokenizer_name: HuggingFace tokenizer identifier
             max_length: Maximum sequence length
-            threshold_percentile: Percentile for anomaly threshold (higher = stricter)
+            threshold_percentile: Percentile for anomaly threshold (98-99 recommended, higher = stricter)
             device: Device to use (None = auto-detect)
         """
         self.max_length = max_length
@@ -218,23 +218,28 @@ class WAFDetector:
     def calibrate(
         self,
         benign_requests: List[Dict],
-        num_samples: int = 100
+        num_samples: Optional[int] = None
     ) -> Dict:
         """
         Calibrate detection threshold using benign requests
         
         Args:
             benign_requests: List of known benign requests
-            num_samples: Number of samples to use for calibration
+            num_samples: Number of samples to use for calibration (None = use all)
             
         Returns:
             Calibration statistics
         """
-        print(f"\n🎯 Calibrating detector on {min(num_samples, len(benign_requests))} benign samples...")
+        # Use all samples if not specified
+        if num_samples is None:
+            num_samples = len(benign_requests)
+        
+        actual_samples = min(num_samples, len(benign_requests))
+        print(f"\n🎯 Calibrating detector on {actual_samples} benign samples...")
         
         losses = []
         
-        for request in tqdm(benign_requests[:num_samples], desc="Calibration"):
+        for request in tqdm(benign_requests[:actual_samples], desc="Calibration"):
             text = self._prepare_request_text(request)
             loss, _ = self._compute_reconstruction_loss(text)
             losses.append(loss)
@@ -301,24 +306,29 @@ class WAFDetector:
         max_loss = np.max(losses)
         
         # Compute anomaly score (normalized by baseline)
-        z_score = (avg_loss - self.baseline_stats['mean']) / self.baseline_stats['std']
+        z_score = (avg_loss - self.baseline_stats['mean']) / max(self.baseline_stats['std'], 1e-6)
         anomaly_score = max(0, z_score)  # Negative scores = normal
         
         # Determine if malicious
         is_malicious = avg_loss > self.anomaly_threshold
         
-        # Compute confidence (based on how far above threshold)
+        # Compute confidence (normalized 0-100%)
         if is_malicious:
-            confidence = min(100.0, (avg_loss / self.anomaly_threshold - 1) * 100)
+            # How many standard deviations above the mean
+            confidence = min(99.9, z_score * 10)  # Scale z-score to percentage
         else:
-            confidence = max(0.0, (1 - avg_loss / self.anomaly_threshold) * 100)
+            # Distance from threshold (inverted)
+            distance_from_threshold = (self.anomaly_threshold - avg_loss) / self.anomaly_threshold
+            confidence = min(99.9, distance_from_threshold * 100)
         
-        # Determine risk level
-        if avg_loss < self.baseline_stats['percentile_95']:
+        # Determine risk level (only for malicious requests)
+        if not is_malicious:
             risk_level = "LOW"
-        elif avg_loss < self.baseline_stats['percentile_99']:
-            risk_level = "MEDIUM"
+        elif avg_loss < self.anomaly_threshold * 1.2:
+            risk_level = "LOW"
         elif avg_loss < self.anomaly_threshold * 1.5:
+            risk_level = "MEDIUM"
+        elif avg_loss < self.anomaly_threshold * 2.0:
             risk_level = "HIGH"
         else:
             risk_level = "CRITICAL"

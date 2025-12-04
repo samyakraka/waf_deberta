@@ -460,12 +460,19 @@ CRLF_INJECTION_PATTERNS = [
     r"%0d%0a",
     r"%0D%0A",
     r"\r\n",
+    r"\\r\\n",  # Escaped CRLF
     r"%0aSet-Cookie:",
     r"%0d%0aSet-Cookie:",
     r"\nSet-Cookie:",
     r"\r\nSet-Cookie:",
+    r"\\nSet-Cookie:",  # Escaped
     r"%0aLocation:",
     r"%0d%0aLocation:",
+    r"\\nLocation:",  # Escaped
+    r"HTTP/1\.[01]\\r\\n",  # HTTP request smuggling
+    r"HTTP/1\.[01]%0d%0a",  # URL-encoded HTTP smuggling
+    r"\\n[xX]-[A-Za-z-]+:",  # Escaped header injection
+    r"%0a[xX]-[A-Za-z-]+:",  # URL-encoded header injection
 ]
 
 # ==================== TEMPLATE INJECTION ====================

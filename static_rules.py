@@ -357,7 +357,7 @@ STATIC_RULES = {
         r"\*\|",
         r"\*&",
         r"admin\*",
-        r"\(\|\(uid=\*\)",
+        r"\(\|\(uid=\*\)\)",
     ],
     
     # ==================== XXE PATTERNS ====================
@@ -445,12 +445,19 @@ STATIC_RULES = {
         r"%0d%0a",
         r"%0D%0A",
         r"\r\n",
+        r"\\r\\n",  # Escaped CRLF
         r"%0aSet-Cookie:",
         r"%0d%0aSet-Cookie:",
         r"\nSet-Cookie:",
         r"\r\nSet-Cookie:",
+        r"\\nSet-Cookie:",  # Escaped
         r"%0aLocation:",
         r"%0d%0aLocation:",
+        r"\\nLocation:",  # Escaped
+        r"HTTP/1\.[01]\\r\\n",  # HTTP request smuggling
+        r"HTTP/1\.[01]%0d%0a",  # URL-encoded HTTP smuggling
+        r"\\n[xX]-[A-Za-z-]+:",  # Escaped header injection
+        r"%0a[xX]-[A-Za-z-]+:",  # URL-encoded header injection
     ],
     
     # ==================== TEMPLATE INJECTION ====================
@@ -648,7 +655,7 @@ STATIC_RULES = {
         r"admin' OR '1'='1",
         r"admin'--",
         r"' OR 'a'='a",
-        r"') OR ('1'='1",
+        r"'\) OR \('1'='1",
         r"' OR '1'='1' /*",
         r"1' OR '1'='1",
     ],

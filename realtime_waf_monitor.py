@@ -118,7 +118,7 @@ class RealtimeWAFMonitor:
         self.detector = WAFDetector(
             model_path=model_path,
             max_length=256,
-            threshold_percentile=85.0
+            threshold_percentile=95.0  # Adjusted to better detect attacks
         )
         
         # Calibrate if data provided
@@ -126,10 +126,19 @@ class RealtimeWAFMonitor:
             print(f"{Colors.OKCYAN}Calibrating detector with benign data...{Colors.ENDC}")
             with open(calibration_data, 'r') as f:
                 benign_requests = json.load(f)
-            self.detector.calibrate(benign_requests)
-            print(f"{Colors.OKGREEN}✓ Calibration complete{Colors.ENDC}\n")
+            
+            print(f"{Colors.OKCYAN}Using {len(benign_requests)} calibration samples{Colors.ENDC}")
+            
+            self.detector.calibrate(benign_requests)  # Use all available samples for calibration
+            print(f"{Colors.OKGREEN}✓ Calibration complete{Colors.ENDC}")
+            print(f"{Colors.OKGREEN}  Threshold: {self.detector.anomaly_threshold:.4f}{Colors.ENDC}")
+            print(f"{Colors.OKGREEN}  Mean Loss: {self.detector.baseline_stats['mean']:.4f}{Colors.ENDC}")
+            print(f"{Colors.OKGREEN}  Std Dev: {self.detector.baseline_stats['std']:.4f}{Colors.ENDC}\n")
         else:
-            print(f"{Colors.WARNING}⚠ No calibration data provided - using default thresholds{Colors.ENDC}\n")
+            print(f"{Colors.FAIL}⚠ ERROR: No calibration data provided!{Colors.ENDC}")
+            print(f"{Colors.FAIL}  The detector needs calibration with benign traffic to work properly.{Colors.ENDC}")
+            print(f"{Colors.FAIL}  Expected file: {calibration_data}{Colors.ENDC}\n")
+            raise ValueError(f"Calibration data not found: {calibration_data}")
         
         # Initialize parser
         self.parser = NginxLogParser()
