@@ -35,6 +35,7 @@ sys.path.append(str(Path(__file__).parent))
 from src.detector import WAFDetector
 from src.redis_rules import RedisRuleManager
 from static_rules import STATIC_RULES
+from incremental_model import get_incremental_manager
 
 # ============================================================================
 # CONFIGURATION
@@ -53,6 +54,7 @@ test_results = deque(maxlen=100)
 log_monitor_results = deque(maxlen=500)
 monitoring_active = False
 monitoring_threads = []
+incremental_manager = None
 
 # Log files to monitor
 LOG_FILES = {
@@ -300,6 +302,13 @@ def hierarchical_detect(request_dict: dict):
         res.anomaly_score = ml_result.anomaly_score
         res.detection_method = "ML"
         res.threat_type = "Anomaly" if ml_result.is_malicious else "None"
+    
+    # If benign, add to incremental training collection
+    if not res.is_malicious and incremental_manager is not None:
+        try:
+            incremental_manager.add_benign_log(request_dict)
+        except Exception as e:
+            print(f"⚠️  Failed to add benign log: {e}")
     
     return res
 
@@ -827,6 +836,7 @@ HTML_TEMPLATE = """
             <button class="tab active" onclick="showTab('testing')">🧪 Live Testing</button>
             <button class="tab" onclick="showTab('monitoring')">📊 Log Monitoring</button>
             <button class="tab" onclick="showTab('stats')">📈 Statistics</button>
+            <button class="tab" onclick="showTab('incremental')">🔄 Incremental Training</button>
         </div>
         
         <div id="testing" class="tab-content active">
@@ -899,6 +909,40 @@ HTML_TEMPLATE = """
                 <div id="recentDetections" class="results"></div>
             </div>
         </div>
+        
+        <div id="incremental" class="tab-content">
+            <div class="section">
+                <h2>Incremental Training Status</h2>
+                <div class="stats" id="incrementalStats"></div>
+            </div>
+            
+            <div class="section">
+                <h2>Configuration</h2>
+                <div class="input-group">
+                    <label>Trigger Threshold (number of benign logs):</label>
+                    <input type="number" id="triggerCount" placeholder="200" min="10" value="200">
+                </div>
+                <div class="control-buttons">
+                    <button onclick="updateTriggerCount()">💾 Update Threshold</button>
+                    <button onclick="triggerTraining()" style="background: #28a745;">🚀 Trigger Training Now</button>
+                    <button onclick="clearLogs()" style="background: #dc3545;">🗑️ Clear Logs</button>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Training History</h2>
+                <div id="trainingHistory" class="results"></div>
+            </div>
+            
+            <div class="section" style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <h3 style="margin-bottom: 10px; color: #667eea;">ℹ️ How It Works</h3>
+                <p style="margin-bottom: 8px;">• <strong>Automatic Collection:</strong> Benign requests (classified by Rules or ML) are automatically saved to <code>new_benign_logs.json</code></p>
+                <p style="margin-bottom: 8px;">• <strong>Auto Training:</strong> When the threshold is reached (default: 200 logs), incremental training starts automatically</p>
+                <p style="margin-bottom: 8px;">• <strong>Simple Fine-Tuning:</strong> The model continues MLM training on new benign data without forgetting old patterns</p>
+                <p style="margin-bottom: 8px;">• <strong>No Downtime:</strong> Training runs in the background - the WAF continues to work normally</p>
+                <p>• <strong>Archive:</strong> After training, logs are archived with a timestamp for audit purposes</p>
+            </div>
+        </div>
     </div>
     
     <script>
@@ -915,6 +959,9 @@ HTML_TEMPLATE = """
                 startAutoRefresh();
             } else if (tabName === 'stats') {
                 loadStats();
+                stopAutoRefresh();
+            } else if (tabName === 'incremental') {
+                loadIncrementalStats();
                 stopAutoRefresh();
             } else {
                 stopAutoRefresh();
@@ -1033,8 +1080,7 @@ HTML_TEMPLATE = """
             const data = await response.json();
             
             // Stats cards
-            const statsCards = document.getElementById('statsCards');
-            statsCards.innerHTML = `
+            let statsHTML = `
                 <div class="stat-card">
                     <h3>${data.total_requests}</h3>
                     <p>Total Requests</p>
@@ -1052,6 +1098,21 @@ HTML_TEMPLATE = """
                     <p>Detection Rate</p>
                 </div>
             `;
+            
+            // Add incremental stats if available
+            if (data.incremental) {
+                const inc = data.incremental;
+                statsHTML += `
+                    <div class="stat-card" style="border: 2px solid #667eea;">
+                        <h3>${inc.current_log_count || 0}</h3>
+                        <p>New Benign Logs</p>
+                        <small style="color: #667eea;">${inc.progress_to_trigger || '0/200'}</small>
+                    </div>
+                `;
+            }
+            
+            const statsCards = document.getElementById('statsCards');
+            statsCards.innerHTML = statsHTML;
             
             // Method stats
             const methodStats = document.getElementById('methodStats');
@@ -1082,6 +1143,141 @@ HTML_TEMPLATE = """
                 loadStats();
             }
         }, 500);
+        
+        // Incremental Training Functions
+        async function loadIncrementalStats() {
+            try {
+                const response = await fetch('/api/incremental/stats');
+                const data = await response.json();
+                
+                if (data.error) {
+                    document.getElementById('incrementalStats').innerHTML = `
+                        <div class="stat-card" style="grid-column: 1/-1;">
+                            <p style="color: #dc3545;">⚠️ Incremental training not enabled</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Update trigger count input
+                const currentCount = data.current_log_count || 0;
+                const triggerCount = data.progress_to_trigger ? data.progress_to_trigger.split('/')[1] : '200';
+                document.getElementById('triggerCount').value = triggerCount;
+                
+                // Stats cards
+                const statsCards = document.getElementById('incrementalStats');
+                statsCards.innerHTML = `
+                    <div class="stat-card">
+                        <h3>${currentCount}</h3>
+                        <p>Current Benign Logs</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${triggerCount}</h3>
+                        <p>Trigger Threshold</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${data.total_trainings || 0}</h3>
+                        <p>Total Trainings</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${data.is_training ? '🔄 Yes' : '✅ No'}</h3>
+                        <p>Training In Progress</p>
+                    </div>
+                `;
+                
+                // Training history
+                const historyContainer = document.getElementById('trainingHistory');
+                if (data.training_history && data.training_history.length > 0) {
+                    historyContainer.innerHTML = data.training_history.slice().reverse().map(entry => `
+                        <div class="result-item">
+                            <div style="margin-bottom: 10px;">
+                                <span class="badge safe">✅ Completed</span>
+                                <strong>${entry.logs_trained} logs trained</strong>
+                                <span style="color: #6c757d; float: right;">${new Date(entry.timestamp).toLocaleString()}</span>
+                            </div>
+                            <p><strong>Epochs:</strong> ${entry.epochs} | <strong>Time:</strong> ${(entry.training_time_seconds / 60).toFixed(2)} minutes</p>
+                        </div>
+                    `).join('');
+                } else {
+                    historyContainer.innerHTML = `
+                        <div class="result-item">
+                            <p style="color: #6c757d; text-align: center;">No training history yet</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Failed to load incremental stats:', error);
+                document.getElementById('incrementalStats').innerHTML = `
+                    <div class="stat-card" style="grid-column: 1/-1;">
+                        <p style="color: #dc3545;">⚠️ Failed to load statistics</p>
+                    </div>
+                `;
+            }
+        }
+        
+        async function updateTriggerCount() {
+            const triggerCount = document.getElementById('triggerCount').value;
+            
+            if (!triggerCount || triggerCount < 10) {
+                alert('Trigger count must be at least 10');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/incremental/config', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({trigger_count: parseInt(triggerCount)})
+                });
+                
+                const result = await response.json();
+                
+                if (result.error) {
+                    alert('Error: ' + result.error);
+                } else {
+                    alert(`✅ Trigger threshold updated to ${result.trigger_count}`);
+                    loadIncrementalStats();
+                }
+            } catch (error) {
+                alert('Failed to update trigger count: ' + error);
+            }
+        }
+        
+        async function triggerTraining() {
+            if (!confirm('Are you sure you want to manually trigger incremental training?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/incremental/trigger', {method: 'POST'});
+                const result = await response.json();
+                
+                if (result.status === 'training_started') {
+                    alert('✅ Incremental training started! Check console logs for progress.');
+                    setTimeout(loadIncrementalStats, 1000);
+                } else {
+                    alert('⚠️ Training already running or insufficient logs (need at least 10)');
+                }
+            } catch (error) {
+                alert('Failed to trigger training: ' + error);
+            }
+        }
+        
+        async function clearLogs() {
+            if (!confirm('Are you sure you want to clear all new benign logs? They will be backed up.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/incremental/clear', {method: 'POST'});
+                const result = await response.json();
+                
+                alert(`✅ Cleared ${result.count} logs (backup created)`);
+                loadIncrementalStats();
+            } catch (error) {
+                alert('Failed to clear logs: ' + error);
+            }
+        }
     </script>
 </body>
 </html>
@@ -1156,14 +1352,69 @@ def api_stats():
     
     recent.sort(key=lambda x: x['timestamp'], reverse=True)
     
-    return jsonify({
+    stats_dict = {
         'total_requests': total,
         'attacks_detected': attacks,
         'benign_requests': benign,
         'detection_rate': (attacks / total * 100) if total > 0 else 0,
         'by_method': by_method,
         'recent': recent[:20]
-    })
+    }
+    
+    # Add incremental training stats if available
+    if incremental_manager:
+        inc_stats = incremental_manager.get_stats()
+        stats_dict['incremental'] = inc_stats
+    
+    return jsonify(stats_dict)
+
+@app.route('/api/incremental/stats')
+def api_incremental_stats():
+    """Get incremental training statistics"""
+    if not incremental_manager:
+        return jsonify({'error': 'Incremental manager not initialized'}), 400
+    
+    stats = incremental_manager.get_stats()
+    return jsonify(stats)
+
+@app.route('/api/incremental/trigger', methods=['POST'])
+def api_incremental_trigger():
+    """Manually trigger incremental training"""
+    if not incremental_manager:
+        return jsonify({'error': 'Incremental manager not initialized'}), 400
+    
+    success = incremental_manager.trigger_training_manually()
+    if success:
+        return jsonify({'status': 'training_started'})
+    else:
+        return jsonify({'status': 'training_already_running_or_insufficient_logs'}), 400
+
+@app.route('/api/incremental/config', methods=['POST'])
+def api_incremental_config():
+    """Update incremental training configuration"""
+    if not incremental_manager:
+        return jsonify({'error': 'Incremental manager not initialized'}), 400
+    
+    data = request.json
+    trigger_count = data.get('trigger_count')
+    
+    if trigger_count:
+        success = incremental_manager.update_trigger_count(int(trigger_count))
+        if success:
+            return jsonify({'status': 'updated', 'trigger_count': incremental_manager.trigger_count})
+        else:
+            return jsonify({'error': 'Invalid trigger count (min: 10)'}), 400
+    
+    return jsonify({'error': 'No valid parameters provided'}), 400
+
+@app.route('/api/incremental/clear', methods=['POST'])
+def api_incremental_clear():
+    """Clear new benign logs"""
+    if not incremental_manager:
+        return jsonify({'error': 'Incremental manager not initialized'}), 400
+    
+    count = incremental_manager.clear_logs()
+    return jsonify({'status': 'cleared', 'count': count})
 
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
 def catch_all(path):
@@ -1217,10 +1468,13 @@ def catch_all(path):
 
 def initialize_waf(
     model_path: str = "models/deberta-waf/best_model",
-    calibration_file: str = "data/parsed/parsed_requests.json"
+    calibration_file: str = "data/parsed/parsed_requests.json",
+    incremental_trigger_count: int = 200,
+    incremental_epochs: int = 2,
+    enable_incremental: bool = True
 ):
-    """Initialize WAF detector with Redis-based rules"""
-    global detector
+    """Initialize WAF detector with Redis-based rules and incremental training"""
+    global detector, incremental_manager
     
     print("=" * 80)
     print("🛡️  Initializing Integrated WAF System with Redis Rules")
@@ -1249,10 +1503,31 @@ def initialize_waf(
     except Exception as e:
         print(f"⚠️  Calibration failed: {e}")
     
+    # Initialize incremental training manager
+    if enable_incremental:
+        print("\n🔄 Initializing incremental training manager...")
+        try:
+            incremental_manager = get_incremental_manager(
+                trigger_count=incremental_trigger_count,
+                training_epochs=incremental_epochs,
+                auto_train=True
+            )
+            current_logs = incremental_manager.get_log_count()
+            print(f"✅ Incremental training enabled")
+            print(f"   - Trigger threshold: {incremental_trigger_count} logs")
+            print(f"   - Training epochs: {incremental_epochs}")
+            print(f"   - Current benign logs: {current_logs}")
+        except Exception as e:
+            print(f"⚠️  Incremental training initialization failed: {e}")
+            incremental_manager = None
+    else:
+        print("\n⚠️  Incremental training disabled")
+    
     print("\n✅ Integrated WAF System Ready!")
     print(f"   - Redis: {'Connected' if redis_connected else 'Fallback to Static'}")
     print(f"   - Rule Patterns: {total_patterns}")
     print(f"   - ML Model: Loaded")
+    print(f"   - Incremental Training: {'Enabled' if incremental_manager else 'Disabled'}")
     print("=" * 80)
 
 # ============================================================================
@@ -1266,9 +1541,18 @@ if __name__ == '__main__':
     parser.add_argument('--port', type=int, default=5000, help='Port for web UI')
     parser.add_argument('--model-path', type=str, default='models/deberta-waf/best_model')
     parser.add_argument('--calibration-file', type=str, default='data/parsed/parsed_requests.json')
+    parser.add_argument('--incremental-trigger', type=int, default=200, help='Number of logs to trigger incremental training')
+    parser.add_argument('--incremental-epochs', type=int, default=2, help='Number of epochs for incremental training')
+    parser.add_argument('--disable-incremental', action='store_true', help='Disable incremental training')
     args = parser.parse_args()
     
-    initialize_waf(args.model_path, args.calibration_file)
+    initialize_waf(
+        model_path=args.model_path,
+        calibration_file=args.calibration_file,
+        incremental_trigger_count=args.incremental_trigger,
+        incremental_epochs=args.incremental_epochs,
+        enable_incremental=not args.disable_incremental
+    )
     
     print(f"\n🚀 Starting Integrated WAF UI on http://localhost:{args.port}")
     print("\nPress Ctrl+C to stop\n")

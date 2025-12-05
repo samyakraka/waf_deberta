@@ -27,4 +27,3 @@ models/
 wafenv/
 nginx/logs/
 .DS_Store/
-nginx/logs
