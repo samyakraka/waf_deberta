@@ -1,0 +1,33 @@
+[
+  {
+    "timestamp": "2025-12-06T15:36:31.951280",
+    "method": "POST",
+    "path": "/vuln.php",
+    "query": {},
+    "headers": {
+      "Transfer-Encoding": "chunked",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": null,
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 35.43860641522859,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-06T16:02:22.554894",
+    "method": "GET",
+    "path": "/search",
+    "query": {
+      "q": "admin\"><img src=x onerror=eval(atob('YWxlcnQoMSk='))>//';SELECT 1--"
+    },
+    "headers": {},
+    "body": null,
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 23.81654883008515,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  }
+]

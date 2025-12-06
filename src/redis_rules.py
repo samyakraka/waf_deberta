@@ -44,6 +44,8 @@ class RedisRuleManager:
         'auth_bypass_patterns': 'waf:rules:auth_bypass_patterns',
         'blocked_user_agents': 'waf:rules:blocked_user_agents',
         'suspicious_extensions': 'waf:rules:suspicious_extensions',
+        'http_smuggling_patterns': 'waf:rules:http_smuggling_patterns',  # NEW: HTTP Request Smuggling
+        'suspicious_patterns': 'waf:rules:suspicious_patterns',  # NEW: Generic suspicious patterns
     }
     
     def __init__(self, host: str = 'localhost', port: int = 6379, db: int = 0, 

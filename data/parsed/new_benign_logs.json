@@ -1,6 +1,105 @@
 [
   {
-    "timestamp": "2025-12-05T11:51:21.827111",
+    "timestamp": "2025-12-06T15:30:15.462085",
+    "request": {
+      "method": "POST",
+      "path": "/api/users",
+      "query": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{"
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:31:01.339391",
+    "request": {
+      "method": "GET",
+      "path": "/api/transfer",
+      "query": {
+        "from": "user123",
+        "to": "attacker",
+        "amount": "-1000",
+        "currency": "USD"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:31:26.668189",
+    "request": {
+      "method": "POST",
+      "path": "/graphql",
+      "query": {},
+      "headers": {},
+      "body": "{"
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:31:49.141180",
+    "request": {
+      "method": "POST",
+      "path": "/api/users",
+      "query": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{"
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:32:14.112343",
+    "request": {
+      "method": "GET",
+      "path": "/api/documents/12345",
+      "query": {
+        "user_id": "999999"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:32:26.341652",
+    "request": {
+      "method": "PUT",
+      "path": "/api/profile/update",
+      "query": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{"
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:37:52.731859",
+    "request": {
+      "method": "POST",
+      "path": "/vuln.php",
+      "query": {},
+      "headers": {
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:38:12.663378",
+    "request": {
+      "method": "POST",
+      "path": "/vuln.php",
+      "query": {},
+      "headers": {
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:50:16.251177",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -19,63 +118,13 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=pcfdbrol01m8pnbknileglhtm2; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQANg.FP1yYYdE9QwNE1LB6N1tzq0seR0"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-05T11:54:08.595052",
-    "request": {
-      "method": "GET",
-      "path": "/search",
-      "query": {
-        "q": "red tshirt"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-05T11:54:46.218459",
-    "request": {
-      "method": "POST",
-      "path": "/cart/add",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-05T11:55:01.196145",
-    "request": {
-      "method": "GET",
-      "path": "/products",
-      "query": {
-        "page": "2",
-        "limit": "20",
-        "sort": "price_asc"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-05T11:55:11.957675",
-    "request": {
-      "method": "GET",
-      "path": "/user/profile",
-      "query": {},
-      "headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.SAFE.SIGNATURE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:33:00.452380",
+    "timestamp": "2025-12-06T15:51:35.785082",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -94,13 +143,13 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQDag.Loo_kldCDzghss4AnOO54YcMAEQ"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:44:57.102350",
+    "timestamp": "2025-12-06T16:01:52.595735",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -119,90 +168,16 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQDtQ.mVmLaCpKfWPIf6Ifc-x3ZUh_Vvw"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:48:38.229004",
+    "timestamp": "2025-12-06T16:02:41.667090",
     "request": {
-      "method": "GET",
-      "path": "/api",
-      "query": {
-        "x": "GET"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:48:51.759010",
-    "request": {
-      "method": "GET",
-      "path": "/api",
-      "query": {
-        "blob": "GET"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:52:09.716847",
-    "request": {
-      "method": "GET",
-      "path": "/api/data",
-      "query": {
-        "q": "unusual-pattern-test"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:52:29.038278",
-    "request": {
-      "method": "GET",
-      "path": "/search",
-      "query": {
-        "q": "test"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:53:00.506345",
-    "request": {
-      "method": "POST",
-      "path": "/api/endpoint",
-      "query": {},
-      "headers": {
-        "X-Forwarded-For": "$(printf ",
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:53:10.508085",
-    "request": {
-      "method": "POST",
-      "path": "/api/endpoint",
-      "query": {},
-      "headers": {
-        "X-Forwarded-For": "$(printf ",
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:54:10.292004",
-    "request": {
-      "method": "POST",
-      "path": "/api/submit",
+      "method": "PUT",
+      "path": "/api/profile/update",
       "query": {},
       "headers": {
         "Content-Type": "application/json"
@@ -211,1165 +186,41 @@
     }
   },
   {
-    "timestamp": "2025-12-06T14:55:44.916566",
+    "timestamp": "2025-12-06T16:04:25.533817",
     "request": {
       "method": "GET",
-      "path": "/search",
+      "path": "/guide",
       "query": {
-        "q": "test"
+        "step": "<script-is-feature>"
       },
       "headers": {},
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:57:00.157088",
+    "timestamp": "2025-12-06T16:04:38.382902",
     "request": {
       "method": "GET",
       "path": "/",
       "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "-",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
+      "headers": {},
+      "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:57:25.112742",
+    "timestamp": "2025-12-06T16:04:49.847121",
     "request": {
       "method": "GET",
       "path": "/",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "-",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:25.588745",
-    "request": {
-      "method": "GET",
-      "path": "/polyfills.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:26.045962",
-    "request": {
-      "method": "GET",
-      "path": "/runtime.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:26.520199",
-    "request": {
-      "method": "GET",
-      "path": "/styles.css",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:27.019583",
-    "request": {
-      "method": "GET",
-      "path": "/main.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:27.533251",
-    "request": {
-      "method": "GET",
-      "path": "/vendor.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:28.007257",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
       "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_CjD"
+        "q": "UNION"
       },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:28.509515",
-    "request": {
-      "method": "GET",
-      "path": "/rest/admin/application-version",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:29.020820",
-    "request": {
-      "method": "GET",
-      "path": "/rest/user/whoami",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:29.499220",
-    "request": {
-      "method": "GET",
-      "path": "/MaterialIcons-Regular.woff2",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/styles.css",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:29.970661",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "websocket",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "-",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:30.460661",
-    "request": {
-      "method": "GET",
-      "path": "/rest/admin/application-version",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:30.928430",
-    "request": {
-      "method": "POST",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Ck9",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "text/plain;charset=UTF-8",
-        "content-length": "2"
-      },
-      "body": "40"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:31.401009",
-    "request": {
-      "method": "GET",
-      "path": "/rest/languages",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:31.876171",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_CkA",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:32.355597",
-    "request": {
-      "method": "GET",
-      "path": "/rest/user/whoami",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:32.847108",
-    "request": {
-      "method": "GET",
-      "path": "/rest/products/search",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:33.291046",
-    "request": {
-      "method": "GET",
-      "path": "/api/Challenges/",
-      "query": {
-        "name": "Score Board"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:33.739594",
-    "request": {
-      "method": "GET",
-      "path": "/api/Quantitys/",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:34.205791",
-    "request": {
-      "method": "GET",
-      "path": "/api/Challenges/",
-      "query": {
-        "name": "Score Board"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:34.671440",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/carrot_juice.jpeg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:35.118504",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/artwork2.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:35.575694",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/apple_pressings.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:36.019537",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/banana_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:36.475791",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/apple_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:36.947107",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/fruit_press.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:37.392763",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/eggfruit_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:37.838318",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/green_smoothie.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:38.284661",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/lemon_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:38.741470",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/permafrost.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:39.184705",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/melon_bike.jpeg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:39.627976",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/fan_facemask.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:46.427435",
-    "request": {
-      "method": "GET",
-      "path": "/setup.php",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8080/login.php",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:50.878757",
-    "request": {
-      "method": "POST",
-      "path": "/setup.php",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8080/setup.php",
-        "content-type": "application/x-www-form-urlencoded",
-        "content-length": "79"
-      },
-      "body": "create_db=Create+%2F+Reset+Database&user_token=e8c6e672375f678aceda404f71d74607"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:51.007502",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Cl_",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:51.853173",
-    "request": {
-      "method": "GET",
-      "path": "/setup.php",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8080/setup.php",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:51.942312",
-    "request": {
-      "method": "POST",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Ipx",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "text/plain;charset=UTF-8",
-        "content-length": "1"
-      },
-      "body": "3"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:57:59.425266",
-    "request": {
-      "method": "GET",
-      "path": "/index.php",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8080/login.php",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:05.257797",
-    "request": {
-      "method": "GET",
-      "path": "/vulnerabilities/brute/",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8080/index.php",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:15.371755",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Ipy",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:15.848479",
-    "request": {
-      "method": "POST",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Owi",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "text/plain;charset=UTF-8",
-        "content-length": "1"
-      },
-      "body": "3"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:40.428974",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_Owi.0",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:40.930611",
-    "request": {
-      "method": "POST",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_V1V",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "text/plain;charset=UTF-8",
-        "content-length": "1"
-      },
-      "body": "3"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:41.406869",
-    "request": {
-      "method": "GET",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_V1V.0",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:41.870420",
-    "request": {
-      "method": "POST",
-      "path": "/socket.io/",
-      "query": {
-        "EIO": "4",
-        "transport": "polling",
-        "t": "Pho_V9c",
-        "sid": "cMusCEUefR7Jc-FaAAAA"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/",
-        "content-type": "text/plain;charset=UTF-8",
-        "content-length": "1"
-      },
-      "body": "1"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:42.353425",
-    "request": {
-      "method": "GET",
-      "path": "/polyfills.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:42.829444",
-    "request": {
-      "method": "GET",
-      "path": "/runtime.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:43.303918",
-    "request": {
-      "method": "GET",
-      "path": "/vendor.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:43.782702",
-    "request": {
-      "method": "GET",
-      "path": "/main.js",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:44.269921",
-    "request": {
-      "method": "GET",
-      "path": "/styles.css",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:44.757306",
-    "request": {
-      "method": "GET",
-      "path": "/rest/admin/application-version",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:45.247612",
-    "request": {
-      "method": "GET",
-      "path": "/rest/user/whoami",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:45.755053",
-    "request": {
-      "method": "GET",
-      "path": "/rest/admin/application-version",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:46.227432",
-    "request": {
-      "method": "GET",
-      "path": "/rest/user/whoami",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:46.700703",
-    "request": {
-      "method": "GET",
-      "path": "/rest/languages",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:47.185929",
-    "request": {
-      "method": "GET",
-      "path": "/rest/products/search",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:47.669074",
-    "request": {
-      "method": "GET",
-      "path": "/api/Quantitys/",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:48.231258",
-    "request": {
-      "method": "GET",
-      "path": "/api/Challenges/",
-      "query": {
-        "name": "Score Board"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:48.778319",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/apple_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:49.312361",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/banana_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:49.890074",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/carrot_juice.jpeg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:50.395285",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/apple_pressings.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:50.879737",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/artwork2.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:51.330950",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/eggfruit_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:51.788737",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/fruit_press.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:52.248157",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/permafrost.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:52.707358",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/green_smoothie.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:53.164338",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/lemon_juice.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:53.620533",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/melon_bike.jpeg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:54.073993",
-    "request": {
-      "method": "GET",
-      "path": "/assets/public/images/products/fan_facemask.jpg",
-      "query": {},
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T14:58:54.546498",
-    "request": {
-      "method": "GET",
-      "path": "/api/Challenges/",
-      "query": {
-        "name": "Score Board"
-      },
-      "headers": {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "referer": "http://localhost:8090/administration",
-        "content-type": "-",
-        "content-length": "-"
-      },
-      "body": "-"
+      "headers": {},
+      "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:59:56.421831",
+    "timestamp": "2025-12-06T16:05:35.123422",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -1388,13 +239,13 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTP0Rw.anebr_1T2J3Ga6Bk1ld2ZrLcwPU; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG6g.7rZmv1M-E9GzQt9skdVF8oizMT0"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T14:59:56.911066",
+    "timestamp": "2025-12-06T16:09:15.369393",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -1413,86 +264,13 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTP0Rw.anebr_1T2J3Ga6Bk1ld2ZrLcwPU; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:00:12.072931",
-    "request": {
-      "method": "GET",
-      "path": "/search",
-      "query": {
-        "q": "test"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:00:32.014352",
-    "request": {
-      "method": "GET",
-      "path": "/x",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTP0Rw.anebr_1T2J3Ga6Bk1ld2ZrLcwPU; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:02:17.903535",
-    "request": {
-      "method": "POST",
-      "path": "/waf/inspect",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:02:37.142323",
-    "request": {
-      "method": "GET",
-      "path": "/api/v1/data",
-      "query": {
-        "input": "XQ11FQ9KZP99A1XQ-metaSignal-variant42"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:02:51.871637",
-    "request": {
-      "method": "GET",
-      "path": "/process",
-      "query": {
-        "node": "a1_b9_c44_structure-omega.delta.segment99"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:13:07.104354",
+    "timestamp": "2025-12-06T16:10:12.373473",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -1511,68 +289,708 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTP3yA.BfdzFAclUO_QH6cIBdPkbg4xC8c"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:13:21.062897",
+    "timestamp": "2025-12-06T16:10:13.595415",
     "request": {
       "method": "GET",
-      "path": "/api/v1/data",
-      "query": {
-        "input": "XQ11FQ9KZP99A1XQ-metaSignal-variant42"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
-      "headers": {},
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:13:50.613731",
+    "timestamp": "2025-12-06T16:10:13.702217",
     "request": {
       "method": "GET",
-      "path": "/process",
-      "query": {
-        "node": "a1_b9_c44_structure-omega.delta.segment99"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
-      "headers": {},
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:14:02.373701",
+    "timestamp": "2025-12-06T16:10:13.963968",
     "request": {
       "method": "GET",
-      "path": "/endpoint",
-      "query": {
-        "payload": "KJ29DKD9D3A1F_QW88Z_metaGrid_P12X"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
-      "headers": {},
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:14:37.168327",
+    "timestamp": "2025-12-06T16:10:13.964295",
     "request": {
       "method": "GET",
-      "path": "/fetch",
-      "query": {
-        "ref": "protox-v4.seg9.chronLayer.alpha99"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
       },
-      "headers": {},
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-06T15:14:48.082926",
+    "timestamp": "2025-12-06T16:13:43.630198",
     "request": {
       "method": "GET",
-      "path": "/uplink",
-      "query": {
-        "data": "ZP9A2X55RLA99PXTQ11_vmod_phase3"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQIFA.6FI-e5-0MtJS7FjLYEi_KaObOOg"
       },
-      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:14:47.953822",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQIFA.6FI-e5-0MtJS7FjLYEi_KaObOOg"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:22.385193",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:49.808970",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:51.262839",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:51.782959",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:51.789820",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:51.992189",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:52.098365",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:15:52.237271",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:06.045453",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:07.354917",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:07.459497",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:07.800611",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:20.285408",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:23.206268",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:24.544880",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:25.258082",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:25.476871",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:25.509511",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:25.513691",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:25.516094",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:58.009366",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-06T16:16:58.321495",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
+      },
       "body": null
     }
   }

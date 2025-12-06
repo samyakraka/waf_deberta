@@ -86,6 +86,7 @@ class SignatureManager:
             path = log.get('path', '')
             query = log.get('query', {})
             body = log.get('body', '')
+            headers = log.get('headers', {})
             
             # Map threat types to categories
             category_map = {
@@ -109,6 +110,17 @@ class SignatureManager:
             }
             
             category = category_map.get(threat_type, 'suspicious_patterns')
+            
+            # ENHANCED: For Anomaly type, try to classify based on request characteristics
+            if threat_type == 'Anomaly':
+                category = self._classify_anomaly(headers, path, query, body, method)
+            
+            # ENHANCED: Extract patterns from headers first (critical for HTTP smuggling, etc.)
+            if isinstance(headers, dict):
+                header_patterns = self._extract_header_patterns(headers)
+                for hp_category, hp_pattern in header_patterns:
+                    if hp_pattern:
+                        signatures[hp_category].add(hp_pattern)
             
             # Extract patterns from query parameters
             if isinstance(query, dict):
@@ -134,6 +146,98 @@ class SignatureManager:
         
         # Convert sets to lists for JSON serialization
         return {k: list(v) for k, v in signatures.items()}
+    
+    def _classify_anomaly(self, headers: dict, path: str, query: dict, body: str, method: str) -> str:
+        """
+        Classify anomaly type based on request characteristics
+        This helps categorize generic 'Anomaly' detections into specific threat types
+        """
+        # Check headers for specific attack indicators
+        if isinstance(headers, dict):
+            header_keys_lower = {k.lower(): v for k, v in headers.items()}
+            
+            # HTTP Request Smuggling / Chunked Transfer Encoding abuse
+            if 'transfer-encoding' in header_keys_lower:
+                te_value = str(header_keys_lower['transfer-encoding']).lower()
+                if 'chunked' in te_value:
+                    return 'http_smuggling_patterns'
+            
+            # Content-Type anomalies
+            if 'content-type' in header_keys_lower:
+                ct_value = str(header_keys_lower['content-type']).lower()
+                if any(sus in ct_value for sus in ['../','..\\','script','exec']):
+                    return 'suspicious_patterns'
+            
+            # Shellshock in User-Agent or other headers
+            for header_val in headers.values():
+                if header_val and '() {' in str(header_val):
+                    return 'shellshock_patterns'
+        
+        # Check path for traversal
+        if path and any(sus in path.lower() for sus in ['../', '.\\', '/etc/', 'passwd', 'shadow', 'win.ini']):
+            return 'path_traversal_patterns'
+        
+        # Check for command injection indicators
+        combined_text = f"{path} {str(query)} {str(body)}"
+        if any(cmd in combined_text for cmd in ['|', '&&', '||', ';', '`', '$(',  'wget', 'curl']):
+            return 'cmd_injection_patterns'
+        
+        # Default to suspicious patterns
+        return 'suspicious_patterns'
+    
+    def _extract_header_patterns(self, headers: dict) -> List[Tuple[str, str]]:
+        """
+        Extract attack patterns from HTTP headers
+        Returns list of (category, pattern) tuples
+        """
+        patterns = []
+        
+        if not isinstance(headers, dict):
+            return patterns
+        
+        # Normalize header keys to lowercase for comparison
+        headers_lower = {k.lower(): v for k, v in headers.items()}
+        
+        # HTTP Request Smuggling Detection (Transfer-Encoding)
+        if 'transfer-encoding' in headers_lower:
+            te_value = str(headers_lower['transfer-encoding'])
+            # Create pattern for Transfer-Encoding: chunked abuse
+            pattern = r'Transfer-Encoding:\s*chunked'
+            patterns.append(('http_smuggling_patterns', pattern))
+            print(f"🔍 Extracted HTTP smuggling pattern: {pattern}")
+        
+        # Content-Length anomalies (multiple Content-Length headers)
+        content_length_count = sum(1 for k in headers.keys() if k.lower() == 'content-length')
+        if content_length_count > 1:
+            pattern = r'Content-Length:.*\r\n.*Content-Length:'
+            patterns.append(('http_smuggling_patterns', pattern))
+        
+        # Shellshock in headers
+        for header_name, header_value in headers.items():
+            if header_value and '() {' in str(header_value):
+                # Extract shellshock pattern
+                pattern = r'\(\)\s*\{[^}]*\}\s*;'
+                patterns.append(('shellshock_patterns', pattern))
+                print(f"🔍 Extracted Shellshock pattern from header {header_name}")
+                break
+        
+        # CRLF Injection in headers
+        for header_name, header_value in headers.items():
+            if header_value and ('\r\n' in str(header_value) or '\n' in str(header_value)):
+                pattern = r'\r\n|\n'
+                patterns.append(('crlf_injection_patterns', pattern))
+                print(f"🔍 Extracted CRLF injection pattern from header {header_name}")
+                break
+        
+        # Suspicious User-Agent patterns
+        if 'user-agent' in headers_lower:
+            ua = str(headers_lower['user-agent']).lower()
+            if any(suspicious in ua for suspicious in ['nmap', 'sqlmap', 'nikto', 'masscan', 'scanner']):
+                pattern = re.escape(headers_lower['user-agent'])
+                patterns.append(('blocked_user_agents', pattern))
+                print(f"🔍 Extracted suspicious User-Agent pattern")
+        
+        return patterns
     
     def _extract_pattern_from_value(self, value: str) -> str:
         """

@@ -1583,7 +1583,12 @@ HTML_TEMPLATE = """
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert(`✅ Successfully added ${result.patterns_added} pattern(s) to Redis across ${result.categories_updated} categories!`);
+                    const message = `✅ Successfully added ${result.patterns_added} pattern(s) to Redis!\n\n` +
+                                  `📊 Categories updated: ${result.categories_updated}\n` +
+                                  `💾 Backup created: ${result.backup_created ? 'Yes' : 'No'}\n` +
+                                  `🗑️  Attack logs cleared: ${result.logs_cleared}\n\n` +
+                                  `The signatures are now active and protecting your application!`;
+                    alert(message);
                     loadSignatures();
                     loadAttackStats();
                 } else {
@@ -1862,8 +1867,12 @@ def api_admin_approve_signatures():
             # Add to Redis if available
             if redis_manager:
                 for pattern in patterns:
-                    redis_manager.add_rule(category, pattern)
-                    patterns_added += 1
+                    success = redis_manager.add_rule(category, pattern)
+                    if success:
+                        patterns_added += 1
+                        print(f"✅ Added to Redis [{category}]: {pattern}")
+                    else:
+                        print(f"⚠️  Failed to add to Redis [{category}]: {pattern}")
                 categories_updated += 1
             
             # Also add to compiled_rules for immediate use
@@ -1877,10 +1886,28 @@ def api_admin_approve_signatures():
                 except re.error as e:
                     print(f"⚠️  Failed to compile pattern: {pattern[:50]}... - {e}")
         
+        # Backup the updated rules to rules_backup.json (just like init_redis_rules.py)
+        backup_success = False
+        if redis_manager and patterns_added > 0:
+            backup_file = "rules_backup.json"
+            backup_success = redis_manager.export_rules_to_json(backup_file)
+            if backup_success:
+                print(f"💾 Backed up {patterns_added} new pattern(s) to {backup_file}")
+            else:
+                print(f"⚠️  Failed to backup rules to {backup_file}")
+        
+        # Clear attack logs after successful approval so approved signatures don't show up again
+        logs_cleared = 0
+        if patterns_added > 0:
+            logs_cleared = signature_manager.clear_attack_logs(backup=True)
+            print(f"🗑️  Cleared {logs_cleared} attack log(s) after approval (backup created)")
+        
         return jsonify({
             'success': True,
             'categories_updated': categories_updated,
-            'patterns_added': patterns_added
+            'patterns_added': patterns_added,
+            'backup_created': backup_success,
+            'logs_cleared': logs_cleared
         })
         
     except Exception as e:
@@ -1981,7 +2008,7 @@ def initialize_waf(
         with open(calibration_file, 'r') as f:
             benign_data = json.load(f)
         # Use ALL samples for accurate threshold estimation (was 100, now using all ~2729)
-        detector.calibrate(benign_data, num_samples=None)
+        detector.calibrate(benign_data, num_samples=100)
         print("✅ Calibration complete")
     except Exception as e:
         print(f"⚠️  Calibration failed: {e}")
