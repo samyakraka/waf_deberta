@@ -26,8 +26,9 @@ from functools import lru_cache
 from typing import Dict, List, Optional
 from urllib.parse import parse_qs, urlparse
 
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template_string, session
 import logging
+import secrets
 
 # Add src to path
 sys.path.append(str(Path(__file__).parent))
@@ -36,12 +37,14 @@ from src.detector import WAFDetector
 from src.redis_rules import RedisRuleManager
 from static_rules import STATIC_RULES
 from incremental_model import get_incremental_manager
+from signature_manager import get_signature_manager
 
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)  # For session management
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
@@ -55,6 +58,12 @@ log_monitor_results = deque(maxlen=500)
 monitoring_active = False
 monitoring_threads = []
 incremental_manager = None
+signature_manager = None
+
+# Admin authentication
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "password"
+admin_sessions = set()
 
 # Log files to monitor
 LOG_FILES = {
@@ -309,6 +318,13 @@ def hierarchical_detect(request_dict: dict):
             incremental_manager.add_benign_log(request_dict)
         except Exception as e:
             print(f"⚠️  Failed to add benign log: {e}")
+    
+    # If malicious (detected by ML), add to attack logs for signature extraction
+    if res.is_malicious and res.detection_method == "ML" and signature_manager is not None:
+        try:
+            signature_manager.add_attack_log(request_dict, res)
+        except Exception as e:
+            print(f"⚠️  Failed to add attack log: {e}")
     
     return res
 
@@ -823,6 +839,56 @@ HTML_TEMPLATE = """
         .example-item:hover {
             background: #e9ecef;
         }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .login-container h3 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .signature-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .signature-item input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .signature-pattern {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            word-break: break-all;
+        }
+        
+        .category-header {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -837,6 +903,7 @@ HTML_TEMPLATE = """
             <button class="tab" onclick="showTab('monitoring')">📊 Log Monitoring</button>
             <button class="tab" onclick="showTab('stats')">📈 Statistics</button>
             <button class="tab" onclick="showTab('incremental')">🔄 Incremental Training</button>
+            <button class="tab" onclick="showTab('admin')">🔐 Admin</button>
         </div>
         
         <div id="testing" class="tab-content active">
@@ -941,6 +1008,57 @@ HTML_TEMPLATE = """
                 <p style="margin-bottom: 8px;">• <strong>Simple Fine-Tuning:</strong> The model continues MLM training on new benign data without forgetting old patterns</p>
                 <p style="margin-bottom: 8px;">• <strong>No Downtime:</strong> Training runs in the background - the WAF continues to work normally</p>
                 <p>• <strong>Archive:</strong> After training, logs are archived with a timestamp for audit purposes</p>
+            </div>
+        </div>
+        
+        <div id="admin" class="tab-content">
+            <!-- Login Screen -->
+            <div id="adminLogin" class="login-container">
+                <h3>🔐 Admin Login</h3>
+                <div class="input-group">
+                    <label>Username:</label>
+                    <input type="text" id="adminUsername" placeholder="admin">
+                </div>
+                <div class="input-group">
+                    <label>Password:</label>
+                    <input type="password" id="adminPassword" placeholder="password">
+                </div>
+                <button onclick="adminLogin()" style="width: 100%;">🔓 Login</button>
+            </div>
+            
+            <!-- Admin Panel (hidden until login) -->
+            <div id="adminPanel" style="display: none;">
+                <div class="section">
+                    <h2>Signature Management <button onclick="adminLogout()" style="float: right; background: #dc3545;">🚪 Logout</button></h2>
+                    <div class="stats" id="signatureStats"></div>
+                </div>
+                
+                <div class="section">
+                    <h2>Pending Signatures</h2>
+                    <p style="color: #6c757d; margin-bottom: 15px;">
+                        Review and approve signatures extracted from ML-detected attacks. Selected signatures will be added to Redis rules.
+                    </p>
+                    <div class="control-buttons">
+                        <button onclick="loadSignatures()">🔄 Refresh Signatures</button>
+                        <button onclick="approveSelected()" style="background: #28a745;">✅ Approve Selected</button>
+                        <button onclick="clearAttackLogs()" style="background: #dc3545;">🗑️ Clear Attack Logs</button>
+                    </div>
+                    <div id="signatureList" class="results"></div>
+                </div>
+                
+                <div class="section">
+                    <h2>Attack Log Statistics</h2>
+                    <div id="attackStats"></div>
+                </div>
+                
+                <div class="section" style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <h3 style="margin-bottom: 10px; color: #667eea;">ℹ️ How It Works</h3>
+                    <p style="margin-bottom: 8px;">• <strong>ML Detection:</strong> When the ML model detects an attack, it's automatically saved to <code>new_attack_logs.json</code></p>
+                    <p style="margin-bottom: 8px;">• <strong>Pattern Extraction:</strong> The system analyzes attack logs and extracts signature patterns</p>
+                    <p style="margin-bottom: 8px;">• <strong>Admin Review:</strong> You can review extracted signatures and select which ones to add to Redis</p>
+                    <p style="margin-bottom: 8px;">• <strong>Redis Update:</strong> Approved signatures are pushed to Redis, enhancing rule-based detection</p>
+                    <p>• <strong>Continuous Improvement:</strong> This creates a feedback loop where ML detections improve rule-based detection</p>
+                </div>
             </div>
         </div>
     </div>
@@ -1278,6 +1396,255 @@ HTML_TEMPLATE = """
                 alert('Failed to clear logs: ' + error);
             }
         }
+        
+        // ========================================================================
+        // Admin Functions
+        // ========================================================================
+        
+        let isAdminLoggedIn = false;
+        
+        async function adminLogin() {
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (!username || !password) {
+                alert('Please enter both username and password');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username, password})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    isAdminLoggedIn = true;
+                    document.getElementById('adminLogin').style.display = 'none';
+                    document.getElementById('adminPanel').style.display = 'block';
+                    loadSignatures();
+                    loadAttackStats();
+                } else {
+                    alert('❌ Invalid credentials');
+                }
+            } catch (error) {
+                alert('Login failed: ' + error);
+            }
+        }
+        
+        async function adminLogout() {
+            try {
+                await fetch('/api/admin/logout', {method: 'POST'});
+                isAdminLoggedIn = false;
+                document.getElementById('adminLogin').style.display = 'block';
+                document.getElementById('adminPanel').style.display = 'none';
+                document.getElementById('adminUsername').value = '';
+                document.getElementById('adminPassword').value = '';
+            } catch (error) {
+                console.error('Logout failed:', error);
+            }
+        }
+        
+        async function loadSignatures() {
+            try {
+                const response = await fetch('/api/admin/signatures');
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                // Update stats
+                document.getElementById('signatureStats').innerHTML = `
+                    <div class="stat-card">
+                        <h3>${data.total_attacks}</h3>
+                        <p>Attack Logs</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${data.signature_categories}</h3>
+                        <p>Signature Categories</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>${data.total_patterns}</h3>
+                        <p>Total Patterns</p>
+                    </div>
+                `;
+                
+                // Display signatures by category
+                const signatureList = document.getElementById('signatureList');
+                signatureList.innerHTML = '';
+                
+                if (data.total_patterns === 0) {
+                    signatureList.innerHTML = `
+                        <div class="result-item">
+                            <p style="color: #6c757d; text-align: center;">No signatures extracted yet. ML-detected attacks will appear here.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                for (const [category, patterns] of Object.entries(data.signatures)) {
+                    if (patterns.length === 0) continue;
+                    
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.innerHTML = `<div class="category-header">${category.replace(/_/g, ' ').toUpperCase()} (${patterns.length})</div>`;
+                    signatureList.appendChild(categoryDiv);
+                    
+                    patterns.forEach((pattern, idx) => {
+                        const sigDiv = document.createElement('div');
+                        sigDiv.className = 'signature-item';
+                        sigDiv.innerHTML = `
+                            <label style="cursor: pointer; display: flex; align-items: flex-start;">
+                                <input type="checkbox" class="signature-checkbox" data-category="${category}" data-pattern="${pattern}">
+                                <div style="flex: 1;">
+                                    <strong>Pattern ${idx + 1}</strong>
+                                    <div class="signature-pattern">${pattern}</div>
+                                </div>
+                            </label>
+                        `;
+                        signatureList.appendChild(sigDiv);
+                    });
+                }
+                
+            } catch (error) {
+                alert('Failed to load signatures: ' + error);
+            }
+        }
+        
+        async function loadAttackStats() {
+            try {
+                const response = await fetch('/api/admin/attack-stats');
+                const data = await response.json();
+                
+                const statsDiv = document.getElementById('attackStats');
+                
+                if (data.total_attacks === 0) {
+                    statsDiv.innerHTML = `
+                        <div class="result-item">
+                            <p style="color: #6c757d; text-align: center;">No attack logs yet</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                statsDiv.innerHTML = `
+                    <div class="result-item">
+                        <h4>By Threat Type</h4>
+                        ${Object.entries(data.by_threat_type).map(([type, count]) => `
+                            <p><strong>${type}:</strong> ${count}</p>
+                        `).join('')}
+                    </div>
+                    <div class="result-item">
+                        <h4>By Risk Level</h4>
+                        ${Object.entries(data.by_risk_level).map(([level, count]) => `
+                            <p><span class="badge ${level.toLowerCase()}">${level}</span> ${count}</p>
+                        `).join('')}
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Failed to load attack stats:', error);
+            }
+        }
+        
+        async function approveSelected() {
+            const checkboxes = document.querySelectorAll('.signature-checkbox:checked');
+            
+            if (checkboxes.length === 0) {
+                alert('Please select at least one signature to approve');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to add ${checkboxes.length} signature(s) to Redis?`)) {
+                return;
+            }
+            
+            // Organize selected patterns by category
+            const selectedSignatures = {};
+            checkboxes.forEach(cb => {
+                const category = cb.dataset.category;
+                const pattern = cb.dataset.pattern;
+                if (!selectedSignatures[category]) {
+                    selectedSignatures[category] = [];
+                }
+                selectedSignatures[category].push(pattern);
+            });
+            
+            try {
+                const response = await fetch('/api/admin/approve-signatures', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({signatures: selectedSignatures})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(`✅ Successfully added ${result.patterns_added} pattern(s) to Redis across ${result.categories_updated} categories!`);
+                    loadSignatures();
+                    loadAttackStats();
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Failed to approve signatures: ' + error);
+            }
+        }
+        
+        async function clearAttackLogs() {
+            if (!confirm('Are you sure you want to clear all attack logs? They will be backed up.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/admin/clear-attacks', {method: 'POST'});
+                const result = await response.json();
+                
+                alert(`✅ Cleared ${result.count} attack logs (backup created)`);
+                loadSignatures();
+                loadAttackStats();
+            } catch (error) {
+                alert('Failed to clear attack logs: ' + error);
+            }
+        }
+        
+        // Update showTab to check admin authentication
+        const originalShowTab = showTab;
+        showTab = function(tabName) {
+            if (tabName === 'admin' && !isAdminLoggedIn) {
+                // Show login screen
+                document.getElementById('adminLogin').style.display = 'block';
+                document.getElementById('adminPanel').style.display = 'none';
+            } else if (tabName === 'admin' && isAdminLoggedIn) {
+                // Show admin panel
+                document.getElementById('adminLogin').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadSignatures();
+                loadAttackStats();
+            }
+            
+            // Call original function
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+            
+            if (tabName === 'monitoring') {
+                startAutoRefresh();
+            } else if (tabName === 'stats') {
+                loadStats();
+                stopAutoRefresh();
+            } else if (tabName === 'incremental') {
+                loadIncrementalStats();
+                stopAutoRefresh();
+            } else {
+                stopAutoRefresh();
+            }
+        };
     </script>
 </body>
 </html>
@@ -1416,6 +1783,122 @@ def api_incremental_clear():
     count = incremental_manager.clear_logs()
     return jsonify({'status': 'cleared', 'count': count})
 
+# ============================================================================
+# ADMIN API ROUTES
+# ============================================================================
+
+@app.route('/api/admin/login', methods=['POST'])
+def api_admin_login():
+    """Admin login"""
+    data = request.json
+    username = data.get('username', '')
+    password = data.get('password', '')
+    
+    if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+        session['admin_authenticated'] = True
+        admin_sessions.add(session.sid if hasattr(session, 'sid') else id(session))
+        return jsonify({'success': True})
+    else:
+        return jsonify({'success': False, 'error': 'Invalid credentials'}), 401
+
+@app.route('/api/admin/logout', methods=['POST'])
+def api_admin_logout():
+    """Admin logout"""
+    session.pop('admin_authenticated', None)
+    return jsonify({'success': True})
+
+def require_admin():
+    """Check if user is authenticated as admin"""
+    return session.get('admin_authenticated', False)
+
+@app.route('/api/admin/signatures')
+def api_admin_signatures():
+    """Get pending signatures"""
+    if not require_admin():
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    if not signature_manager:
+        return jsonify({'error': 'Signature manager not initialized'}), 400
+    
+    pending = signature_manager.get_pending_signatures()
+    return jsonify(pending)
+
+@app.route('/api/admin/attack-stats')
+def api_admin_attack_stats():
+    """Get attack log statistics"""
+    if not require_admin():
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    if not signature_manager:
+        return jsonify({'error': 'Signature manager not initialized'}), 400
+    
+    stats = signature_manager.get_stats()
+    return jsonify(stats)
+
+@app.route('/api/admin/approve-signatures', methods=['POST'])
+def api_admin_approve_signatures():
+    """Approve selected signatures and add to Redis"""
+    if not require_admin():
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    if not signature_manager:
+        return jsonify({'error': 'Signature manager not initialized'}), 400
+    
+    data = request.json
+    selected_signatures = data.get('signatures', {})
+    
+    if not selected_signatures:
+        return jsonify({'error': 'No signatures provided'}), 400
+    
+    try:
+        # Add signatures to Redis
+        categories_updated = 0
+        patterns_added = 0
+        
+        for category, patterns in selected_signatures.items():
+            if not patterns:
+                continue
+            
+            # Add to Redis if available
+            if redis_manager:
+                for pattern in patterns:
+                    redis_manager.add_rule(category, pattern)
+                    patterns_added += 1
+                categories_updated += 1
+            
+            # Also add to compiled_rules for immediate use
+            if category not in compiled_rules:
+                compiled_rules[category] = []
+            
+            for pattern in patterns:
+                try:
+                    compiled_pattern = re.compile(pattern, re.IGNORECASE)
+                    compiled_rules[category].append(compiled_pattern)
+                except re.error as e:
+                    print(f"⚠️  Failed to compile pattern: {pattern[:50]}... - {e}")
+        
+        return jsonify({
+            'success': True,
+            'categories_updated': categories_updated,
+            'patterns_added': patterns_added
+        })
+        
+    except Exception as e:
+        print(f"❌ Error approving signatures: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/admin/clear-attacks', methods=['POST'])
+def api_admin_clear_attacks():
+    """Clear attack logs"""
+    if not require_admin():
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    if not signature_manager:
+        return jsonify({'error': 'Signature manager not initialized'}), 400
+    
+    count = signature_manager.clear_attack_logs(backup=True)
+    return jsonify({'status': 'cleared', 'count': count})
+
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
 def catch_all(path):
     """Catch-all route to analyze ANY request sent to the WAF"""
@@ -1474,7 +1957,7 @@ def initialize_waf(
     enable_incremental: bool = True
 ):
     """Initialize WAF detector with Redis-based rules and incremental training"""
-    global detector, incremental_manager
+    global detector, incremental_manager, signature_manager
     
     print("=" * 80)
     print("🛡️  Initializing Integrated WAF System with Redis Rules")
@@ -1503,6 +1986,17 @@ def initialize_waf(
     except Exception as e:
         print(f"⚠️  Calibration failed: {e}")
     
+    # Initialize signature manager
+    print("\n📝 Initializing signature manager...")
+    try:
+        signature_manager = get_signature_manager()
+        attack_count = signature_manager.get_attack_count()
+        print(f"✅ Signature manager enabled")
+        print(f"   - Current attack logs: {attack_count}")
+    except Exception as e:
+        print(f"⚠️  Signature manager initialization failed: {e}")
+        signature_manager = None
+    
     # Initialize incremental training manager
     if enable_incremental:
         print("\n🔄 Initializing incremental training manager...")
@@ -1527,6 +2021,7 @@ def initialize_waf(
     print(f"   - Redis: {'Connected' if redis_connected else 'Fallback to Static'}")
     print(f"   - Rule Patterns: {total_patterns}")
     print(f"   - ML Model: Loaded")
+    print(f"   - Signature Manager: {'Enabled' if signature_manager else 'Disabled'}")
     print(f"   - Incremental Training: {'Enabled' if incremental_manager else 'Disabled'}")
     print("=" * 80)
 
