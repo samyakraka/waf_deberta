@@ -1,0 +1,72 @@
+# Docker Ignore File
+# Excludes unnecessary files from Docker build context
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+test_*.py
+tests/
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Large model outputs (will be downloaded/generated at runtime if needed)
+models_out/
+
+# Logs (runtime generated)
+logs/*.log
+nginx/logs/*.log
+
+# Runtime JSON files (will be generated in container)
+data/parsed/new_benign_logs.json
+data/parsed/new_attack_logs.json
+data/parsed/attack_logs_backup_*.json
+
+# Tokenized data (can be regenerated)
+data/tokenized/*.pt
+
+# Reports (runtime generated)
+reports/*.json
+
+# Backup files
+*_backup_*.json
+rules_backup.json
+
+# Shell scripts (not needed in container)
+*.sh
+
+# macOS artifacts
+__MACOSX/

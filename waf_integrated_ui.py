@@ -81,8 +81,12 @@ def initialize_redis_rules():
     global redis_manager, compiled_rules
     
     try:
+        # Get Redis connection from environment or use default
+        redis_host = os.getenv('REDIS_HOST', 'localhost')
+        redis_port = int(os.getenv('REDIS_PORT', '6379'))
+        
         # Try to connect to Redis
-        redis_manager = RedisRuleManager(host='localhost', port=6379, db=0)
+        redis_manager = RedisRuleManager(host=redis_host, port=redis_port, db=0)
         
         # Check if rules exist, if not initialize them
         rule_counts = redis_manager.get_all_rule_counts()
@@ -303,14 +307,19 @@ def hierarchical_detect(request_dict: dict):
     
     # ML detection if rules don't flag
     if detector is not None:
-        ml_result = detector.detect(request_dict)
-        res.is_malicious = ml_result.is_malicious
-        res.confidence = ml_result.confidence
-        res.risk_level = ml_result.risk_level
-        res.reconstruction_loss = ml_result.reconstruction_loss
-        res.anomaly_score = ml_result.anomaly_score
-        res.detection_method = "ML"
-        res.threat_type = "Anomaly" if ml_result.is_malicious else "None"
+        try:
+            ml_result = detector.detect(request_dict)
+            res.is_malicious = ml_result.is_malicious
+            res.confidence = ml_result.confidence
+            res.risk_level = ml_result.risk_level
+            res.reconstruction_loss = ml_result.reconstruction_loss
+            res.anomaly_score = ml_result.anomaly_score
+            res.detection_method = "ML"
+            res.threat_type = "Anomaly" if ml_result.is_malicious else "None"
+        except ValueError as e:
+            # ML detector not calibrated - skip ML detection
+            print(f"⚠️  ML detection skipped: {e}")
+            res.detection_method = "RULE_ONLY"
     
     # If benign, add to incremental training collection
     if not res.is_malicious and incremental_manager is not None:
@@ -2010,8 +2019,12 @@ def initialize_waf(
         # Use ALL samples for accurate threshold estimation (was 100, now using all ~2729)
         detector.calibrate(benign_data, num_samples=100)
         print("✅ Calibration complete")
+    except FileNotFoundError:
+        print(f"⚠️  Calibration file not found: {calibration_file}")
+        print("⚠️  ML detection will be disabled. System will use 400+ rule-based detection only.")
     except Exception as e:
         print(f"⚠️  Calibration failed: {e}")
+        print("⚠️  ML detection will be disabled. System will use 400+ rule-based detection only.")
     
     # Initialize signature manager
     print("\n📝 Initializing signature manager...")

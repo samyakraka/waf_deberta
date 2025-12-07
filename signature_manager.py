@@ -10,7 +10,7 @@ import json
 import re
 import os
 from datetime import datetime
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Tuple
 from collections import defaultdict
 from pathlib import Path
 

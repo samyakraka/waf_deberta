@@ -1,0 +1,117 @@
+# Docker Compose for Complete WAF System
+# Includes WAF application, Redis, and vulnerable test applications
+
+services:
+  # Redis - for rule management (data will NOT persist)
+  redis:
+    image: redis:7-alpine
+    container_name: waf-redis
+    ports:
+      - "6380:6379" # Changed to 6380 to avoid conflict with local Redis
+    networks:
+      - waf-network
+    restart: unless-stopped
+    command: redis-server --save "" --appendonly no
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # WAF Application
+  waf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: waf-application
+    ports:
+      - "5001:5000" # Changed to 5001 to avoid macOS AirPlay conflict
+    networks:
+      - waf-network
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Security configurations
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    read_only: false # Set to false because we need to write runtime data
+    tmpfs:
+      # Mount volatile data in tmpfs (RAM) - will be lost when container stops
+      - /app/data/parsed:uid=1000,gid=1000,mode=1777
+      - /app/logs:uid=1000,gid=1000,mode=1777
+      - /tmp
+
+  # DVWA - Damn Vulnerable Web Application (for testing)
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: waf-dvwa
+    ports:
+      - "8081:80"
+    networks:
+      - waf-network
+    restart: unless-stopped
+
+  # OWASP Juice Shop (for testing)
+  juiceshop:
+    image: bkimminich/juice-shop
+    container_name: waf-juiceshop
+    ports:
+      - "3000:3000"
+    networks:
+      - waf-network
+    restart: unless-stopped
+
+  # WebGoat (for testing)
+  webgoat:
+    image: webgoat/webgoat:latest
+    container_name: waf-webgoat
+    ports:
+      - "8082:8080"
+    networks:
+      - waf-network
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy for Log Collection
+  nginx:
+    image: nginx:alpine
+    container_name: waf-nginx
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "8090:8090"
+      - "8091:8091"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - dvwa
+      - juiceshop
+      - webgoat
+    networks:
+      - waf-network
+    restart: unless-stopped
+    tmpfs:
+      # Nginx logs in tmpfs - will NOT persist
+      - /var/log/nginx:uid=101,gid=101,mode=1777
+
+networks:
+  waf-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
