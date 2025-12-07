@@ -25,6 +25,7 @@ from dataclasses import dataclass
 import numpy as np
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 from tqdm import tqdm
+import random
 
 
 @dataclass
@@ -55,7 +56,8 @@ class WAFDetector:
         tokenizer_name: str = "microsoft/deberta-v3-small",
         max_length: int = 256,
         threshold_percentile: float = 98.0,
-        device: Optional[str] = None
+        device: Optional[str] = None,
+        seed: Optional[int] = 42
     ):
         """
         Initialize detector
@@ -66,9 +68,19 @@ class WAFDetector:
             max_length: Maximum sequence length
             threshold_percentile: Percentile for anomaly threshold (98-99 recommended, higher = stricter)
             device: Device to use (None = auto-detect)
+            seed: Random seed for reproducibility (None = random behavior)
         """
         self.max_length = max_length
         self.threshold_percentile = threshold_percentile
+        self.seed = seed
+        
+        # Set random seeds for reproducibility
+        if seed is not None:
+            random.seed(seed)
+            np.random.seed(seed)
+            torch.manual_seed(seed)
+            if torch.cuda.is_available():
+                torch.cuda.manual_seed_all(seed)
         
         # Setup device
         if device is None:
@@ -137,7 +149,8 @@ class WAFDetector:
     def _compute_reconstruction_loss(
         self,
         text: str,
-        mask_probability: float = 0.15
+        mask_probability: float = 0.15,
+        seed_offset: int = 0
     ) -> Tuple[float, Dict]:
         """
         Compute reconstruction loss by masking tokens and measuring prediction error
@@ -145,10 +158,15 @@ class WAFDetector:
         Args:
             text: Input text
             mask_probability: Probability of masking each token
+            seed_offset: Offset to add to seed for multiple samples (internal use)
             
         Returns:
             Tuple of (loss, details_dict)
         """
+        # Set seed for this specific computation if seed is enabled
+        if self.seed is not None:
+            torch.manual_seed(self.seed + seed_offset)
+        
         # Tokenize
         encoded = self.tokenizer(
             text,
@@ -239,9 +257,10 @@ class WAFDetector:
         
         losses = []
         
-        for request in tqdm(benign_requests[:actual_samples], desc="Calibration"):
+        for idx, request in enumerate(tqdm(benign_requests[:actual_samples], desc="Calibration")):
             text = self._prepare_request_text(request)
-            loss, _ = self._compute_reconstruction_loss(text)
+            # Use index as seed offset for reproducible but varied calibration
+            loss, _ = self._compute_reconstruction_loss(text, seed_offset=idx * 1000)
             losses.append(loss)
         
         losses = np.array(losses)
@@ -296,8 +315,8 @@ class WAFDetector:
         losses = []
         all_details = []
         
-        for _ in range(num_samples):
-            loss, details = self._compute_reconstruction_loss(text)
+        for i in range(num_samples):
+            loss, details = self._compute_reconstruction_loss(text, seed_offset=i)
             losses.append(loss)
             all_details.append(details)
         

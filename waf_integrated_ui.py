@@ -216,7 +216,7 @@ def check_rule_based_threats(request_dict: dict) -> tuple:
     }
     
     # Categories to skip for form login requests (reduces false positives)
-    skip_for_login = {'sensitive_data_patterns', 'auth_bypass_patterns'} if (is_form_submission and is_login_path) else set()
+    skip_for_login = {'sensitive_data_patterns', 'auth_bypass_patterns', 'blocked_user_agents'} if (is_form_submission and is_login_path) else set()
     
     # Check all rule categories
     for category, patterns in compiled_rules.items():
@@ -536,6 +536,9 @@ def parse_curl_command(curl_cmd: str) -> Dict:
     body_match = re.search(r'-d\s+["\'](.+?)["\']', curl_cmd)
     if body_match:
         body = body_match.group(1)
+        # Auto-set Content-Type for -d flag if not explicitly provided
+        if 'Content-Type' not in headers and 'content-type' not in headers:
+            headers['content-type'] = 'application/x-www-form-urlencoded'
     
     # Parse query
     query_params = parse_qs(parsed.query) if parsed.query else {}
@@ -914,25 +917,6 @@ HTML_TEMPLATE = """
                     <textarea id="curlInput" rows="3" placeholder='curl "http://localhost:8080/test?id=1"'></textarea>
                 </div>
                 <button onclick="testCurl()">🚀 Test Request</button>
-                
-                <div class="examples">
-                    <h4>Example Payloads (click to use):</h4>
-                    <div class="example-item" onclick="setCurl('curl \"http://localhost:8080/test?id=1\"')">
-                        ✅ Benign: Simple query
-                    </div>
-                    <div class="example-item" onclick="setCurl('curl \"http://localhost:8080/test?id=1\' OR \'1\'=\'1\"')">
-                        🚨 SQL Injection: OR 1=1
-                    </div>
-                    <div class="example-item" onclick="setCurl('curl \"http://localhost:8080/test?page=../../../../etc/passwd\"')">
-                        🚨 Path Traversal: /etc/passwd
-                    </div>
-                    <div class="example-item" onclick="setCurl('curl \"http://localhost:8080/test?input=<script>alert(1)</script>\"')">
-                        🚨 XSS: Script injection
-                    </div>
-                    <div class="example-item" onclick="setCurl('curl \"http://localhost:8080/test?cmd=ls; cat /etc/shadow\"')">
-                        🚨 Command Injection: Shell commands
-                    </div>
-                </div>
             </div>
             
             <div class="section">
@@ -1084,10 +1068,6 @@ HTML_TEMPLATE = """
             } else {
                 stopAutoRefresh();
             }
-        }
-        
-        function setCurl(cmd) {
-            document.getElementById('curlInput').value = cmd;
         }
         
         async function testCurl() {

