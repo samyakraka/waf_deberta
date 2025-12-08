@@ -1,1218 +1,2409 @@
 [
   {
-    "timestamp": "2025-12-06T15:30:15.462085",
-    "request": {
-      "method": "POST",
-      "path": "/api/users",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:31:01.339391",
+    "timestamp": "2025-12-08T17:50:30.268399",
     "request": {
       "method": "GET",
-      "path": "/api/transfer",
+      "path": "/administration/socket.io/",
       "query": {
-        "from": "user123",
-        "to": "attacker",
-        "amount": "-1000",
-        "currency": "USD"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzuoJu"
       },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:31:26.668189",
-    "request": {
-      "method": "POST",
-      "path": "/graphql",
-      "query": {},
-      "headers": {},
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:31:49.141180",
-    "request": {
-      "method": "POST",
-      "path": "/api/users",
-      "query": {},
       "headers": {
-        "Content-Type": "application/json"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "body": "{"
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T15:32:14.112343",
+    "timestamp": "2025-12-08T17:50:30.392039",
     "request": {
       "method": "GET",
-      "path": "/api/documents/12345",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:31.799420",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
       "query": {
-        "user_id": "999999"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzupnZ"
       },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:32:26.341652",
-    "request": {
-      "method": "PUT",
-      "path": "/api/profile/update",
-      "query": {},
       "headers": {
-        "Content-Type": "application/json"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "body": "{"
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T15:37:52.731859",
-    "request": {
-      "method": "POST",
-      "path": "/vuln.php",
-      "query": {},
-      "headers": {
-        "Transfer-Encoding": "chunked",
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:38:12.663378",
-    "request": {
-      "method": "POST",
-      "path": "/vuln.php",
-      "query": {},
-      "headers": {
-        "Transfer-Encoding": "chunked",
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T15:50:16.251177",
+    "timestamp": "2025-12-08T17:50:31.992466",
     "request": {
       "method": "GET",
-      "path": "/favicon.ico",
+      "path": "/WebGoat/images/ChromeDev_Elements_CSS.jpg",
       "query": {},
       "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQANg.FP1yYYdE9QwNE1LB6N1tzq0seR0"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "body": null
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T15:51:35.785082",
+    "timestamp": "2025-12-08T17:50:33.342309",
     "request": {
       "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQDag.Loo_kldCDzghss4AnOO54YcMAEQ"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:01:52.595735",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQDtQ.mVmLaCpKfWPIf6Ifc-x3ZUh_Vvw"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:02:41.667090",
-    "request": {
-      "method": "PUT",
-      "path": "/api/profile/update",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "body": "{"
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:04:25.533817",
-    "request": {
-      "method": "GET",
-      "path": "/guide",
+      "path": "/administration/socket.io/",
       "query": {
-        "step": "<script-is-feature>"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzurFK"
       },
-      "headers": {},
-      "body": null
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T16:04:38.382902",
+    "timestamp": "2025-12-08T17:50:33.529822",
     "request": {
       "method": "GET",
-      "path": "/",
+      "path": "/WebGoat/images/ChromeDev_Console_Ex.jpg",
       "query": {},
-      "headers": {},
-      "body": null
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T16:04:49.847121",
+    "timestamp": "2025-12-08T17:50:34.839053",
     "request": {
       "method": "GET",
-      "path": "/",
+      "path": "/administration/socket.io/",
       "query": {
-        "q": "UNION"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzusjB"
       },
-      "headers": {},
-      "body": null
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T16:05:35.123422",
+    "timestamp": "2025-12-08T17:50:35.033460",
     "request": {
       "method": "GET",
-      "path": "/favicon.ico",
+      "path": "/WebGoat/service/lessonoverview.mvc/CIA.lesson",
       "query": {},
       "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG6g.7rZmv1M-E9GzQt9skdVF8oizMT0"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "body": null
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-06T16:09:15.369393",
+    "timestamp": "2025-12-08T17:50:36.280698",
     "request": {
       "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:10:12.373473",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:10:13.595415",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:10:13.702217",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:10:13.963968",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:10:13.964295",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQG_g.WXoExp7tti8OJg6nkYWktIu5HYE"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:13:43.630198",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQIFA.6FI-e5-0MtJS7FjLYEi_KaObOOg"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:14:47.953822",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQIFA.6FI-e5-0MtJS7FjLYEi_KaObOOg"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:22.385193",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:49.808970",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:51.262839",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:51.782959",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:51.789820",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:51.992189",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:52.098365",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:15:52.237271",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:06.045453",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:07.354917",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:07.459497",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:07.800611",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:20.285408",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:23.206268",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:24.544880",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:25.258082",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:25.476871",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:25.509511",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:25.513691",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:25.516094",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:58.009366",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-06T16:16:58.321495",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=a208mg2mst0c55lukuq0lm3aa3; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTQJKA.Dntegyb9Yv-BI-KiDFnkbL-kGko"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T18:41:57.343917",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:34:22.885131",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:37:09.146844",
-    "request": {
-      "method": "POST",
-      "path": "/comment",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "WAF-XSS-Tester"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:37:24.760505",
-    "request": {
-      "method": "POST",
-      "path": "/comment",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "WAF-XSS-Tester"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:37:29.177601",
-    "request": {
-      "method": "POST",
-      "path": "/comment",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "WAF-XSS-Tester"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:38:18.006417",
-    "request": {
-      "method": "POST",
-      "path": "/run",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "WAF-CMDI-Tester"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:38:23.200087",
-    "request": {
-      "method": "POST",
-      "path": "/run",
-      "query": {},
-      "headers": {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "WAF-CMDI-Tester"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:39:19.614719",
-    "request": {
-      "method": "GET",
-      "path": "/api/v4/sync",
+      "path": "/administration/socket.io/",
       "query": {
-        "blob": "KJ29FQ_92XZ_LAM12_PLX992_AXS22"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzuuAu"
       },
-      "headers": {},
-      "body": null
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-07T21:39:32.564688",
+    "timestamp": "2025-12-08T17:50:36.448901",
     "request": {
       "method": "GET",
-      "path": "/compute",
-      "query": {
-        "expr": "ax9.mod(lambda.gamma*delta^3).omega17"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:40:19.425816",
-    "request": {
-      "method": "GET",
-      "path": "/",
+      "path": "/WebGoat/images/ChromeDev_Sources.jpg",
       "query": {},
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:40:50.216428",
-    "request": {
-      "method": "GET",
-      "path": "/about",
-      "query": {},
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:41:03.564308",
-    "request": {
-      "method": "GET",
-      "path": "/assets/css/style.css",
-      "query": {},
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:41:08.327056",
-    "request": {
-      "method": "GET",
-      "path": "/assets/css/style.css",
-      "query": {},
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:42:14.759848",
-    "request": {
-      "method": "GET",
-      "path": "/search",
-      "query": {
-        "q": "laptops under 50000"
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "headers": {},
-      "body": null
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-07T21:42:30.719975",
+    "timestamp": "2025-12-08T17:50:37.675546",
     "request": {
       "method": "GET",
-      "path": "/products",
+      "path": "/administration/socket.io/",
       "query": {
-        "category": "electronics",
-        "sort": "price_asc"
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzuvgy"
       },
-      "headers": {},
-      "body": null
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-07T21:42:35.243676",
+    "timestamp": "2025-12-08T17:50:37.914224",
     "request": {
       "method": "GET",
-      "path": "/products",
-      "query": {
-        "category": "electronics",
-        "sort": "price_asc"
+      "path": "/WebGoat/images/breakpoint2.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
       },
-      "headers": {},
-      "body": null
+      "body": "-"
     }
   },
   {
-    "timestamp": "2025-12-07T21:44:34.282012",
+    "timestamp": "2025-12-08T17:50:39.098581",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzux6I"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:39.259824",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/breakpoint.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:40.453971",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzuya3"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:40.654266",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/ChromeDev_Network.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:41.816748",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzu-2k"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:42.000762",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/proxy-intercept-details.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:43.202178",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzu_Y0"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:43.401705",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/rootca.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:44.592377",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv0-A"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:44.784731",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/savecerts.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:45.997044",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv2R0"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:46.181834",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/firefoxsettingscerts.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:47.406504",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv3wt"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:47.605513",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/importcerts.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:48.825034",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv5PE"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:48.997845",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/firefox-proxy-config.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:50.269874",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv6qG"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:50.434073",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/chrome-manual-proxy-win.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:51.643220",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv8I8"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:51.803318",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/images/chrome-manual-proxy.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:53.011720",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzv9lo"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:53.153866",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:54.994672",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvBDX"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:55.217771",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/CIA.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:57.145855",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvChJ"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:57.513624",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/LessonTemplate.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:58.878004",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvEJN"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:50:59.052772",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:00.291639",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvFsR"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:00.478638",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/LessonTemplate.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:01.705607",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvHOG"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:01.884263",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/LessonTemplate.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:03.113591",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvIo5"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:03.252514",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/LessonTemplate.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:04.565881",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvKFh"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:04.660268",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:05.992855",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvLlf"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:06.084505",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/LessonTemplate.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:07.397844",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzvNiK"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:07.571662",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/video/sample-video.m4v",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:08.814433",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzvl5-"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:09.003450",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:10.289885",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Phzw6QB"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:10.413726",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/HijackSession.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:11.096196",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/HijackSession.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:11.766974",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:12.445642",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/HijackSession.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:13.154895",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:13.946306",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/HijackSession.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:14.715213",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:15.664069",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/IDOR.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:16.776689",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/MissingFunctionAC.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:17.606743",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwAuj"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:18.019937",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:18.682982",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:19.480765",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/MissingFunctionAC.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:20.163794",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/MissingFunctionAC.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:20.840203",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/MissingFunctionAC.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:21.909549",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:22.856760",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwC9m"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:23.140040",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/MissingFunctionAC.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:23.936575",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:24.630592",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/SpoofCookie.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:25.316909",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/SpoofCookie.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:25.996956",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:26.729096",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SpoofCookie.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:27.496419",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:28.954738",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwDfJ"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:29.074691",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/Cryptography.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:29.782679",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/Cryptography.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:30.460314",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:31.131318",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SpoofCookie.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:31.816353",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/crypto/hashing/sha256",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:32.482406",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/crypto/hashing/md5",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:33.184993",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/crypto/encoding/basic",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:33.836871",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:34.493959",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/Cryptography.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:35.160735",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:35.808898",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/SqlInjectionAdvanced.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:36.454118",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/SqlInjectionAdvanced.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:37.117492",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:37.789253",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionAdvanced.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:38.441297",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/crypto/signing/getprivate",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:39.088509",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:39.767504",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/SqlInjectionMitigations.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:40.425420",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessoninfo.mvc/SqlInjectionMitigations.lesson.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:41.077425",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/js/libs/ace.js",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:41.722766",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/js/libs/mode-java.js",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:42.374110",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/hint.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:43.017954",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/SqlInjectionMitigations/servers",
+      "query": {
+        "column": "id"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:43.979911",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:44.764225",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwHZu"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:45.117851",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:45.759863",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:46.402350",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:47.065365",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:47.791804",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:48.680075",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:50.210700",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:51.019233",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwI_G"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:51.410303",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:52.152177",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:52.894284",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:53.665086",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:54.397305",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:55.651988",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:57.403413",
+    "request": {
+      "method": "GET",
+      "path": "/administration/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "PhzwKT0"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/administration",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:57.497536",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:58.212786",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:58.980841",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:51:59.737279",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:00.496382",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:01.261860",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:01.971750",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:02.709702",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:03.412352",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:04.106292",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:04.827366",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:05.526659",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:06.237875",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:06.953393",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:07.863895",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:08.615761",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:09.339125",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:10.131897",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:11.003452",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:11.849207",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:12.594948",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:13.283423",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:13.967586",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:14.653456",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:15.330165",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:16.131282",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:16.937891",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:17.980087",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:18.722537",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:19.395719",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:20.105510",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonoverview.mvc/SqlInjectionMitigations.lesson",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:20.766059",
+    "request": {
+      "method": "GET",
+      "path": "/WebGoat/service/lessonmenu.mvc",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8091/WebGoat/start.mvc?username=admin123",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T17:52:24.946650",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -1231,145 +2422,276 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTWm9w.JU18fgVlZD28OC-ep0jBXQPTcFY"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
       },
       "body": null
     }
   },
   {
-    "timestamp": "2025-12-07T21:53:04.394915",
+    "timestamp": "2025-12-08T17:58:38.056983",
     "request": {
       "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTWm9w.JU18fgVlZD28OC-ep0jBXQPTcFY"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:53:20.877471",
-    "request": {
-      "method": "GET",
-      "path": "/blog",
-      "query": {
-        "page": "3"
-      },
-      "headers": {},
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:54:32.035949",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTWm9w.JU18fgVlZD28OC-ep0jBXQPTcFY"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T21:58:16.003631",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTWqdA.w7V7GATBAdqe2ePuD1b7HfywJA0"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T22:07:36.957313",
-    "request": {
-      "method": "GET",
-      "path": "/favicon.ico",
-      "query": {},
-      "headers": {
-        "Host": "localhost:5001",
-        "Connection": "keep-alive",
-        "Sec-Ch-Ua-Platform": "\"macOS\"",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "no-cors",
-        "Sec-Fetch-Dest": "image",
-        "Referer": "http://localhost:5001/",
-        "Accept-Encoding": "gzip, deflate, br, zstd",
-        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTWqdA.w7V7GATBAdqe2ePuD1b7HfywJA0"
-      },
-      "body": null
-    }
-  },
-  {
-    "timestamp": "2025-12-07T22:07:46.223256",
-    "request": {
-      "method": "POST",
       "path": "/login",
-      "query": {},
-      "headers": {
-        "content-type": "application/x-www-form-urlencoded"
+      "query": {
+        "user": "admin",
+        "pass": "test123"
       },
-      "body": "username=john&password=demo123"
+      "headers": {},
+      "body": null
     }
   },
   {
-    "timestamp": "2025-12-07T22:08:31.816037",
+    "timestamp": "2025-12-08T18:12:39.487533",
     "request": {
       "method": "GET",
-      "path": "/cart/add",
-      "query": {
-        "item_id": "42",
-        "qty": "1"
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cookie": "_ga=GA1.1.1174351194.1759406462; _ga_HCDZGJY2LD=GS2.1.s1759471360$o2$g1$t1759473425$j59$l0$h0"
       },
-      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:12:52.357122",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:16:13.809087",
+    "request": {
+      "method": "GET",
+      "path": "/",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:16:14.542622",
+    "request": {
+      "method": "GET",
+      "path": "/login.php",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:23:27.933818",
+    "request": {
+      "method": "GET",
+      "path": "/isro_logo.webp",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:23:28.709309",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:25:48.184227",
+    "request": {
+      "method": "GET",
+      "path": "/isro_logo.jpg",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:25:48.956090",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:25:49.772214",
+    "request": {
+      "method": "GET",
+      "path": "/isro_logo.jpg",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:25:50.511263",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-08T18:27:34.675280",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTbCkA.Rb7jRj9luoN6R5FV29fMvu5Ry4w"
+      },
       "body": null
     }
   }

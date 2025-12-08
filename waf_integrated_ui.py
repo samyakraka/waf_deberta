@@ -285,8 +285,38 @@ def hierarchical_detect(request_dict: dict):
             self.detection_method = "NONE"
             self.threat_type = "None"
             self.matched_patterns = []
+            # Add detailed processing info
+            self.normalized_request = None
+            self.text_sequence = None
+            self.token_count = 0
+            self.processing_details = {}
 
     res = ResultObj()
+    
+    # Store normalized request
+    res.normalized_request = request_dict
+    
+    # Generate text sequence (same format as ParsedRequest.to_text_sequence)
+    parts = [f"METHOD:{request_dict.get('method', 'GET')}"]
+    
+    path = request_dict.get('path', '/')
+    parts.append(f"PATH:{path}")
+    
+    query = request_dict.get('query', {})
+    if query:
+        query_str = " ".join([f"{k}={v}" for k, v in query.items()])
+        parts.append(f"QUERY:{query_str}")
+    
+    body = request_dict.get('body')
+    if body:
+        parts.append(f"BODY:{body}")
+    
+    headers = request_dict.get('headers', {})
+    content_type = headers.get('Content-Type') or headers.get('content-type')
+    if content_type:
+        parts.append(f"CONTENT_TYPE:{content_type}")
+    
+    res.text_sequence = " ".join(parts)
     
     # Rule-based check first
     rule_triggered, threat_type, matched_patterns = check_rule_based_threats(request_dict)
@@ -299,6 +329,10 @@ def hierarchical_detect(request_dict: dict):
         res.detection_method = "RULE"
         res.threat_type = threat_type
         res.matched_patterns = matched_patterns
+        res.processing_details['rule_check'] = {
+            'patterns_matched': len(matched_patterns),
+            'threat_categories': list(set([m[0] if isinstance(m, tuple) else str(m).split(':')[0] for m in matched_patterns[:5]]))
+        }
         return res
     
     # ML detection if rules don't flag
@@ -311,6 +345,13 @@ def hierarchical_detect(request_dict: dict):
         res.anomaly_score = ml_result.anomaly_score
         res.detection_method = "ML"
         res.threat_type = "Anomaly" if ml_result.is_malicious else "None"
+        
+        # Add ML processing details
+        res.processing_details['ml_detection'] = {
+            'reconstruction_loss': float(ml_result.reconstruction_loss),
+            'anomaly_score': float(ml_result.anomaly_score),
+            'model': 'DeBERTa-v3-small'
+        }
     
     # If benign, add to incremental training collection
     if not res.is_malicious and incremental_manager is not None:
@@ -594,6 +635,13 @@ def execute_curl_test(curl_cmd: str, target_url: str = "http://localhost:8080") 
             'detection_method': result.detection_method,
             'threat_type': result.threat_type,
             'anomaly_score': result.anomaly_score,
+            'matched_patterns': result.matched_patterns[:5] if hasattr(result, 'matched_patterns') else [],
+        },
+        'processing': {
+            'normalized_request': result.normalized_request if hasattr(result, 'normalized_request') else request_dict,
+            'text_sequence': result.text_sequence if hasattr(result, 'text_sequence') else '',
+            'token_count': result.token_count if hasattr(result, 'token_count') else 0,
+            'details': result.processing_details if hasattr(result, 'processing_details') else {}
         },
         'execution': {
             'return_code': response_code,
@@ -612,293 +660,746 @@ HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WAF Integrated Testing & Monitoring</title>
+    <title>ISRO WAF Security Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --isro-orange: #FF6B35;
+            --isro-deep-orange: #E8500E;
+            --isro-navy: #0D1B2A;
+            --isro-blue: #1B3A5F;
+            --isro-light-blue: #2E5984;
+            --isro-accent: #FFB800;
+            --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --bg-light: #F8F9FA;
+            --border-light: #E1E8ED;
+            --success: #00C853;
+            --danger: #FF3D00;
+            --warning: #FFB800;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            background: var(--isro-navy);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
         }
+        
         .container { 
-            max-width: 1600px; 
+            max-width: 1920px; 
             margin: 0 auto; 
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
+            background: #ffffff;
+            min-height: 100vh;
         }
+        
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--isro-navy) 0%, var(--isro-blue) 100%);
+            color: var(--text-light);
+            padding: 24px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .header h1 { margin-bottom: 10px; font-size: 2.5em; }
-        .header p { font-size: 1.1em; opacity: 0.9; }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .isro-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .header-title h1 { 
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .header-title p { 
+            font-size: 13px;
+            opacity: 0.85;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
         
         .tabs {
             display: flex;
-            background: #f8f9fa;
-            border-bottom: 2px solid #dee2e6;
+            background: var(--bg-light);
+            border-bottom: 2px solid var(--border-light);
+            padding: 0 32px;
+            gap: 4px;
         }
+        
         .tab {
             flex: 1;
-            padding: 20px;
+            max-width: 220px;
+            padding: 18px 24px;
             text-align: center;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
-            background: none;
-            font-size: 1.1em;
+            background: transparent;
+            color: var(--text-dark);
+            opacity: 0.6;
+            position: relative;
+            border-radius: 8px 8px 0 0;
         }
-        .tab:hover { background: #e9ecef; }
+        
+        .tab:hover { 
+            opacity: 1;
+            background: rgba(255, 107, 53, 0.08);
+        }
+        
         .tab.active { 
-            background: white; 
-            border-bottom: 3px solid #667eea;
-            color: #667eea;
+            background: white;
+            opacity: 1;
+            color: var(--isro-orange);
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--isro-orange), var(--isro-deep-orange));
         }
         
         .tab-content { 
             display: none; 
-            padding: 30px;
-            animation: fadeIn 0.3s;
+            padding: 32px 48px;
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: calc(100vh - 200px);
         }
+        
         .tab-content.active { display: block; }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(16px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .section {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            margin-bottom: 28px;
+            padding: 28px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s;
         }
+        
+        .section:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        
         .section h2 { 
             margin-bottom: 20px; 
-            color: #667eea;
-            font-size: 1.5em;
+            color: var(--isro-navy);
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--isro-orange), var(--isro-deep-orange));
+            border-radius: 2px;
         }
         
         .input-group {
             margin-bottom: 20px;
         }
+        
         .input-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #495057;
+            color: var(--isro-navy);
+            font-size: 14px;
+            letter-spacing: 0.2px;
         }
+        
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border 0.3s;
+            padding: 14px 16px;
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Inter', monospace;
+            transition: all 0.3s;
+            background: var(--bg-light);
         }
+        
         .input-group input:focus, .input-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--isro-orange);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
         
         button {
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--isro-orange), var(--isro-deep-orange));
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 15px;
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            letter-spacing: 0.3px;
         }
+        
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
-        button:active { transform: translateY(0); }
+        
+        button:active { 
+            transform: translateY(0);
+        }
+        
         button:disabled {
-            background: #6c757d;
+            background: #9E9E9E;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
+        }
+        
+        button.secondary {
+            background: var(--isro-navy);
+            box-shadow: 0 4px 12px rgba(13, 27, 42, 0.3);
+        }
+        
+        button.secondary:hover {
+            background: var(--isro-blue);
+            box-shadow: 0 6px 20px rgba(13, 27, 42, 0.4);
+        }
+        
+        button.danger {
+            background: linear-gradient(135deg, var(--danger), #D32F2F);
+            box-shadow: 0 4px 12px rgba(255, 61, 0, 0.3);
+        }
+        
+        button.success {
+            background: linear-gradient(135deg, var(--success), #00A142);
+            box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
         }
         
         .results {
             margin-top: 20px;
-            max-height: 600px;
+            max-height: 650px;
             overflow-y: auto;
+            padding-right: 8px;
         }
+        
+        .results::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .results::-webkit-scrollbar-track {
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+        
+        .results::-webkit-scrollbar-thumb {
+            background: var(--isro-orange);
+            border-radius: 4px;
+        }
+        
         .result-item {
             background: white;
             padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #6c757d;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border-left: 4px solid var(--border-light);
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
-        .result-item.malicious { border-left-color: #dc3545; }
-        .result-item.benign { border-left-color: #28a745; }
+        
+        .result-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .result-item.malicious { 
+            border-left-color: var(--danger);
+            background: linear-gradient(90deg, rgba(255, 61, 0, 0.05) 0%, white 100%);
+        }
+        
+        .result-item.benign { 
+            border-left-color: var(--success);
+            background: linear-gradient(90deg, rgba(0, 200, 83, 0.05) 0%, white 100%);
+        }
         
         .badge {
             display: inline-block;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 12px;
             font-weight: 600;
             margin-right: 8px;
+            letter-spacing: 0.3px;
         }
-        .badge.attack { background: #dc3545; color: white; }
-        .badge.safe { background: #28a745; color: white; }
-        .badge.critical { background: #dc3545; color: white; }
-        .badge.high { background: #fd7e14; color: white; }
-        .badge.medium { background: #ffc107; color: #333; }
-        .badge.low { background: #28a745; color: white; }
-        .badge.rule { background: #6f42c1; color: white; }
-        .badge.ml { background: #17a2b8; color: white; }
+        
+        .badge.attack { background: var(--danger); color: white; }
+        .badge.safe { background: var(--success); color: white; }
+        .badge.critical { background: var(--danger); color: white; }
+        .badge.high { background: var(--isro-orange); color: white; }
+        .badge.medium { background: var(--warning); color: var(--text-dark); }
+        .badge.low { background: var(--success); color: white; }
+        .badge.rule { background: var(--isro-navy); color: white; }
+        .badge.ml { background: var(--isro-blue); color: white; }
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
+        
         .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, white, var(--bg-light));
+            padding: 24px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--isro-orange), var(--isro-deep-orange));
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
         .stat-card h3 {
-            font-size: 2em;
-            color: #667eea;
-            margin-bottom: 5px;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--isro-orange);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
         }
+        
         .stat-card p {
-            color: #6c757d;
+            color: var(--isro-navy);
             font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .log-entry {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            margin-top: 10px;
+            font-family: 'Courier New', 'Monaco', monospace;
+            font-size: 13px;
+            padding: 16px;
+            background: var(--isro-navy);
+            color: #00ff41;
+            border-radius: 8px;
+            margin-top: 12px;
             overflow-x: auto;
+            border-left: 3px solid var(--isro-orange);
         }
         
         .control-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         
         .refresh-indicator {
-            color: #28a745;
+            color: var(--success);
             font-weight: 600;
-            margin-left: 10px;
-            animation: pulse 1.5s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            margin-left: 12px;
+            animation: pulse 2s infinite;
+            font-size: 13px;
         }
         
         code {
-            background: #f8f9fa;
-            padding: 2px 6px;
-            border-radius: 3px;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
             font-family: 'Courier New', monospace;
+            color: var(--isro-orange);
+            font-size: 13px;
         }
         
         .examples {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid var(--border-light);
         }
+        
         .examples h4 {
-            margin-bottom: 10px;
-            color: #667eea;
+            margin-bottom: 14px;
+            color: var(--isro-navy);
+            font-size: 15px;
+            font-weight: 600;
         }
+        
         .example-item {
-            padding: 8px;
-            background: #f8f9fa;
-            margin: 5px 0;
-            border-radius: 5px;
+            padding: 12px 16px;
+            background: white;
+            margin: 8px 0;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid var(--border-light);
         }
+        
         .example-item:hover {
-            background: #e9ecef;
+            background: var(--isro-orange);
+            color: white;
+            transform: translateX(4px);
+            border-color: var(--isro-orange);
         }
         
         .login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 30px;
+            max-width: 420px;
+            margin: 60px auto;
+            padding: 40px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            border: 1px solid var(--border-light);
         }
         
         .login-container h3 {
             text-align: center;
-            color: #667eea;
-            margin-bottom: 20px;
+            color: var(--isro-navy);
+            margin-bottom: 32px;
+            font-size: 24px;
+            font-weight: 700;
         }
         
         .signature-item {
             background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 18px;
+            margin: 12px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--isro-orange);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .signature-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
         
         .signature-item input[type="checkbox"] {
-            margin-right: 10px;
-            width: 18px;
-            height: 18px;
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
+            accent-color: var(--isro-orange);
         }
         
         .signature-pattern {
             font-family: 'Courier New', monospace;
-            background: #f8f9fa;
-            padding: 8px;
-            margin-top: 8px;
-            border-radius: 4px;
-            font-size: 0.85em;
+            background: var(--bg-light);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            font-size: 13px;
             word-break: break-all;
+            border-left: 2px solid var(--isro-orange);
         }
         
         .category-header {
-            background: #667eea;
+            background: linear-gradient(135deg, var(--isro-navy), var(--isro-blue));
             color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin: 20px 0 10px 0;
+            padding: 14px 20px;
+            border-radius: 10px;
+            margin: 24px 0 12px 0;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* Pipeline Visualization Styles */
+        .pipeline-container {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 16px;
+            margin: 24px 0;
+            border: 1px solid var(--border-light);
+        }
+        
+        .pipeline-step {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .pipeline-step.processing {
+            border-color: var(--isro-orange);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), white);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
+            transform: scale(1.02);
+        }
+        
+        .pipeline-step.completed {
+            border-color: var(--success);
+            background: linear-gradient(135deg, rgba(0, 200, 83, 0.05), white);
+        }
+        
+        .pipeline-step.failed, .pipeline-step.blocked {
+            border-color: var(--danger);
+            background: linear-gradient(135deg, rgba(255, 61, 0, 0.05), white);
+            box-shadow: 0 0 30px rgba(255, 61, 0, 0.2);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, var(--isro-orange), var(--isro-deep-orange));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            margin-right: 14px;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+        
+        .step-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--isro-navy);
+            letter-spacing: 0.2px;
+        }
+        
+        .step-time {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--isro-orange);
+            font-size: 14px;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 2px solid var(--isro-orange);
+        }
+        
+        .step-status {
             font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .step-status.waiting {
+            background: var(--bg-light);
+            color: #666;
+        }
+        
+        .step-status.processing {
+            background: var(--isro-orange);
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .step-status.success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .step-status.blocked {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .step-status.skipped {
+            background: var(--warning);
+            color: var(--text-dark);
+        }
+        
+        .step-details {
+            background: var(--bg-light);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 13px;
+            max-height: 250px;
+            overflow-y: auto;
+            border-left: 3px solid var(--isro-orange);
+        }
+        
+        .step-details pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .pipeline-arrow {
+            text-align: center;
+            font-size: 28px;
+            color: var(--isro-orange);
+            margin: -8px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+        
+        .total-time-container {
+            margin-top: 32px;
+            text-align: center;
+        }
+        
+        .total-time-card {
+            background: linear-gradient(135deg, var(--isro-navy), var(--isro-blue));
+            color: white;
+            padding: 32px;
+            border-radius: 20px;
+            display: inline-block;
+            min-width: 350px;
+            box-shadow: 0 8px 32px rgba(13, 27, 42, 0.4);
+        }
+        
+        .total-time-card h3 {
+            font-size: 42px;
+            margin-bottom: 8px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .total-time-card p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .detail-label {
+            font-weight: 700;
+            color: var(--isro-navy);
+            font-size: 13px;
+        }
+        
+        .detail-value {
+            color: var(--isro-orange);
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛡️ WAF Integrated Testing & Monitoring</h1>
-            <p>400+ Redis Rules → ML Detection | Real-time Log Analysis | Comprehensive Security</p>
+            <div class="header-left">
+                <img src="isro_logo.jpg" alt="ISRO Logo" class="isro-logo">
+                <div class="header-title">
+                    <h1>ISRO WAF Security Platform</h1>
+                    <p>400+ Redis Rules → ML Detection | Real-time Log Analysis | Advanced Threat Protection</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
         </div>
         
         <div class="tabs">
@@ -911,16 +1412,120 @@ HTML_TEMPLATE = """
         
         <div id="testing" class="tab-content active">
             <div class="section">
-                <h2>Live curl Testing</h2>
+                <h2>Live curl Testing with Pipeline Visualization</h2>
                 <div class="input-group">
                     <label>Enter curl command:</label>
-                    <textarea id="curlInput" rows="3" placeholder='curl "http://localhost:8080/test?id=1"'></textarea>
+                    <textarea id="curlInput" rows="3" placeholder='curl "http://localhost:8080/test?id=1 OR 1=1"'></textarea>
                 </div>
-                <button onclick="testCurl()">🚀 Test Request</button>
+                <button onclick="testCurl()" id="testButton">🚀 Test Request</button>
+                
+                <div class="examples">
+                    <h4>📋 Example Payloads:</h4>
+                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/login?user=admin&pass=test123"</div>
+                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/search?q=test' OR '1'='1"</div>
+                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/file?path=../../etc/passwd"</div>
+                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/api/users?id=1; DROP TABLE users--"</div>
+                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/page?name=&lt;script&gt;alert('XSS')&lt;/script&gt;"</div>
+                </div>
+            </div>
+            
+            <!-- Processing Pipeline Visualization -->
+            <div id="pipelineSection" class="section" style="display: none;">
+                <h2>🔄 Processing Pipeline</h2>
+                <div class="pipeline-container">
+                    <div class="pipeline-step" id="step1">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Curl Parsing</span>
+                            <span class="step-time" id="time1">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status1">⏳ Waiting...</div>
+                        <div class="step-details" id="details1"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step2">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Request Normalization</span>
+                            <span class="step-time" id="time2">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status2">⏳ Waiting...</div>
+                        <div class="step-details" id="details2"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step3">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Redis Rule Check</span>
+                            <span class="step-time" id="time3">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status3">⏳ Waiting...</div>
+                        <div class="step-details" id="details3"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step4">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Text Sequence Generation</span>
+                            <span class="step-time" id="time4">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status4">⏳ Waiting...</div>
+                        <div class="step-details" id="details4"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step5">
+                        <div class="step-header">
+                            <span class="step-number">5</span>
+                            <span class="step-title">Tokenization</span>
+                            <span class="step-time" id="time5">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status5">⏳ Waiting...</div>
+                        <div class="step-details" id="details5"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step6">
+                        <div class="step-header">
+                            <span class="step-number">6</span>
+                            <span class="step-title">ML Model Detection</span>
+                            <span class="step-time" id="time6">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status6">⏳ Waiting...</div>
+                        <div class="step-details" id="details6"></div>
+                    </div>
+                    
+                    <div class="pipeline-arrow">↓</div>
+                    
+                    <div class="pipeline-step" id="step7">
+                        <div class="step-header">
+                            <span class="step-number">7</span>
+                            <span class="step-title">Final Decision</span>
+                            <span class="step-time" id="time7">⏱️ 0ms</span>
+                        </div>
+                        <div class="step-status" id="status7">⏳ Waiting...</div>
+                        <div class="step-details" id="details7"></div>
+                    </div>
+                </div>
+                
+                <div class="total-time-container">
+                    <div class="total-time-card">
+                        <h3 id="totalTime">⚡ Total: 0ms</h3>
+                        <p>End-to-End Processing Time</p>
+                    </div>
+                </div>
             </div>
             
             <div class="section">
-                <h2>Test Results</h2>
+                <h2>📊 Test Results</h2>
                 <div id="testResults" class="results"></div>
             </div>
         </div>
@@ -1077,14 +1682,259 @@ HTML_TEMPLATE = """
                 return;
             }
             
-            const response = await fetch('/api/test-curl', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({curl_command: curlCmd})
-            });
+            // Show pipeline section
+            document.getElementById('pipelineSection').style.display = 'block';
             
-            const result = await response.json();
-            displayTestResult(result);
+            // Disable test button
+            const testButton = document.getElementById('testButton');
+            testButton.disabled = true;
+            testButton.innerText = '⏳ Processing...';
+            
+            // Reset all steps
+            resetPipeline();
+            
+            try {
+                // Simulate step-by-step processing with timing
+                let startTime = Date.now();
+                let stepStartTime = startTime;
+                
+                // Step 1: Curl Parsing
+                updateStep(1, 'processing', '🔄 Parsing curl command...');
+                await sleep(100);
+                updateStep(1, 'success', '✅ Curl command parsed successfully');
+                updateStepTime(1, Date.now() - stepStartTime);
+                updateStepDetails(1, `<div class="detail-row"><span class="detail-label">Command:</span><span class="detail-value">${escapeHtml(curlCmd)}</span></div>`);
+                
+                // Step 2: Request Normalization
+                stepStartTime = Date.now();
+                updateStep(2, 'processing', '🔄 Normalizing request...');
+                await sleep(50);
+                
+                // Make actual API call
+                const response = await fetch('/api/test-curl', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({curl_command: curlCmd})
+                });
+                
+                // Check if response is OK
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    updateStep(2, 'failed', '❌ Server error');
+                    updateStepDetails(2, `<div style="color: #dc3545;">HTTP ${response.status}: ${errorText.substring(0, 200)}</div>`);
+                    throw new Error(`Server returned ${response.status}`);
+                }
+                
+                // Check if response is JSON
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    updateStep(2, 'failed', '❌ Invalid response');
+                    updateStepDetails(2, `<div style="color: #dc3545;">Server returned HTML instead of JSON. Check server logs.</div>`);
+                    throw new Error('Invalid JSON response from server');
+                }
+                
+                const result = await response.json();
+                
+                // Check if request was blocked or processing error
+                if (result.error) {
+                    updateStep(2, 'failed', '❌ Normalization failed');
+                    updateStepDetails(2, `<div style="color: #dc3545;">${result.error}</div>`);
+                    throw new Error(result.error);
+                }
+                
+                updateStep(2, 'success', '✅ Request normalized');
+                updateStepTime(2, Date.now() - stepStartTime);
+                if (result.processing && result.processing.normalized_request) {
+                    const req = result.processing.normalized_request;
+                    let normalized = `<div class="detail-row"><span class="detail-label">Method:</span><span class="detail-value">${req.method}</span></div>
+                                     <div class="detail-row"><span class="detail-label">Path:</span><span class="detail-value">${req.path}</span></div>`;
+                    
+                    // Add query parameters
+                    if (req.query && Object.keys(req.query).length > 0) {
+                        const queryStr = Object.entries(req.query).map(([k, v]) => `${k}=${v}`).join(', ');
+                        normalized += `<div class="detail-row"><span class="detail-label">Query:</span><span class="detail-value">${escapeHtml(queryStr)}</span></div>`;
+                    }
+                    
+                    // Add body
+                    if (req.body) {
+                        normalized += `<div class="detail-row"><span class="detail-label">Body:</span><span class="detail-value">${escapeHtml(req.body)}</span></div>`;
+                    }
+                    
+                    // Add headers
+                    if (req.headers && Object.keys(req.headers).length > 0) {
+                        const headersStr = Object.entries(req.headers).map(([k, v]) => `${k}: ${v}`).join('; ');
+                        normalized += `<div class="detail-row"><span class="detail-label">Headers:</span><span class="detail-value">${escapeHtml(headersStr)}</span></div>`;
+                    }
+                    
+                    updateStepDetails(2, normalized);
+                } else if (result.request) {
+                    const normalized = `<div class="detail-row"><span class="detail-label">Method:</span><span class="detail-value">${result.request.method}</span></div>
+                                       <div class="detail-row"><span class="detail-label">Path:</span><span class="detail-value">${result.request.path}</span></div>`;
+                    updateStepDetails(2, normalized);
+                }
+                
+                // Step 3: Redis Rule Check
+                stepStartTime = Date.now();
+                updateStep(3, 'processing', '🔄 Checking Redis rules...');
+                await sleep(80);
+                
+                const rulesBlocked = result.waf_result.detection_method === 'RULE';
+                
+                if (rulesBlocked) {
+                    updateStep(3, 'blocked', '🚨 BLOCKED BY RULES');
+                    updateStepTime(3, Date.now() - stepStartTime);
+                    updateStepDetails(3, `<div style="color: #dc3545; font-weight: 600;">Attack detected by Redis rule patterns!</div>
+                                         <div class="detail-row"><span class="detail-label">Threat Type:</span><span class="detail-value">${result.waf_result.threat_type}</span></div>
+                                         <div class="detail-row"><span class="detail-label">Risk Level:</span><span class="detail-value">${result.waf_result.risk_level}</span></div>`);
+                    
+                    // Mark remaining steps as skipped
+                    updateStep(4, 'skipped', '⊘ Skipped (Blocked by Rules)');
+                    updateStep(5, 'skipped', '⊘ Skipped (Blocked by Rules)');
+                    updateStep(6, 'skipped', '⊘ Skipped (Blocked by Rules)');
+                    
+                    // Jump to final decision
+                    stepStartTime = Date.now();
+                    updateStep(7, 'processing', '🔄 Generating final decision...');
+                    await sleep(50);
+                    updateStep(7, 'blocked', '🚨 REQUEST BLOCKED');
+                    updateStepTime(7, Date.now() - stepStartTime);
+                    updateStepDetails(7, `<div style="color: #dc3545; font-weight: 600; font-size: 1.1em;">REQUEST BLOCKED</div>
+                                         <div class="detail-row"><span class="detail-label">Confidence:</span><span class="detail-value">${result.waf_result.confidence.toFixed(1)}%</span></div>
+                                         <div class="detail-row"><span class="detail-label">Detection:</span><span class="detail-value">${result.waf_result.detection_method}</span></div>`);
+                } else {
+                    updateStep(3, 'success', '✅ No rule matches, proceeding to ML');
+                    updateStepTime(3, Date.now() - stepStartTime);
+                    updateStepDetails(3, '<div style="color: #28a745;">No malicious patterns detected in Redis rules</div>');
+                    
+                    // Step 4: Text Sequence Generation
+                    stepStartTime = Date.now();
+                    updateStep(4, 'processing', '🔄 Generating text sequence...');
+                    await sleep(60);
+                    updateStep(4, 'success', '✅ Text sequence generated');
+                    updateStepTime(4, Date.now() - stepStartTime);
+                    
+                    // Display full text sequence
+                    if (result.processing && result.processing.text_sequence) {
+                        const textSeq = result.processing.text_sequence;
+                        updateStepDetails(4, `<div style="margin-bottom: 8px;"><strong>Generated Text Sequence:</strong></div>
+                                             <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; font-family: 'Courier New', monospace; word-break: break-all; font-size: 0.85em; color: #667eea;">${escapeHtml(textSeq)}</div>
+                                             <div class="detail-row" style="margin-top: 10px;"><span class="detail-label">Format:</span><span class="detail-value">METHOD:X PATH:Y QUERY:... BODY:... CONTENT_TYPE:...</span></div>`);
+                    } else {
+                        updateStepDetails(4, '<div class="detail-row"><span class="detail-label">Format:</span><span class="detail-value">METHOD:GET PATH:/test QUERY:...</span></div>');
+                    }
+                    
+                    // Step 5: Tokenization
+                    stepStartTime = Date.now();
+                    updateStep(5, 'processing', '🔄 Tokenizing with DeBERTa...');
+                    await sleep(100);
+                    updateStep(5, 'success', '✅ Request tokenized');
+                    updateStepTime(5, Date.now() - stepStartTime);
+                    updateStepDetails(5, '<div class="detail-row"><span class="detail-label">Tokenizer:</span><span class="detail-value">microsoft/deberta-v3-small</span></div><div class="detail-row"><span class="detail-label">Max Length:</span><span class="detail-value">256 tokens</span></div>');
+                    
+                    // Step 6: ML Model Detection
+                    stepStartTime = Date.now();
+                    updateStep(6, 'processing', '🔄 Running ML detection...');
+                    await sleep(150);
+                    
+                    const mlBlocked = result.waf_result.detection_method === 'ML' && result.waf_result.is_malicious;
+                    
+                    if (mlBlocked) {
+                        updateStep(6, 'blocked', '🚨 ANOMALY DETECTED');
+                        updateStepTime(6, Date.now() - stepStartTime);
+                        updateStepDetails(6, `<div style="color: #dc3545; font-weight: 600;">ML model detected anomaly!</div>
+                                             <div class="detail-row"><span class="detail-label">Anomaly Score:</span><span class="detail-value">${result.waf_result.anomaly_score.toFixed(4)}</span></div>
+                                             <div class="detail-row"><span class="detail-label">Threat Type:</span><span class="detail-value">${result.waf_result.threat_type}</span></div>`);
+                    } else {
+                        updateStep(6, 'success', '✅ No anomaly detected');
+                        updateStepTime(6, Date.now() - stepStartTime);
+                        updateStepDetails(6, `<div style="color: #28a745;">Request appears benign</div>
+                                             <div class="detail-row"><span class="detail-label">Anomaly Score:</span><span class="detail-value">${result.waf_result.anomaly_score.toFixed(4)}</span></div>`);
+                    }
+                    
+                    // Step 7: Final Decision
+                    stepStartTime = Date.now();
+                    updateStep(7, 'processing', '🔄 Generating final decision...');
+                    await sleep(50);
+                    
+                    if (result.waf_result.is_malicious) {
+                        updateStep(7, 'blocked', '🚨 REQUEST BLOCKED');
+                        updateStepDetails(7, `<div style="color: #dc3545; font-weight: 600; font-size: 1.1em;">REQUEST BLOCKED</div>
+                                             <div class="detail-row"><span class="detail-label">Confidence:</span><span class="detail-value">${result.waf_result.confidence.toFixed(1)}%</span></div>
+                                             <div class="detail-row"><span class="detail-label">Detection:</span><span class="detail-value">${result.waf_result.detection_method}</span></div>`);
+                    } else {
+                        updateStep(7, 'success', '✅ REQUEST ALLOWED');
+                        updateStepDetails(7, `<div style="color: #28a745; font-weight: 600; font-size: 1.1em;">REQUEST ALLOWED</div>
+                                             <div class="detail-row"><span class="detail-label">Confidence:</span><span class="detail-value">${result.waf_result.confidence.toFixed(1)}%</span></div>
+                                             <div class="detail-row"><span class="detail-label">Risk Level:</span><span class="detail-value">${result.waf_result.risk_level}</span></div>`);
+                    }
+                    updateStepTime(7, Date.now() - stepStartTime);
+                }
+                
+                // Update total time
+                const totalTime = Date.now() - startTime;
+                document.getElementById('totalTime').innerText = `⚡ Total: ${totalTime}ms`;
+                
+                // Display result in results section
+                displayTestResult(result);
+                
+            } catch (error) {
+                console.error('Test failed:', error);
+                alert('Test failed: ' + error.message);
+            } finally {
+                // Re-enable test button
+                testButton.disabled = false;
+                testButton.innerText = '🚀 Test Request';
+            }
+        }
+        
+        function resetPipeline() {
+            for (let i = 1; i <= 7; i++) {
+                const step = document.getElementById(`step${i}`);
+                step.className = 'pipeline-step';
+                updateStep(i, 'waiting', '⏳ Waiting...');
+                updateStepTime(i, 0);
+                updateStepDetails(i, '');
+            }
+            document.getElementById('totalTime').innerText = '⚡ Total: 0ms';
+        }
+        
+        function updateStep(stepNum, status, message) {
+            const statusElement = document.getElementById(`status${stepNum}`);
+            const stepElement = document.getElementById(`step${stepNum}`);
+            
+            statusElement.innerText = message;
+            statusElement.className = `step-status ${status}`;
+            
+            // Update step container class
+            stepElement.className = 'pipeline-step';
+            if (status === 'processing') {
+                stepElement.classList.add('processing');
+            } else if (status === 'success') {
+                stepElement.classList.add('completed');
+            } else if (status === 'blocked' || status === 'failed') {
+                stepElement.classList.add('blocked');
+            }
+        }
+        
+        function updateStepTime(stepNum, timeMs) {
+            const timeElement = document.getElementById(`time${stepNum}`);
+            timeElement.innerText = `⏱️ ${timeMs}ms`;
+        }
+        
+        function updateStepDetails(stepNum, html) {
+            const detailsElement = document.getElementById(`details${stepNum}`);
+            detailsElement.innerHTML = html;
+        }
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.innerText = text;
+            return div.innerHTML;
         }
         
         function displayTestResult(result) {
@@ -1639,6 +2489,12 @@ HTML_TEMPLATE = """
 # FLASK ROUTES
 # ============================================================================
 
+@app.route('/isro_logo.jpg')
+def serve_logo():
+    """Serve the ISRO logo"""
+    from flask import send_file
+    return send_file('isro_logo.jpg', mimetype='image/jpeg')
+
 @app.route('/')
 def index():
     """Main UI"""
@@ -1647,14 +2503,23 @@ def index():
 @app.route('/api/test-curl', methods=['POST'])
 def api_test_curl():
     """Test a curl command"""
-    data = request.json
-    curl_cmd = data.get('curl_command', '')
-    
-    if not curl_cmd:
-        return jsonify({'error': 'No curl command provided'}), 400
-    
-    result = execute_curl_test(curl_cmd)
-    return jsonify(result)
+    try:
+        data = request.json
+        if not data:
+            return jsonify({'error': 'No JSON data provided'}), 400
+        
+        curl_cmd = data.get('curl_command', '')
+        
+        if not curl_cmd:
+            return jsonify({'error': 'No curl command provided'}), 400
+        
+        result = execute_curl_test(curl_cmd)
+        return jsonify(result)
+    except Exception as e:
+        print(f"❌ Error in api_test_curl: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 @app.route('/api/monitoring/start', methods=['POST'])
 def api_start_monitoring():
