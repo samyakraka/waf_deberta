@@ -1422,7 +1422,6 @@ HTML_TEMPLATE = """
                 <div class="examples">
                     <h4>📋 Example Payloads:</h4>
                     <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/login?user=admin&pass=test123"</div>
-                    <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/search?q=test' OR '1'='1"</div>
                     <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/file?path=../../etc/passwd"</div>
                     <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/api/users?id=1; DROP TABLE users--"</div>
                     <div class="example-item" onclick="document.getElementById('curlInput').value = this.innerText">curl "http://localhost:8080/page?name=&lt;script&gt;alert('XSS')&lt;/script&gt;"</div>
@@ -2684,6 +2683,34 @@ def api_admin_attack_stats():
     
     stats = signature_manager.get_stats()
     return jsonify(stats)
+
+@app.route('/api/admin/reload-rules', methods=['POST'])
+def api_admin_reload_rules():
+    """Reload rules from Redis without restarting the server"""
+    global compiled_rules
+    
+    try:
+        old_count = sum(len(patterns) for patterns in compiled_rules.values())
+        
+        # Reconnect to Redis and reload all rules
+        print("🔄 Reloading rules from Redis...")
+        initialize_redis_rules()
+        
+        new_count = sum(len(patterns) for patterns in compiled_rules.values())
+        added = new_count - old_count
+        
+        print(f"✅ Rules reloaded: {old_count} → {new_count} (+{added})")
+        
+        return jsonify({
+            'success': True,
+            'old_count': old_count,
+            'new_count': new_count,
+            'added': added,
+            'categories': {cat: len(patterns) for cat, patterns in compiled_rules.items()}
+        })
+    except Exception as e:
+        print(f"❌ Failed to reload rules: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/admin/approve-signatures', methods=['POST'])
 def api_admin_approve_signatures():
