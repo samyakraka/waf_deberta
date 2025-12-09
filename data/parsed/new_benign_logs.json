@@ -214,5 +214,1927 @@
       "headers": {},
       "body": null
     }
+  },
+  {
+    "timestamp": "2025-12-09T15:54:55.338760",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:55:00.488140",
+    "request": {
+      "method": "POST",
+      "path": "/vulnerabilities/xss_r/",
+      "query": {},
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+        "Cookie": "security=low; PHPSESSID=cbb312abc2133ffd54bfdc4beeedafb6",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Referer": "http://dvwa.local/vulnerabilities/"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:35:59.328727",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:36:03.694923",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:46:18.366495",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:46:43.980579",
+    "request": {
+      "method": "GET",
+      "path": "/products",
+      "query": {
+        "id": "42"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:47:01.706271",
+    "request": {
+      "method": "POST",
+      "path": "/api/register",
+      "query": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:47:52.606293",
+    "request": {
+      "method": "POST",
+      "path": "/api/upload",
+      "query": {},
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:49:33.412404",
+    "request": {
+      "method": "GET",
+      "path": "/login.php",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T16:51:11.277916",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTgF2A.l-guEWeoT9BlM9suKr1Ec2aI__U"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:28.909509",
+    "request": {
+      "method": "GET",
+      "path": "/vendor.js",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:29.575199",
+    "request": {
+      "method": "GET",
+      "path": "/polyfills.js",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:30.239641",
+    "request": {
+      "method": "GET",
+      "path": "/main.js",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:31.569346",
+    "request": {
+      "method": "GET",
+      "path": "/styles.css",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:32.260721",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vHcb"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:32.920802",
+    "request": {
+      "method": "GET",
+      "path": "/rest/admin/application-configuration",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:33.567514",
+    "request": {
+      "method": "GET",
+      "path": "/rest/user/whoami",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:34.238751",
+    "request": {
+      "method": "GET",
+      "path": "/rest/admin/application-version",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:35.540684",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "websocket",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:36.196296",
+    "request": {
+      "method": "GET",
+      "path": "/rest/admin/application-configuration",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:36.848194",
+    "request": {
+      "method": "GET",
+      "path": "/rest/user/whoami",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:37.495397",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/JuiceShop_Logo.png",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:38.175987",
+    "request": {
+      "method": "GET",
+      "path": "/rest/admin/application-version",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:38.853948",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vHeu",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "2"
+      },
+      "body": "40"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:39.500384",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vHez",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:40.855973",
+    "request": {
+      "method": "GET",
+      "path": "/rest/admin/application-configuration",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:41.513870",
+    "request": {
+      "method": "GET",
+      "path": "/rest/products/search",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:42.174798",
+    "request": {
+      "method": "GET",
+      "path": "/api/Challenges/",
+      "query": {
+        "name": "Score Board"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:42.841166",
+    "request": {
+      "method": "GET",
+      "path": "/api/Quantitys/",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:43.502419",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/apple_juice.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:44.186140",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/artwork2.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:44.962740",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/apple_pressings.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:45.981643",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/banana_juice.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:46.879971",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/carrot_juice.jpeg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:47.629157",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/eggfruit_juice.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:48.406647",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/fruit_press.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:49.090512",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/green_smoothie.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:49.788142",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/permafrost.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:50.468574",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/lemon_juice.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:51.184614",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/melon_bike.jpeg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:51.854571",
+    "request": {
+      "method": "GET",
+      "path": "/assets/public/images/products/fan_facemask.jpg",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:52.529964",
+    "request": {
+      "method": "GET",
+      "path": "/api/Challenges/",
+      "query": {
+        "name": "Score Board"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:53.215888",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vHj9",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:05:53.913042",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vNjO",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:06:18.172865",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vNjO.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:06:18.796908",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vTq9",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:06:43.354193",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vTqA",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:06:44.084591",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vZx0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:08.285551",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vZx1",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:08.938492",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vg1q",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:33.202277",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vg1q.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:33.855387",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vm8d",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:58.262595",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vm8e",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:07:58.901635",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vsFX",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:08:23.196642",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vsFX.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:08:23.859970",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vyMJ",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:08:48.348746",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2vyMJ.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:08:48.984192",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w2T6",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:09:13.323796",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w2T7",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:09:14.004289",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w8Zv",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:09:38.440883",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w8Zw",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:09:39.173073",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wEgj",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:03.325636",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wEgj.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:04.029884",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wKnU",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:28.320150",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wKnU.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:28.954959",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wQuH",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:53.344022",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wQuH.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:10:54.031954",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wW_3",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:11:18.415277",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wW_4",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:11:19.092298",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wd5r",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:11:43.333442",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wd5s",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:11:44.017076",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wjCd",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:08.373361",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wjCe",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:09.023048",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wpJO",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:33.857859",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:34.147907",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wpJP",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:34.936140",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wvQ9",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:58.480598",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2wvQ9.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:12:59.170659",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w_Wu",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:23.414752",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2w_Wu.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:24.159769",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2x5df",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:48.474197",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2x5dg",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:49.205263",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xBkQ",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:56.182512",
+    "request": {
+      "method": "GET",
+      "path": "/login.php",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:13:59.759705",
+    "request": {
+      "method": "GET",
+      "path": "/login.php",
+      "query": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "-",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:14:13.370371",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xBkQ.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:14:14.085373",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xHrA",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:14:38.498162",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xHrA.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:14:39.210186",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xNxz",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:03.494521",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xNx-",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:04.337684",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xU2l",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:28.522189",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xU2m",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:29.240349",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xa9X",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:53.531443",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xa9Y",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:15:54.368060",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xgGK",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:16:18.499933",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xgGL",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:16:19.340156",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xmN6",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:16:43.424070",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xmN7",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:16:44.139240",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xsTs",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:08.620389",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xsTs.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:09.352956",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xyaf",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:33.427562",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2xyaf.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:34.103623",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2y2hR",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:58.802050",
+    "request": {
+      "method": "GET",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2y2hR.0",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "-",
+        "content-length": "-"
+      },
+      "body": "-"
+    }
+  },
+  {
+    "timestamp": "2025-12-09T17:17:59.499629",
+    "request": {
+      "method": "POST",
+      "path": "/socket.io/",
+      "query": {
+        "EIO": "4",
+        "transport": "polling",
+        "t": "Pi2y8oM",
+        "sid": "AfCzXJFSHv0gcWlJAAAA"
+      },
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "referer": "http://localhost:8090/",
+        "content-type": "text/plain;charset=UTF-8",
+        "content-length": "1"
+      },
+      "body": "3"
+    }
   }
 ]

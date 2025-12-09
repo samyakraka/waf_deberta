@@ -556,7 +556,7 @@ def catch_all(path):
 # Detector Initialization
 # ============================
 def initialize_detector(
-    model_path: str = "models/deberta-waf/best_model",
+    model_path: str = "models_30k/deberta-waf/best_model",
     calibration_file: str = "data/parsed/parsed_requests.json",
     threshold_percentile: float = 85.0
 ):
@@ -603,7 +603,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Enhanced Hierarchical Hybrid WAF Server')
     parser.add_argument('--port', type=int, default=8080, help='Port to run server on')
-    parser.add_argument('--model-path', type=str, default='models/deberta-waf/best_model', help='Path to trained model')
+    parser.add_argument('--model-path', type=str, default='models_30k/deberta-waf/best_model', help='Path to trained model')
     parser.add_argument('--calibration-file', type=str, default='data/parsed/parsed_requests.json', help='Path to calibration data')
     parser.add_argument('--threshold', type=float, default=85.0, help='Detection threshold percentile (lower=more sensitive)')
     parser.add_argument('--no-block', action='store_true', help='Disable request blocking (log only)')

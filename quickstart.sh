@@ -35,10 +35,10 @@ else
 fi
 
 # Check model
-if [ -d "models/deberta-waf/best_model" ]; then
+if [ -d "models_30k/deberta-waf/best_model" ]; then
     echo "✓ WAF model found"
 else
-    echo "⚠ WAF model not found at models/deberta-waf/best_model"
+    echo "⚠ WAF model not found at models_30k/deberta-waf/best_model"
     echo "  You may need to train the model first"
 fi
 
@@ -57,7 +57,7 @@ echo "   # Activate Python environment (if using venv)"
 echo "   source wafenv/bin/activate"
 echo
 echo "   # Start real-time monitoring"
-echo "   python3 realtime_waf_monitor.py --model models/deberta-waf/best_model"
+echo "   python3 realtime_waf_monitor.py --model models_30k/deberta-waf/best_model"
 echo
 echo "3. Stop everything:"
 echo "   ./stop_waf_system.sh"

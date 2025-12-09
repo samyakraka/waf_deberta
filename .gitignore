@@ -29,3 +29,4 @@ nginx/logs/
 .DS_Store/
 model/
 models_out/
+models_30k/

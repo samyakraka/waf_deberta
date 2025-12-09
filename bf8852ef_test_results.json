@@ -1,0 +1,49 @@
+{
+  "dataset": "bf8852ef.csv",
+  "total_samples": 1000,
+  "threshold": 3.65,
+  "metrics": {
+    "accuracy": 0.901,
+    "precision": 1.0,
+    "recall": 0.901,
+    "f1_score": 0.9479221462388217,
+    "false_positive_rate": 0.0
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0
+    ],
+    [
+      99,
+      901
+    ]
+  ],
+  "label_distribution": {
+    "benign": 0,
+    "malicious": 1000
+  },
+  "anomaly_type_distribution": {
+    "sqli": 154,
+    "jwt_manipulation": 106,
+    "ssrf": 101,
+    "nosql_injection": 93,
+    "file_upload": 83,
+    "command_injection": 80,
+    "csrf": 75,
+    "xss": 73,
+    "spel_injection": 62,
+    "xxe": 61,
+    "path_traversal": 58,
+    "dom_xss": 54
+  },
+  "loss_statistics": {
+    "malicious": {
+      "mean": 8.169903014952608,
+      "std": 3.190370170889356,
+      "median": 8.812881469726562,
+      "min": 0.0003358753747306764,
+      "max": 15.395772933959961
+    }
+  }
+}

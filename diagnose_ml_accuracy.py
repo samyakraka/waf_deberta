@@ -667,7 +667,7 @@ def main():
     parser = argparse.ArgumentParser(description="ML Model Accuracy Diagnostic Tool")
     parser.add_argument(
         '--model',
-        default='models/deberta-waf/best_model',
+        default='models_30k/deberta-waf/best_model',
         help='Path to trained model'
     )
     parser.add_argument(

@@ -348,7 +348,7 @@ def main():
     parser.add_argument(
         '--model',
         type=str,
-        default='models/deberta-waf/best_model',
+        default='models_30k/deberta-waf/best_model',
         help='Path to trained WAF model directory'
     )
     parser.add_argument(

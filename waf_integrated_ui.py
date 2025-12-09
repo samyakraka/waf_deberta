@@ -1548,7 +1548,7 @@ HTML_TEMPLATE = """
                 <img src="isro_logo.jpg" alt="ISRO Logo" class="isro-logo">
                 <div class="header-title">
                     <h1>ISRO WAF Security Platform</h1>
-                    <p>400+ Redis Rules → ML Detection | Real-time Log Analysis | Advanced Threat Protection</p>
+                    <p>400+ Redis Rules → Transformer based Detection | Real-time Log Analysis | Advanced Threat Protection</p>
                 </div>
             </div>
             <div class="header-right">
@@ -1717,7 +1717,7 @@ HTML_TEMPLATE = """
             </div>
             
             <div class="section">
-                <h2>Hit Ratio: Rule vs ML Detection</h2>
+                <h2>Hit Ratio: Rule vs</h2>
                 <div id="hitRatioStats"></div>
             </div>
             
@@ -1734,7 +1734,7 @@ HTML_TEMPLATE = """
         
         <div id="incremental" class="tab-content">
             <div class="section">
-                <h2>Incremental Training Status</h2>
+                <h2>Increment Transformer Detectional Training Status</h2>
                 <div class="stats" id="incrementalStats"></div>
             </div>
             
@@ -1812,7 +1812,7 @@ HTML_TEMPLATE = """
                     <p style="margin-bottom: 8px;">• <strong>Pattern Extraction:</strong> The system analyzes attack logs and extracts signature patterns</p>
                     <p style="margin-bottom: 8px;">• <strong>Admin Review:</strong> You can review extracted signatures and select which ones to add to Redis</p>
                     <p style="margin-bottom: 8px;">• <strong>Redis Update:</strong> Approved signatures are pushed to Redis, enhancing rule-based detection</p>
-                    <p>• <strong>Continuous Improvement:</strong> This creates a feedback loop where ML detections improve rule-based detection</p>
+                    <p>• <strong>Continuous Improvement:</strong> This creates a feedback loop where Transformer detections improve rule-based detection</p>
                 </div>
             </div>
         </div>
@@ -2000,7 +2000,7 @@ HTML_TEMPLATE = """
                     
                     // Step 6: ML Model Detection
                     stepStartTime = Date.now();
-                    updateStep(6, 'processing', '🔄 Running ML detection...');
+                    updateStep(6, 'processing', '🔄 Running Transformer detection...');
                     await sleep(150);
                     
                     const mlBlocked = result.waf_result.detection_method === 'ML' && result.waf_result.is_malicious;
@@ -2262,7 +2262,7 @@ HTML_TEMPLATE = """
                     </div>
                     <div class="hit-ratio-stat">
                         <h3 class="ml-color">${mlCount}</h3>
-                        <p>🤖 ML DETECTIONS</p>
+                        <p>🤖 TRANSFORMER DETECTIONS</p>
                     </div>
                 </div>
                 
@@ -3181,7 +3181,7 @@ def catch_all(path):
 # ============================================================================
 
 def initialize_waf(
-    model_path: str = "models/deberta-waf/best_model",
+    model_path: str = "models_30k/deberta-waf/best_model",
     calibration_file: str = "data/parsed/parsed_requests.json",
     incremental_trigger_count: int = 200,
     incremental_epochs: int = 2,
@@ -3265,7 +3265,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description='Integrated WAF Testing & Monitoring UI')
     parser.add_argument('--port', type=int, default=5000, help='Port for web UI')
-    parser.add_argument('--model-path', type=str, default='models/deberta-waf/best_model')
+    parser.add_argument('--model-path', type=str, default='models_30k/deberta-waf/best_model')
     parser.add_argument('--calibration-file', type=str, default='data/parsed/parsed_requests.json')
     parser.add_argument('--incremental-trigger', type=int, default=200, help='Number of logs to trigger incremental training')
     parser.add_argument('--incremental-epochs', type=int, default=2, help='Number of epochs for incremental training')

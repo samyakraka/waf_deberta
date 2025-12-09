@@ -25,7 +25,7 @@ DEFAULT_CONFIG = TrainingConfig(
     save_steps=1000,
     eval_steps=500,
     logging_steps=100,
-    output_dir="models/deberta-waf",
+    output_dir="models_30k/deberta-waf",
     use_mps=True,
     seed=42
 )
@@ -40,7 +40,7 @@ FAST_CONFIG = TrainingConfig(
     num_epochs=3,
     warmup_steps=200,
     gradient_accumulation_steps=1,
-    output_dir="models/deberta-waf-fast",
+    output_dir="models_30k/deberta-waf-fast",
     use_mps=True
 )
 

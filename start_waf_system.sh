@@ -25,7 +25,7 @@ fi
 echo -e "${GREEN}✓ Docker is running${NC}"
 
 # Check if model exists
-MODEL_PATH="models/deberta-waf/best_model"
+MODEL_PATH="models_30k/deberta-waf/best_model"
 if [ ! -d "$MODEL_PATH" ]; then
     echo -e "${YELLOW}⚠ Warning: Model not found at $MODEL_PATH${NC}"
     echo -e "${YELLOW}  You may need to train the model first.${NC}"

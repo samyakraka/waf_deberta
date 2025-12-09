@@ -33,7 +33,7 @@ detection_log = []
 
 
 def initialize_detector(
-    model_path: str = "models/deberta-waf/best_model",
+    model_path: str = "models_30k/deberta-waf/best_model",
     calibration_file: str = "data/parsed/parsed_requests.json",
     threshold_percentile: float = 80.0  # CHANGED: Lower threshold for better detection (was 95.0)
 ):
@@ -312,7 +312,7 @@ def main():
     
     parser.add_argument(
         '--model',
-        default='models/deberta-waf/best_model',
+        default='models_30k/deberta-waf/best_model',
         help='Path to trained model'
     )
     

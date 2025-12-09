@@ -1,1 +1,146 @@
-[]
+[
+  {
+    "timestamp": "2025-12-09T16:49:32.705523",
+    "method": "GET",
+    "path": "/",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "-",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 32.530866707520374,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:05:28.223509",
+    "method": "GET",
+    "path": "/",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "-",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 32.530866707520374,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:05:30.922176",
+    "method": "GET",
+    "path": "/runtime.js",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "http://localhost:8090/",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 30.893393234415075,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:05:34.895739",
+    "method": "GET",
+    "path": "/MaterialIcons-Regular.woff2",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "http://localhost:8090/styles.css",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 31.382210788507997,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:05:40.167444",
+    "method": "GET",
+    "path": "/rest/languages",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "http://localhost:8090/",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 32.0339281388571,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:13:55.495355",
+    "method": "GET",
+    "path": "/",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "-",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 32.530866707520374,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:13:59.067490",
+    "method": "GET",
+    "path": "/",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "-",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 32.530866707520374,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  },
+  {
+    "timestamp": "2025-12-09T17:14:04.222775",
+    "method": "GET",
+    "path": "/WebGoat/registration",
+    "query": {},
+    "headers": {
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+      "referer": "-",
+      "content-type": "-",
+      "content-length": "-"
+    },
+    "body": "-",
+    "detection_method": "ML",
+    "threat_type": "Anomaly",
+    "confidence": 30.955059109210495,
+    "risk_level": "LOW",
+    "matched_patterns": []
+  }
+]

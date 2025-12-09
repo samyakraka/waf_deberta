@@ -45,8 +45,8 @@ class IncrementalModelManager:
     def __init__(
         self,
         new_logs_file: str = "data/parsed/new_benign_logs.json",
-        model_path: str = "models/deberta-waf/best_model",
-        output_dir: str = "models/deberta-waf",
+        model_path: str = "models_30k/deberta-waf/best_model",
+        output_dir: str = "models_30k/deberta-waf",
         trigger_count: int = 200,
         training_epochs: int = 2,
         auto_train: bool = True
