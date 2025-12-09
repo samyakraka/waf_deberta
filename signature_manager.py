@@ -114,6 +114,7 @@ class SignatureManager:
             # ENHANCED: For Anomaly type, try to classify based on request characteristics
             if threat_type == 'Anomaly':
                 category = self._classify_anomaly(headers, path, query, body, method)
+                print(f"🔍 Classified anomaly as: {category}")
             
             # ENHANCED: Extract patterns from headers first (critical for HTTP smuggling, etc.)
             if isinstance(headers, dict):
@@ -121,6 +122,7 @@ class SignatureManager:
                 for hp_category, hp_pattern in header_patterns:
                     if hp_pattern:
                         signatures[hp_category].add(hp_pattern)
+                        print(f"✅ Extracted header pattern for {hp_category}")
             
             # Extract patterns from query parameters
             if isinstance(query, dict):
@@ -131,18 +133,29 @@ class SignatureManager:
                         pattern = self._extract_pattern_from_value(val_str)
                         if pattern:
                             signatures[category].add(pattern)
+                            print(f"✅ Extracted query pattern for {category}: {pattern[:50]}...")
             
             # Extract patterns from body
             if body:
                 pattern = self._extract_pattern_from_value(str(body))
                 if pattern:
                     signatures[category].add(pattern)
+                    print(f"✅ Extracted body pattern for {category}")
             
-            # Extract patterns from path
-            if path and any(sus in path.lower() for sus in ['../', '.\\', 'etc/', 'passwd', 'shadow']):
-                pattern = self._extract_pattern_from_value(path)
-                if pattern:
-                    signatures['path_traversal_patterns'].add(pattern)
+            # Extract patterns from path (ENHANCED: also extract simple suspicious paths)
+            if path:
+                # Check for path traversal
+                if any(sus in path.lower() for sus in ['../', '.\\', 'etc/', 'passwd', 'shadow']):
+                    pattern = self._extract_pattern_from_value(path)
+                    if pattern:
+                        signatures['path_traversal_patterns'].add(pattern)
+                        print(f"✅ Extracted path traversal pattern")
+                # For anomalies, also extract the path itself as a pattern
+                elif threat_type == 'Anomaly' and len(path) > 1:
+                    # Create a simple path pattern for suspicious requests
+                    path_pattern = re.escape(path)
+                    signatures[category].add(path_pattern)
+                    print(f"✅ Extracted anomaly path pattern: {path}")
         
         # Convert sets to lists for JSON serialization
         return {k: list(v) for k, v in signatures.items()}
@@ -291,8 +304,9 @@ class SignatureManager:
         # Make whitespace flexible
         pattern = re.sub(r'\\\s+', r'\\s+', pattern)
         
-        # Only return if pattern is meaningful (not too short or too simple)
-        if len(pattern) > 10:
+        # LOWERED THRESHOLD: Return pattern if it's at least 3 chars (was 10)
+        # This allows simple anomaly patterns to be extracted
+        if len(pattern) >= 3:
             return pattern
         
         return None

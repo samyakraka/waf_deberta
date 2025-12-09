@@ -28,3 +28,4 @@ wafenv/
 nginx/logs/
 .DS_Store/
 model/
+models_out/

@@ -290,6 +290,7 @@ def hierarchical_detect(request_dict: dict):
             self.text_sequence = None
             self.token_count = 0
             self.processing_details = {}
+            self.inference_time_ms = 0.0
 
     res = ResultObj()
     
@@ -319,7 +320,9 @@ def hierarchical_detect(request_dict: dict):
     res.text_sequence = " ".join(parts)
     
     # Rule-based check first
+    rule_start = time.time()
     rule_triggered, threat_type, matched_patterns = check_rule_based_threats(request_dict)
+    rule_time_ms = (time.time() - rule_start) * 1000
     
     if rule_triggered:
         conf, risk = compute_rule_confidence(matched_patterns)
@@ -329,15 +332,19 @@ def hierarchical_detect(request_dict: dict):
         res.detection_method = "RULE"
         res.threat_type = threat_type
         res.matched_patterns = matched_patterns
+        res.inference_time_ms = rule_time_ms
         res.processing_details['rule_check'] = {
             'patterns_matched': len(matched_patterns),
-            'threat_categories': list(set([m[0] if isinstance(m, tuple) else str(m).split(':')[0] for m in matched_patterns[:5]]))
+            'threat_categories': list(set([m[0] if isinstance(m, tuple) else str(m).split(':')[0] for m in matched_patterns[:5]])),
+            'inference_time_ms': rule_time_ms
         }
         return res
     
     # ML detection if rules don't flag
     if detector is not None:
+        ml_start = time.time()
         ml_result = detector.detect(request_dict)
+        ml_time_ms = (time.time() - ml_start) * 1000
         res.is_malicious = ml_result.is_malicious
         res.confidence = ml_result.confidence
         res.risk_level = ml_result.risk_level
@@ -345,9 +352,11 @@ def hierarchical_detect(request_dict: dict):
         res.anomaly_score = ml_result.anomaly_score
         res.detection_method = "ML"
         res.threat_type = "Anomaly" if ml_result.is_malicious else "None"
+        res.inference_time_ms = ml_time_ms
         
         # Add ML processing details
         res.processing_details['ml_detection'] = {
+            'inference_time_ms': ml_time_ms,
             'reconstruction_loss': float(ml_result.reconstruction_loss),
             'anomaly_score': float(ml_result.anomaly_score),
             'model': 'DeBERTa-v3-small'
@@ -508,6 +517,7 @@ def monitor_log_file(app_name: str, log_file: str):
                     'risk_level': result.risk_level,
                     'detection_method': result.detection_method,
                     'threat_type': result.threat_type,
+                    'inference_time_ms': result.inference_time_ms if hasattr(result, 'inference_time_ms') else 0.0,
                 }
                 log_monitor_results.append(result_entry)
                 
@@ -636,6 +646,7 @@ def execute_curl_test(curl_cmd: str, target_url: str = "http://localhost:8080") 
             'threat_type': result.threat_type,
             'anomaly_score': result.anomaly_score,
             'matched_patterns': result.matched_patterns[:5] if hasattr(result, 'matched_patterns') else [],
+            'inference_time_ms': result.inference_time_ms if hasattr(result, 'inference_time_ms') else 0.0,
         },
         'processing': {
             'normalized_request': result.normalized_request if hasattr(result, 'normalized_request') else request_dict,
@@ -1053,6 +1064,152 @@ HTML_TEMPLATE = """
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        
+        .hit-ratio-container {
+            margin-top: 30px;
+        }
+        
+        .hit-ratio-unified-bar {
+            position: relative;
+            height: 80px;
+            background: var(--bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid #e5e7eb;
+        }
+        
+        .hit-ratio-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+            transition: all 0.6s ease;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .hit-ratio-segment.rule-segment {
+            background: #ef4444;
+        }
+        
+        .hit-ratio-segment.ml-segment {
+            background: #3b82f6;
+        }
+        
+        .hit-ratio-legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .hit-ratio-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hit-ratio-legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+        }
+        
+        .hit-ratio-legend-color.rule-legend {
+            background: #ef4444;
+        }
+        
+        .hit-ratio-legend-color.ml-legend {
+            background: #3b82f6;
+        }
+        
+        .hit-ratio-legend-text {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .hit-ratio-bar {
+            position: relative;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .hit-ratio-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: white;
+            transition: width 0.6s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .hit-ratio-fill.rule-fill {
+            background: linear-gradient(135deg, var(--isro-navy), #1e3a8a);
+        }
+        
+        .hit-ratio-fill.ml-fill {
+            background: linear-gradient(135deg, var(--isro-blue), #2563eb);
+        }
+        
+        .hit-ratio-label {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-secondary);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .hit-ratio-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+        
+        .hit-ratio-stat {
+            text-align: center;
+        }
+        
+        .hit-ratio-stat h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+        }
+        
+        .hit-ratio-stat h3.rule-color {
+            color: var(--isro-navy);
+        }
+        
+        .hit-ratio-stat h3.ml-color {
+            color: var(--isro-blue);
+        }
+        
+        .hit-ratio-stat p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+            font-weight: 500;
         }
         
         .log-entry {
@@ -1560,6 +1717,16 @@ HTML_TEMPLATE = """
             </div>
             
             <div class="section">
+                <h2>Hit Ratio: Rule vs ML Detection</h2>
+                <div id="hitRatioStats"></div>
+            </div>
+            
+            <div class="section">
+                <h2>Mean Inference Time (ms)</h2>
+                <div id="inferenceTimeStats"></div>
+            </div>
+            
+            <div class="section">
                 <h2>Recent Detections</h2>
                 <div id="recentDetections" class="results"></div>
             </div>
@@ -1874,6 +2041,9 @@ HTML_TEMPLATE = """
                 const totalTime = Date.now() - startTime;
                 document.getElementById('totalTime').innerText = `⚡ Total: ${totalTime}ms`;
                 
+                // Add totalTime to result
+                result.total_time_ms = totalTime;
+                
                 // Display result in results section
                 displayTestResult(result);
                 
@@ -1959,6 +2129,7 @@ HTML_TEMPLATE = """
                 <p><strong>Confidence:</strong> ${result.waf_result.confidence.toFixed(1)}%</p>
                 <p><strong>Anomaly Score:</strong> ${result.waf_result.anomaly_score.toFixed(4)}</p>
                 <div class="log-entry"><code>${result.curl_command}</code></div>
+                ${result.total_time_ms ? `<p style="margin-top: 8px;"><strong>⚡ Total:</strong> ${result.total_time_ms}ms<br/><small style="color: #6c757d;">End-to-End Processing Time</small></p>` : ''}
             `;
             
             container.insertBefore(div, container.firstChild);
@@ -2069,6 +2240,164 @@ HTML_TEMPLATE = """
                     <strong>${count}</strong> detections
                 </div>
             `).join('');
+            
+            // Hit Ratio Stats
+            const ruleCount = (data.by_method['RULE'] || 0);
+            const mlCount = (data.by_method['ML'] || 0);
+            const totalDetections = ruleCount + mlCount;
+            
+            const rulePercentage = totalDetections > 0 ? (ruleCount / totalDetections * 100).toFixed(1) : 0;
+            const mlPercentage = totalDetections > 0 ? (mlCount / totalDetections * 100).toFixed(1) : 0;
+            
+            const hitRatioStats = document.getElementById('hitRatioStats');
+            hitRatioStats.innerHTML = `
+                <div class="hit-ratio-comparison">
+                    <div class="hit-ratio-stat">
+                        <h3 class="rule-color">${ruleCount}</h3>
+                        <p>🛡️ RULE DETECTIONS</p>
+                    </div>
+                    <div class="hit-ratio-stat">
+                        <h3 style="color: var(--text-secondary);">vs</h3>
+                        <p style="opacity: 0.6;">comparison</p>
+                    </div>
+                    <div class="hit-ratio-stat">
+                        <h3 class="ml-color">${mlCount}</h3>
+                        <p>🤖 ML DETECTIONS</p>
+                    </div>
+                </div>
+                
+                <div class="hit-ratio-container">
+                    <div class="hit-ratio-unified-bar">
+                        ${rulePercentage > 0 ? `
+                            <div class="hit-ratio-segment rule-segment" style="width: ${rulePercentage}%;">
+                                ${rulePercentage > 8 ? rulePercentage + '%' : ''}
+                            </div>
+                        ` : ''}
+                        ${mlPercentage > 0 ? `
+                            <div class="hit-ratio-segment ml-segment" style="width: ${mlPercentage}%;">
+                                ${mlPercentage > 8 ? mlPercentage + '%' : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="hit-ratio-legend">
+                        <div class="hit-ratio-legend-item">
+                            <div class="hit-ratio-legend-color rule-legend"></div>
+                            <div class="hit-ratio-legend-text">🛡️ RULE-BASED (${rulePercentage}%)</div>
+                        </div>
+                        <div class="hit-ratio-legend-item">
+                            <div class="hit-ratio-legend-color ml-legend"></div>
+                            <div class="hit-ratio-legend-text">🤖 ML-BASED (${mlPercentage}%)</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Inference Time Stats - Column Graph with Thin Lines
+            const timeSeriesData = [];
+            
+            data.recent.forEach((entry, index) => {
+                const time = entry.total_time_ms || entry.inference_time_ms || 0;
+                const method = entry.detection_method;
+                if (method === 'RULE' || method === 'ML') {
+                    timeSeriesData.push({
+                        index: index,
+                        time: time,
+                        method: method,
+                        timestamp: entry.timestamp
+                    });
+                }
+            });
+            
+            // Calculate overall average from all hits
+            const allTimes = timeSeriesData.map(d => d.time);
+            const overallAvg = allTimes.length > 0 ? (allTimes.reduce((a, b) => a + b, 0) / allTimes.length).toFixed(2) : 0;
+            
+            // Find max time for scaling
+            const maxTime = Math.max(...allTimes, parseFloat(overallAvg), 100);
+            
+            // Generate SVG graph
+            const graphWidth = 900;
+            const graphHeight = 300;
+            const padding = 50;
+            const plotWidth = graphWidth - 2 * padding;
+            const plotHeight = graphHeight - 2 * padding;
+            
+            // Calculate bar width (thin lines)
+            const barWidth = Math.max(2, Math.min(8, plotWidth / timeSeriesData.length));
+            const spacing = plotWidth / (timeSeriesData.length || 1);
+            
+            // Generate thin column bars
+            let columnBars = '';
+            timeSeriesData.forEach((d, idx) => {
+                const x = padding + idx * spacing;
+                const barHeight = (d.time / maxTime) * plotHeight;
+                const y = graphHeight - padding - barHeight;
+                const color = d.method === 'RULE' ? '#ef4444' : '#3b82f6';
+                
+                columnBars += `<rect x="${x - barWidth/2}" y="${y}" width="${barWidth}" height="${barHeight}" fill="${color}" opacity="0.8"/>`;
+            });
+            
+            // Overall average line
+            const avgY = graphHeight - padding - (parseFloat(overallAvg) / maxTime) * plotHeight;
+            
+            const inferenceTimeStats = document.getElementById('inferenceTimeStats');
+            inferenceTimeStats.innerHTML = `
+                <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                    <svg width="${graphWidth}" height="${graphHeight}" style="display: block; margin: 0 auto;">
+                        <!-- Grid lines -->
+                        <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${graphHeight - padding}" stroke="#e5e7eb" stroke-width="2"/>
+                        <line x1="${padding}" y1="${graphHeight - padding}" x2="${graphWidth - padding}" y2="${graphHeight - padding}" stroke="#e5e7eb" stroke-width="2"/>
+                        
+                        <!-- Horizontal grid lines -->
+                        <line x1="${padding}" y1="${padding + plotHeight * 0.25}" x2="${graphWidth - padding}" y2="${padding + plotHeight * 0.25}" stroke="#f3f4f6" stroke-width="1"/>
+                        <line x1="${padding}" y1="${padding + plotHeight * 0.5}" x2="${graphWidth - padding}" y2="${padding + plotHeight * 0.5}" stroke="#f3f4f6" stroke-width="1"/>
+                        <line x1="${padding}" y1="${padding + plotHeight * 0.75}" x2="${graphWidth - padding}" y2="${padding + plotHeight * 0.75}" stroke="#f3f4f6" stroke-width="1"/>
+                        
+                        <!-- Y-axis labels -->
+                        <text x="${padding - 10}" y="${padding + 5}" text-anchor="end" font-size="12" fill="#6b7280">${maxTime.toFixed(0)}ms</text>
+                        <text x="${padding - 10}" y="${padding + plotHeight * 0.25 + 5}" text-anchor="end" font-size="12" fill="#6b7280">${(maxTime * 0.75).toFixed(0)}ms</text>
+                        <text x="${padding - 10}" y="${padding + plotHeight * 0.5 + 5}" text-anchor="end" font-size="12" fill="#6b7280">${(maxTime * 0.5).toFixed(0)}ms</text>
+                        <text x="${padding - 10}" y="${padding + plotHeight * 0.75 + 5}" text-anchor="end" font-size="12" fill="#6b7280">${(maxTime * 0.25).toFixed(0)}ms</text>
+                        <text x="${padding - 10}" y="${graphHeight - padding + 5}" text-anchor="end" font-size="12" fill="#6b7280">0ms</text>
+                        
+                        <!-- Column bars (thin lines) -->
+                        ${columnBars}
+                        
+                        <!-- Overall average line -->
+                        ${allTimes.length > 0 ? `
+                            <line x1="${padding}" y1="${avgY}" x2="${graphWidth - padding}" y2="${avgY}" 
+                                  stroke="#10b981" stroke-width="3" stroke-dasharray="8,4" opacity="0.9"/>
+                            <text x="${graphWidth - padding - 10}" y="${avgY - 8}" font-size="12" fill="#10b981" font-weight="700" text-anchor="end">
+                                Overall Avg: ${overallAvg}ms
+                            </text>
+                        ` : ''}
+                        
+                        <!-- Axis labels -->
+                        <text x="${graphWidth / 2}" y="${graphHeight - 5}" text-anchor="middle" font-size="14" fill="#374151" font-weight="600">
+                            Request Sequence
+                        </text>
+                        <text x="${padding - 35}" y="${graphHeight / 2}" text-anchor="middle" font-size="14" fill="#374151" font-weight="600" transform="rotate(-90, ${padding - 35}, ${graphHeight / 2})">
+                            End-to-End Time (ms)
+                        </text>
+                    </svg>
+                    
+                    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 4px; height: 20px; background: #ef4444; border-radius: 2px;"></div>
+                            <span style="font-size: 14px; color: #374151; font-weight: 600;">🛡️ RULE-BASED</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 4px; height: 20px; background: #3b82f6; border-radius: 2px;"></div>
+                            <span style="font-size: 14px; color: #374151; font-weight: 600;">🤖 ML-BASED</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 24px; height: 3px; background: #10b981; border-radius: 2px;"></div>
+                            <span style="font-size: 14px; color: #10b981; font-weight: 700;">Overall Average: ${overallAvg}ms (${allTimes.length} samples)</span>
+                        </div>
+                    </div>
+                </div>
+            `;
             
             // Recent detections
             const recentDetections = document.getElementById('recentDetections');
@@ -2564,6 +2893,9 @@ def api_stats():
                 'path': r['request']['path'],
                 'is_malicious': r['waf_result']['is_malicious'],
                 'risk_level': r['waf_result']['risk_level'],
+                'detection_method': r['waf_result'].get('detection_method', 'UNKNOWN'),
+                'inference_time_ms': r['waf_result'].get('inference_time_ms', 0.0),
+                'total_time_ms': r.get('total_time_ms', 0.0),
             })
     
     recent.sort(key=lambda x: x['timestamp'], reverse=True)

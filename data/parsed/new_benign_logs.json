@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2025-12-09T07:45:04.665585",
+    "timestamp": "2025-12-09T14:58:49.235822",
     "request": {
       "method": "GET",
       "path": "/favicon.ico",
@@ -19,8 +19,199 @@
         "Referer": "http://localhost:5001/",
         "Accept-Encoding": "gzip, deflate, br, zstd",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA; session=eyJhZG1pbl9hdXRoZW50aWNhdGVkIjp0cnVlfQ.aTcgog.mlUjeQTV_CNMOiO1Y3vdsqxeLsI"
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
       },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T14:58:54.041575",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:00:37.093152",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123787987vjhvj"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:05:13.987001",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:05:17.172359",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:09:38.220515",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:09:40.961624",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:17:05.567259",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:17:19.734596",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:22:28.944987",
+    "request": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": {},
+      "headers": {
+        "Host": "localhost:5001",
+        "Connection": "keep-alive",
+        "Sec-Ch-Ua-Platform": "\"macOS\"",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+        "Sec-Ch-Ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Dest": "image",
+        "Referer": "http://localhost:5001/",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Cookie": "_ga=GA1.1.1628509722.1759399740; _ga_HCDZGJY2LD=GS2.1.s1759476149$o4$g0$t1759476149$j60$l0$h0; welcomebanner_status=dismiss; language=en; grafana_session=cccf8855bdff6997453ab76bd7210d3c; grafana_session_expiry=1764380343; PHPSESSID=ovqb108efm7ihfkp8amvqjagr1; security=low; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjMsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAZ21haWwuY29tIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjUtMTEtMTggMTA6MTA6MTguODMwICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc2MzQ2MDYzNn0.WI0oiHJoQ_oAxhCKESb8X2-8_N-dUpIP094QjL6OovML3RznPx-V7NTn5Nz8jtIUe3cuyavU9C75Bg6d-NfHlGbsTUdOpdMLvGJnK191jJoCe_VqPC_payHSuusJr18wEtXfiNkDQHpcJKkMyiCX-h7q3Mo5hS1ngui40WdFnUA"
+      },
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:22:34.517684",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
+      "body": null
+    }
+  },
+  {
+    "timestamp": "2025-12-09T15:22:45.180593",
+    "request": {
+      "method": "GET",
+      "path": "/login",
+      "query": {
+        "user": "admin",
+        "pass": "test123"
+      },
+      "headers": {},
       "body": null
     }
   }
