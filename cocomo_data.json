@@ -1,0 +1,136 @@
+{
+  "generated_at": "2025-12-09T17:24:41.718892",
+  "workspace": "/Users/samyakraka/Documents/SIH25-WAF/waf_deberta",
+  "metrics": {
+    "total_lines": 5113686,
+    "source_lines": 2454381,
+    "comment_lines": 1833233,
+    "blank_lines": 826072,
+    "files_count": 10999,
+    "avg_lines_per_file": 464.9228111646513,
+    "max_lines_in_file": 25002,
+    "min_lines_in_file": 0
+  },
+  "estimates": {
+    "organic_junior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "organic",
+      "kloc": 2454.381,
+      "effort_pm": 10878.282528454174,
+      "development_time_months": 85.47378490886886,
+      "average_team_size": 127.27039688312001,
+      "productivity_loc_per_pm": 225.62210473759157,
+      "total_cost_usd": 54391412.64227087,
+      "cost_per_loc": 22.160949193410016,
+      "maintenance_cost_annual": 9246540.149186049
+    },
+    "organic_mid": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "organic",
+      "kloc": 2454.381,
+      "effort_pm": 10878.282528454174,
+      "development_time_months": 85.47378490886886,
+      "average_team_size": 127.27039688312001,
+      "productivity_loc_per_pm": 225.62210473759157,
+      "total_cost_usd": 87026260.22763339,
+      "cost_per_loc": 35.457518709456025,
+      "maintenance_cost_annual": 14794464.238697676
+    },
+    "organic_senior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "organic",
+      "kloc": 2454.381,
+      "effort_pm": 10878.282528454174,
+      "development_time_months": 85.47378490886886,
+      "average_team_size": 127.27039688312001,
+      "productivity_loc_per_pm": 225.62210473759157,
+      "total_cost_usd": 130539390.3414501,
+      "cost_per_loc": 53.186278064184044,
+      "maintenance_cost_annual": 22191696.358046517
+    },
+    "semi-detached_junior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "semi-detached",
+      "kloc": 2454.381,
+      "effort_pm": 23483.687127921545,
+      "development_time_months": 84.66583749072329,
+      "average_team_size": 277.3690997918094,
+      "productivity_loc_per_pm": 104.51429482220445,
+      "total_cost_usd": 117418435.63960773,
+      "cost_per_loc": 47.84034574893129,
+      "maintenance_cost_annual": 19961134.058733314
+    },
+    "semi-detached_mid": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "semi-detached",
+      "kloc": 2454.381,
+      "effort_pm": 23483.687127921545,
+      "development_time_months": 84.66583749072329,
+      "average_team_size": 277.3690997918094,
+      "productivity_loc_per_pm": 104.51429482220445,
+      "total_cost_usd": 187869497.02337235,
+      "cost_per_loc": 76.54455319829006,
+      "maintenance_cost_annual": 31937814.493973304
+    },
+    "semi-detached_senior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "semi-detached",
+      "kloc": 2454.381,
+      "effort_pm": 23483.687127921545,
+      "development_time_months": 84.66583749072329,
+      "average_team_size": 277.3690997918094,
+      "productivity_loc_per_pm": 104.51429482220445,
+      "total_cost_usd": 281804245.53505856,
+      "cost_per_loc": 114.8168297974351,
+      "maintenance_cost_annual": 47906721.74095996
+    },
+    "embedded_junior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "embedded",
+      "kloc": 2454.381,
+      "effort_pm": 52619.03633215265,
+      "development_time_months": 81.04117581468371,
+      "average_team_size": 649.2876713989964,
+      "productivity_loc_per_pm": 46.644354801691044,
+      "total_cost_usd": 263095181.66076326,
+      "cost_per_loc": 107.19410786701953,
+      "maintenance_cost_annual": 44726180.882329755
+    },
+    "embedded_mid": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "embedded",
+      "kloc": 2454.381,
+      "effort_pm": 52619.03633215265,
+      "development_time_months": 81.04117581468371,
+      "average_team_size": 649.2876713989964,
+      "productivity_loc_per_pm": 46.644354801691044,
+      "total_cost_usd": 420952290.6572212,
+      "cost_per_loc": 171.51057258723125,
+      "maintenance_cost_annual": 71561889.4117276
+    },
+    "embedded_senior": {
+      "model_type": "COCOMO II Basic",
+      "project_type": "embedded",
+      "kloc": 2454.381,
+      "effort_pm": 52619.03633215265,
+      "development_time_months": 81.04117581468371,
+      "average_team_size": 649.2876713989964,
+      "productivity_loc_per_pm": 46.644354801691044,
+      "total_cost_usd": 631428435.9858319,
+      "cost_per_loc": 257.2658588808469,
+      "maintenance_cost_annual": 107342834.11759143
+    }
+  },
+  "recommended": {
+    "model_type": "COCOMO II Basic",
+    "project_type": "semi-detached",
+    "kloc": 2454.381,
+    "effort_pm": 23483.687127921545,
+    "development_time_months": 84.66583749072329,
+    "average_team_size": 277.3690997918094,
+    "productivity_loc_per_pm": 104.51429482220445,
+    "total_cost_usd": 187869497.02337235,
+    "cost_per_loc": 76.54455319829006,
+    "maintenance_cost_annual": 31937814.493973304
+  }
+}

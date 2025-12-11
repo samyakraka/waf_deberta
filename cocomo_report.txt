@@ -1,0 +1,85 @@
+================================================================================
+COCOMO COST ESTIMATION REPORT
+WAF DeBERTa Project - AI/ML Security System
+================================================================================
+Generated: 2025-12-09 17:24:41
+Workspace: /Users/samyakraka/Documents/SIH25-WAF/waf_deberta
+
+CODE METRICS
+--------------------------------------------------------------------------------
+Total Lines:              5,113,686
+Source Lines (SLOC):      2,454,381
+Comment Lines:            1,833,233
+Blank Lines:              826,072
+Python Files:             10999
+Avg Lines per File:       464.9
+Largest File:             25002 lines
+Smallest File:            0 lines
+Code to Comment Ratio:    1.34:1
+
+RECOMMENDED ESTIMATE (Semi-Detached, Mid-Level Developers)
+--------------------------------------------------------------------------------
+Model:                    COCOMO II Basic
+Project Type:             Semi-Detached
+KLOC:                     2454.38
+
+Effort Required:          23483.69 person-months
+Development Time:         84.67 months
+Average Team Size:        277.4 developers
+Productivity:             105 LOC/person-month
+
+Total Development Cost:   $187,869,497.02
+Cost per LOC:             $76.54
+Annual Maintenance Cost:  $31,937,814.49
+
+ALTERNATIVE SCENARIOS
+--------------------------------------------------------------------------------
+Scenario                       Effort (PM)     Time (Mo)       Cost (USD)          
+--------------------------------------------------------------------------------
+Embedded + Junior              52619.04        81.04           $263,095,181.66     
+Embedded + Mid                 52619.04        81.04           $420,952,290.66     
+Embedded + Senior              52619.04        81.04           $631,428,435.99     
+Organic + Junior               10878.28        85.47           $54,391,412.64      
+Organic + Mid                  10878.28        85.47           $87,026,260.23      
+Organic + Senior               10878.28        85.47           $130,539,390.34     
+Semi-Detached + Junior         23483.69        84.67           $117,418,435.64     
+Semi-Detached + Mid            23483.69        84.67           $187,869,497.02     
+Semi-Detached + Senior         23483.69        84.67           $281,804,245.54     
+
+PROJECT CHARACTERISTICS
+--------------------------------------------------------------------------------
+✓ AI/ML Security System (DeBERTa-based WAF)
+✓ Complexity Multiplier: 1.25x (AI/ML projects)
+✓ Components:
+  - Machine Learning Model Training (src/trainer.py)
+  - Anomaly Detection Engine (src/detector.py)
+  - Real-time WAF Monitoring (waf_integrated_ui.py)
+  - Redis Rule Management (src/redis_rules.py)
+  - Incremental Learning System (incremental_model.py)
+  - Web UI and API Integration (Flask-based)
+
+ASSUMPTIONS & NOTES
+--------------------------------------------------------------------------------
+• COCOMO II Basic Model used for estimation
+• AI/ML complexity multiplier: 1.25x
+• Cost rates (per person-month):
+  - Junior Developer: $5,000
+  - Mid-Level Developer: $8,000
+  - Senior Developer: $12,000
+  - Lead Developer: $15,000
+• Maintenance cost: 17% of development cost annually
+• Excludes: Hardware, infrastructure, training, licenses
+
+RISK & ADJUSTMENT FACTORS
+--------------------------------------------------------------------------------
+Consider adjusting estimates for:
+  • Model training time and compute costs
+  • Dataset collection and labeling efforts
+  • Security testing and penetration testing
+  • Performance optimization and tuning
+  • Documentation and deployment guides
+  • Integration with existing systems
+
+================================================================================
+END OF REPORT
+================================================================================
